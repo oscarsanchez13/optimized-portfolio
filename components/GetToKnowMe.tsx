@@ -1,10 +1,10 @@
 export default function GetToKnowMe() {
     return (
-        <section id="about" className="py-16 bg-gray-100 text-gray-900 w-full h-screen bg-white text-black">
+        <section id="about" className="py-16 bg-gray-100 text-gray-900 w-full h-auto min-h-screen bg-white text-black">
             <div className="container mx-auto px-6 md:px-12 lg:px-20">
                 <h2 className="text-4xl font-bold text-center mb-6">Get To Know Me</h2>
                 <div className="flex flex-wrap justify-center gap-6">
-                    {/* Sticky Notes with More Achievements */}                    
+                    {/* Sticky Notes with More Achievements */}
                     <div className="sticky-note transform rotate-3">
                         <p className="text-lg font-semibold">🌍 7 International Projects</p>
                         <p className="text-sm">Led cross-functional teams across multiple countries.</p>
@@ -19,7 +19,7 @@ export default function GetToKnowMe() {
                     </div>
                     <div className="sticky-note transform -rotate-2">
                         <p className="text-lg font-semibold">🏆 Leadership Awards</p>
-                        <p className="text-sm">Central Golf Coast Manager of The Year 2022, 2023</p>
+                        <p className="text-sm">Central Gulf Coast Manager of The Year 2022, 2023</p>
                     </div>
                     <div className="sticky-note transform rotate-3">
                         <p className="text-lg font-semibold">📚 1000+ Hours of Learning</p>
