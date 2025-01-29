@@ -2,20 +2,42 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+/* General Theme */
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+    background-color: #0a0a0a;
+    color: #ffffff;
+}
+
+/* Text Colors */
+.text-emerald {
+    color: #50C878;
+}
+
+/* Sticky Notes Styling */
+.sticky-note {
+    background-color: #1a472a; /* Darker Green */
+    border-left: 5px solid #50C878; /* Olive Green */
+    padding: 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.sticky-note {
+  background-color: #2a6f4f; /* Olive green */
+  color: white;
+  padding: 16px;
+  width: 280px;
+  border-left: 5px solid #50C878; /* Olive green edge */
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+  font-family: 'Courier New', Courier, monospace;
+  transform: rotate(-1deg);
+  transition: transform 0.3s ease-in-out;
+}
+
+.sticky-note:hover {
+  transform: rotate(0deg) scale(1.05);
+}
+
+html, body {
+  background-color: #0a0a0a !important; /* Set it to match the theme */
+  overflow-x: hidden;
 }
