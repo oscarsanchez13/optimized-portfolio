@@ -55,7 +55,7 @@ export default function Navbar() {
                 {/* Right Side: "Let’s Connect" & Hamburger */}
                 <div className="flex items-center space-x-6">
                     <a
-                        href="https://www.linkedin.com/in/YOUR-LINKEDIN-HERE"
+                        href="https://www.linkedin.com/in/oscarsanchez13"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-2 px-4 rounded-lg flex items-center space-x-2 whitespace-nowrap"

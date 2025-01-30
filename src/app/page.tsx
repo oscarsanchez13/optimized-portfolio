@@ -10,7 +10,7 @@ export default function Home() {
     return (
         <div>
             <HomeSection />
-            {/* <Projects /> */}
+            <Projects />
             {/* <Skills /> */}
             {/* <Certifications /> */}
             <GetToKnowMe />
