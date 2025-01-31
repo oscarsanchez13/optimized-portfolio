@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 /* General Theme */
+html, body {
+  background-color: #0a0a0a !important; /* Set it to match the theme */
+  overflow-x: hidden;
+}
 body {
     background-color: #0a0a0a;
     color: #ffffff;
@@ -37,21 +41,30 @@ body {
   transform: rotate(0deg) scale(1.15);
 }
 
-html, body {
-  background-color: #0a0a0a !important; /* Set it to match the theme */
-  overflow-x: hidden;
-}
-
 .perspective {
   perspective: 1000px;
 }
 .transform-style-3d {
   transform-style: preserve-3d;
-  transition: transform 0.8s;
+  transition: transform 0.5s ease-in-out;
+}
+.group-hover\:rotate-y-180 {
+  transform: rotateY(180deg);
 }
 .rotate-y-180 {
   transform: rotateY(180deg);
-}
+} 
 .backface-hidden {
   backface-visibility: hidden;
+}
+
+/* Fixes button layout */
+.flex.justify-evenly a {
+  min-width: 40%;
+  text-align: center;
+}
+
+/* Ensures project blocks touch each other */
+.grid {
+  gap: 0px;
 }
