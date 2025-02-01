@@ -90,23 +90,60 @@ body {
   }
 }
 
-/* Neon Glow Effect */
-@keyframes neonGlow {
+/* Neon Flicker Animation */
+@keyframes neonFlicker {
   0% {
-      text-shadow: 0 0 5px #34d399, 0 0 10px #34d399, 0 0 15px #34d399;
+    text-shadow: 0 0 4px rgba(52, 211, 153, 0.8), 0 0 10px rgba(52, 211, 153, 0.6);
   }
-  50% {
-      text-shadow: 0 0 10px #10b981, 0 0 20px #10b981, 0 0 25px #10b981;
+  15% {
+    text-shadow: 0 0 5px rgba(52, 211, 153, 0.9), 0 0 12px rgba(52, 211, 153, 0.7);
+  }
+  30% {
+    text-shadow: 0 0 3px rgba(52, 211, 153, 0.7), 0 0 8px rgba(52, 211, 153, 0.5);
+  }
+  40% {
+    text-shadow: none; /* Quick flicker OFF */
+  }
+  55% {
+    text-shadow: 0 0 6px rgba(52, 211, 153, 1), 0 0 14px rgba(52, 211, 153, 0.9);
+  }
+  70% {
+    text-shadow: 0 0 3px rgba(52, 211, 153, 0.8), 0 0 8px rgba(52, 211, 153, 0.6);
+  }
+  80% {
+    text-shadow: 0 0 8px rgba(52, 211, 153, 1), 0 0 18px rgba(52, 211, 153, 0.9);
+  }
+  90% {
+    text-shadow: none; /* Another flicker OFF */
   }
   100% {
-      text-shadow: 0 0 5px #34d399, 0 0 10px #34d399, 0 0 15px #34d399;
+    text-shadow: 0 0 5px rgba(52, 211, 153, 0.9), 0 0 10px rgba(52, 211, 153, 0.7);
   }
 }
 
-/* Outline Effect for <OS/> */
+/* Random Neon Color Animation */
+@keyframes neonColorCycle {
+  0% { text-shadow: 0 0 6px #ff0000, 0 0 12px #ff0000, 0 0 18px #ff0000; } /* Red */
+  25% { text-shadow: 0 0 6px #00ffff, 0 0 12px #00ffff, 0 0 18px #00ffff; } /* Cyan */
+  50% { text-shadow: 0 0 6px #ffff00, 0 0 12px #ffff00, 0 0 18px #ffff00; } /* Yellow */
+  75% { text-shadow: 0 0 6px #ff69b4, 0 0 12px #ff69b4, 0 0 18px #ff69b4; } /* Pink */
+  100% { text-shadow: 0 0 6px #ff0000, 0 0 12px #ff0000, 0 0 18px #ff0000; } /* Back to Red */
+}
+
+/* Default Neon Effect */
 .logo-outline {
   font-family: "Arial", sans-serif;
-  -webkit-text-stroke: 1.5px #34d399; /* Outline effect */
+  font-size: 2.5rem;
+  font-weight: bold;
   color: transparent;
   text-transform: uppercase;
+  -webkit-text-stroke: 1.2px rgba(52, 211, 153, 0.9); /* Emerald Outline */
+  animation: neonFlicker 2.5s infinite alternate ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Hover Effect: Random Neon Colors */
+.logo-outline:hover {
+  animation: neonColorCycle 2s infinite alternate ease-in-out; /* Start color cycling */
+  -webkit-text-stroke: 1.2px rgba(255, 255, 255, 1); /* White outline to keep readability */
 }
