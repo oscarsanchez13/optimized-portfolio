@@ -121,17 +121,17 @@ Ensure you have the following installed:
 ---
 
 ## 📂 **Project Structure**
-
+```
 📂 src/
- ├── 📂 app/                  # Next.js App Router structure
- │   ├── 📂 components/       # Reusable components
- │   ├── 📂 styles/           # Global styles
- │   ├── 📂 public/           # Static assets
- ├── 📄 tailwind.config.ts    # TailwindCSS configuration
- ├── 📄 next.config.ts        # Next.js configuration
- ├── 📄 package.json          # Project dependencies
- ├── 📄 README.md             # This file
- 
+├── 📂 app/                  # Next.js App Router structure
+│   ├── 📂 components/       # Reusable components
+│   ├── 📂 styles/           # Global styles
+│   ├── 📂 public/           # Static assets
+├── 📄 tailwind.config.ts    # TailwindCSS configuration
+├── 📄 next.config.ts        # Next.js configuration
+├── 📄 package.json          # Project dependencies
+├── 📄 README.md             # This file
+```
 ---
 
 ## 📌 **Projects Featured in This Portfolio**  
