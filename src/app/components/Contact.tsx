@@ -58,13 +58,13 @@ export default function Contact() {
   return (
     <section id="contact" className="py-16 bg-gray-900 text-white">
       <div className="container mx-auto px-6 md:px-12 lg:px-20">
-        <h2 className="text-4xl font-bold text-center mb-10">Let's Connect!</h2>
+        <h2 className="section-title text-4xl font-bold text-center mb-10">Let&apos;s Connect!</h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Left Side: Social Links */}
           <div className="flex flex-col items-center md:items-start">
             <p className="text-lg text-gray-300 mb-4">
-              Feel free to reach out! Whether you have a question or just want to say hi, I'll do my best to get back to you.
+              Feel free to reach out! Whether you have a question or just want to say hi, I&apos;ll do my best to get back to you.
             </p>
             <div className="flex space-x-4">
               <a href="https://linkedin.com/in/your-profile" target="_blank" rel="noopener noreferrer" className="bg-emerald-600 hover:bg-emerald-500 p-3 rounded-full transition">

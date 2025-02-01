@@ -147,3 +147,21 @@ body {
   animation: neonColorCycle 2s infinite alternate ease-in-out; /* Start color cycling */
   -webkit-text-stroke: 1.2px rgba(255, 255, 255, 1); /* White outline to keep readability */
 }
+
+/* Section Titles - Hollow Neon Glow */
+.section-title {
+  font-family: "Arial", sans-serif;
+  font-size: 2rem;
+  font-weight: bold;
+  color: transparent;
+  text-transform: uppercase;
+  -webkit-text-stroke: 1.2px rgba(52, 211, 153, 0.9); /* Emerald Outline */
+  animation: neonFlicker 2.5s infinite alternate ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Hover Effect: Random Neon Colors */
+.section-title:hover {
+  animation: neonColorCycle 2s infinite alternate ease-in-out;
+  -webkit-text-stroke: 1.2px rgba(255, 255, 255, 1); /* White outline for better readability */
+}
