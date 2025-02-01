@@ -17,6 +17,14 @@ body {
     color: #50C878;
 }
 
+@media (max-width: 768px) {
+  .scroll-arrow {
+    bottom: 4rem; /* Moves arrow further down in mobile */
+    font-size: 2rem; /* Smaller size for mobile */
+  }
+}
+
+
 /* Sticky Notes Styling */
 .sticky-note {
     background-color: #1a472a; /* Darker Green */
@@ -49,10 +57,10 @@ body {
   transition: transform 0.5s ease-in-out;
 }
 .group-hover\:rotate-y-180 {
-  transform: rotateY(180deg);
+  transform: rotateY();
 }
 .rotate-y-180 {
-  transform: rotateY(180deg);
+  transform: rotateY();
 } 
 .backface-hidden {
   backface-visibility: hidden;
@@ -67,4 +75,17 @@ body {
 /* Ensures project blocks touch each other */
 .grid {
   gap: 0px;
+}
+
+.blinker {
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: #38e577; /* Tailwind green-400 */
+  animation: blink-animation .7s infinite;
+}
+
+@keyframes blink-animation {
+  50% {
+    opacity: 0;
+  }
 }
