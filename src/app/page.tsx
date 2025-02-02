@@ -1,6 +1,6 @@
 import HomeSection from "./components/HomeSection";
 import Projects from "./components/Projects";
-// import Skills from "./components/Skills";
+import Skills from "./components/Skills";
 // import Certifications from "./components/Certifications";
 import GetToKnowMe from "./components/GetToKnowMe"; // Renamed
 // import Recommendations from "./components/Recommendations";
@@ -11,7 +11,7 @@ export default function Home() {
         <div>
             <HomeSection />
             <Projects />
-            {/* <Skills /> */}
+            <Skills />
             {/* <Certifications /> */}
             <GetToKnowMe />
             {/* <Recommendations /> */}
