@@ -5,12 +5,15 @@ import Typewriter from "./Typewriter";
 
 export default function HomeSection() {
     const [isMobile, setIsMobile] = useState(false);
+    const [arrowBottom, setArrowBottom] = useState("2rem");
 
     useEffect(() => {
         const handleResize = () => {
             setIsMobile(window.innerWidth < 1020);
+            setArrowBottom(window.innerWidth < 768 ? "calc(2rem + -20px)" : "2rem");
         };
 
+        // Run on mount & resize
         handleResize();
         window.addEventListener("resize", handleResize);
         return () => window.removeEventListener("resize", handleResize);
@@ -63,11 +66,10 @@ export default function HomeSection() {
             <div
                 className="absolute right-1/2 transform translate-x-1/2 text-white animate-bounce opacity-80
                 md:bottom-10 md:text-5xl text-4xl"
-                style={{ bottom: window.innerWidth < 768 ? "calc(2rem + -20px)" : "2rem" }} // Moves arrow down 100px on mobile
+                style={{ bottom: arrowBottom }} // Uses state instead of direct window reference
             >
-
-                    <FaChevronDown />
-                </div>            
+                <FaChevronDown />
+            </div>            
         </section>
     );
 }
