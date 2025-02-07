@@ -33,9 +33,9 @@ export default function Contact() {
       return;
     }
 
-    const serviceID = "your_service_id"; // Replace with EmailJS Service ID
-    const templateID = "your_template_id"; // Replace with EmailJS Template ID
-    const publicKey = "your_public_key"; // Replace with EmailJS Public Key
+    const serviceID = "service_tjg8kj9"; // Replace with EmailJS Service ID
+    const templateID = "template_mmvgltk"; // Replace with EmailJS Template ID
+    const publicKey = "NNcoiA40YeKx-ne1e"; // Replace with EmailJS Public Key
 
     const templateParams = {
       name: formData.name,
@@ -67,13 +67,13 @@ export default function Contact() {
               Feel free to reach out! Whether you have a question or just want to say hi, I&apos;ll do my best to get back to you.
             </p>
             <div className="flex space-x-4">
-              <a href="https://linkedin.com/in/your-profile" target="_blank" rel="noopener noreferrer" className="bg-emerald-600 hover:bg-emerald-500 p-3 rounded-full transition">
+              <a href="https://linkedin.com/in/oscarsanchez13" target="_blank" rel="noopener noreferrer" className="bg-emerald-600 hover:bg-emerald-500 p-3 rounded-full transition">
                 <FaLinkedin size={24} />
               </a>
-              <a href="https://github.com/your-profile" target="_blank" rel="noopener noreferrer" className="bg-gray-700 hover:bg-gray-600 p-3 rounded-full transition">
+              <a href="https://github.com/oscarsanchez13" target="_blank" rel="noopener noreferrer" className="bg-gray-700 hover:bg-gray-600 p-3 rounded-full transition">
                 <FaGithub size={24} />
               </a>
-              <a href="mailto:your.email@example.com" className="bg-gray-700 hover:bg-gray-600 p-3 rounded-full transition">
+              <a href="mailto:architectsanchez13@gmail.com" className="bg-gray-700 hover:bg-gray-600 p-3 rounded-full transition">
                 <FaEnvelope size={24} />
               </a>
             </div>

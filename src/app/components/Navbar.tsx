@@ -55,7 +55,7 @@ export default function Navbar() {
 
             {/* "Let's Connect!" Button */}
             <a
-                href="https://www.linkedin.com/in/yourprofile"
+                href="https://www.linkedin.com/in/oscarsanchez13"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded-lg transition flex items-center space-x-2 text-base md:text-lg"
