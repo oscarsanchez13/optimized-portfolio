@@ -1,130 +1,94 @@
-// "use client";
+"use client";
 
-// import { motion, useInView } from "framer-motion";
-// import { useRef, useState, useEffect } from "react";
+import Image from "next/image";
+import { motion } from "framer-motion";
+import { useState } from "react";
+import { DiJavascript1, DiReact, DiNodejs, DiDocker, DiGit } from "react-icons/di";
+import { SiTypescript, SiNextdotjs, SiTailwindcss, SiMongodb, SiGraphql, SiKubernetes, SiTerraform, SiAmazon, SiGithubactions, SiJenkins, SiHelm, SiPrometheus, SiGrafana, SiExpress } from "react-icons/si";
 
-// const skillsData = {
-//   TechnicalExperience: {
-//     Frontend: ["React", "Next.js", "Tailwind CSS", "JavaScript", "TypeScript"],
-//     Backend: ["Node.js", "Express", "MongoDB", "PostgreSQL", "GraphQL"],
-//     DevOps: ["Docker", "Kubernetes", "Terraform", "AWS", "GitHub Actions"],
-//   },
-//   SoftSkills: [
-//     "Leadership",
-//     "Process Optimization",
-//     "Team Building",
-//     "Strategic Planning",
-//   ],
-// };
+// Mapping stack names to their respective React Icons
+const skillIcons: { [key: string]: JSX.Element } = {
+  "JavaScript": <DiJavascript1 className="w-12 h-12 text-yellow-500 drop-shadow-lg shadow-white" />,
+  "TypeScript": <SiTypescript className="w-12 h-12 text-blue-500 drop-shadow-lg shadow-white" />,
+  "React": <DiReact className="w-12 h-12 text-blue-400 drop-shadow-lg shadow-white" />,
+  "Next.js": <SiNextdotjs className="w-12 h-12 text-white drop-shadow-lg shadow-white" />,
+  "Tailwind CSS": <SiTailwindcss className="w-12 h-12 text-blue-400 drop-shadow-lg shadow-white" />,
+  "MongoDB": <SiMongodb className="w-12 h-12 text-green-500 drop-shadow-lg shadow-white" />,
+  "Node.js": <DiNodejs className="w-12 h-12 text-green-600 drop-shadow-lg shadow-white" />,
+  "Express.js": <SiExpress className="w-12 h-12 text-white drop-shadow-lg shadow-white" />,
+  "GraphQL": <SiGraphql className="w-12 h-12 text-pink-500 drop-shadow-lg shadow-white" />,
+  "Docker": <DiDocker className="w-12 h-12 text-blue-500 drop-shadow-lg shadow-white" />,
+  "Kubernetes": <SiKubernetes className="w-12 h-12 text-blue-500 drop-shadow-lg shadow-white" />,
+  "Terraform": <SiTerraform className="w-12 h-12 text-purple-500 drop-shadow-lg shadow-white" />,
+  "AWS": <SiAmazon className="w-12 h-12 text-orange-500 drop-shadow-lg shadow-white" />,
+  "GitHub Actions": <SiGithubactions className="w-12 h-12 text-white drop-shadow-lg shadow-white" />,
+  "Jenkins": <SiJenkins className="w-12 h-12 text-red-500 drop-shadow-lg shadow-white" />,
+  "Helm": <SiHelm className="w-12 h-12 text-blue-600 drop-shadow-lg shadow-white" />,
+  "Prometheus": <SiPrometheus className="w-12 h-12 text-orange-500 drop-shadow-lg shadow-white" />,
+  "Grafana": <SiGrafana className="w-12 h-12 text-orange-400 drop-shadow-lg shadow-white" />,
+  "Git": <DiGit className="w-12 h-12 text-red-500 drop-shadow-lg shadow-white" />,
+  "Azure DevOps": <Image src="/icons/azure-devops.png" alt="Azure DevOps" width={48} height={48} className="drop-shadow-lg shadow-white" />,
+};
 
-// export default function Skills() {
-//   const sectionRef = useRef(null);
-//   const isInView = useInView(sectionRef, { once: true, margin: "-100px 0px" });
-
-//   const [backgroundImage, setBackgroundImage] = useState<string | null>(null);
-
-//   // Fetch a random image from Unsplash API
-//   useEffect(() => {
-//     const fetchBackground = async () => {
-//       try {
-//         const response = await fetch(
-//           `https://api.unsplash.com/photos/random?query=technology,dark,coding&client_id=YOUR_UNSPLASH_ACCESS_KEY`
-//         );
-//         const data = await response.json();
-//         setBackgroundImage(data.urls.full);
-//       } catch (error) {
-//         console.error("Failed to fetch background image", error);
-//       }
-//     };
-
-//     fetchBackground();
-//   }, []);
-
-//   return (
-//     <section
-//       ref={sectionRef}
-//       className="relative flex flex-row h-screen bg-cover bg-center"
-//       style={{
-//         backgroundImage: backgroundImage
-//           ? `url(${backgroundImage})`
-//           : "linear-gradient(to bottom, #0d1117, #161b22)",
-//       }}
-//     >
-//       {/* Dark Overlay */}
-//       <div className="absolute inset-0 bg-black bg-opacity-60"></div>
-
-//       {/* Massive Vertical "SKILLS" Title */}
-//       <div className="absolute left-4 top-0 h-full flex items-center">
-//         <motion.h1
-//           className="text-gray-300 dark:text-gray-600 text-[12vw] font-extrabold tracking-wide uppercase leading-none"
-//           initial={{ x: -50, opacity: 0 }}
-//           animate={isInView ? { x: 0, opacity: 1 } : {}}
-//           transition={{ duration: 1 }}
-//           style={{ writingMode: "vertical-rl", textOrientation: "upright" }}
-//         >
-//           SKILLS
-//         </motion.h1>
-//       </div>
-
-//       {/* Skills Content */}
-//       <div className="flex-1 flex flex-col items-center justify-center px-8 md:px-16 lg:px-32 relative z-10">
-//         {/* Main Node */}
-//         <motion.div
-//           className="bg-blue-600 text-white px-6 py-3 rounded-lg shadow-lg text-lg font-semibold"
-//           initial={{ scale: 0.8, opacity: 0 }}
-//           animate={isInView ? { scale: 1, opacity: 1 } : {}}
-//           transition={{ duration: 0.6 }}
-//         >
-//           Technical Experience
-//         </motion.div>
-
-//         {/* Branches */}
-//         <div className="flex flex-wrap justify-center gap-8 mt-6">
-//           {Object.entries(skillsData.TechnicalExperience).map(
-//             ([category, skills], index) => (
-//               <motion.div
-//                 key={category}
-//                 className="bg-gray-200 dark:bg-gray-800 text-black dark:text-white p-6 rounded-lg shadow-md w-72 h-40 overflow-y-auto"
-//                 initial={{ opacity: 0, y: 20 }}
-//                 animate={isInView ? { opacity: 1, y: 0 } : {}}
-//                 transition={{ duration: 0.6, delay: index * 0.2 }}
-//               >
-//                 <h3 className="text-xl font-semibold mb-4 text-center">
-//                   {category}
-//                 </h3>
-//                 <ul className="space-y-2">
-//                   {skills.map((skill, i) => (
-//                     <motion.li
-//                       key={skill}
-//                       className="text-center text-gray-700 dark:text-gray-300"
-//                       whileHover={{ scale: 1.1 }}
-//                       transition={{ duration: 0.2 }}
-//                     >
-//                       {skill}
-//                     </motion.li>
-//                   ))}
-//                 </ul>
-//               </motion.div>
-//             )
-//           )}
-//         </div>
-//       </div>
-//     </section>
-//   );
-// }
-
-
-import React from 'react';
-
+const skillsData: {
+    TechnicalExperience: Record<string, string[]>;
+    SoftSkills: string[];
+  } = {
+    TechnicalExperience: {
+      Frontend: ["JavaScript", "TypeScript", "React", "Next.js", "Tailwind CSS"],
+      Backend: ["Node.js", "Express.js", "GraphQL", "MongoDB"],
+      DevOps: ["Docker", "Kubernetes", "Terraform", "AWS", "GitHub Actions", "Jenkins", "Helm", "Prometheus", "Grafana"],
+    },
+    SoftSkills: ["Leadership", "Process Optimization", "Team Building", "Strategic Planning", "Agile Methodologies"],
+  };
+  
 
 export default function Skills() {
-    return (
-        <div className="flex flex-col items-center justify-center h-96 bg-gray-100 border-4 border-yellow-500 text-center p-6 rounded-lg shadow-lg">
-            <div className="text-4xl font-bold text-gray-700">🚧 Skills Section Coming Soon 🚧</div>
-            <p className="text-lg text-gray-600 mt-4">This section is currently under reconstruction.</p>
-            <div className="mt-6 w-full h-12 bg-yellow-500 text-black font-bold text-xl flex items-center justify-center">
-                ⚠️ Construction in Progress ⚠️
-            </div>
-        </div>
-    );
+  const [selectedCategory, setSelectedCategory] = useState("Frontend");
+
+  return (
+    <section id="skills" className="relative flex flex-col items-center bg-white py-20 text-black">
+      {/* Section Title */}
+      <motion.h2 className="text-4xl font-bold text-center mb-8 text-emerald-500" initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
+        Technical Skills
+      </motion.h2>
+
+      {/* Category Buttons */}
+      <div className="flex space-x-4 mb-6">
+        {Object.keys(skillsData.TechnicalExperience).map((category) => (
+          <button key={category} className={`px-6 py-2 text-lg font-semibold rounded-md ${selectedCategory === category ? "bg-emerald-500 text-white" : "bg-gray-200 text-black hover:bg-gray-300"}`} onClick={() => setSelectedCategory(category)}>
+            {category}
+          </button>
+        ))}
+      </div>
+
+      {/* Scrollable Skills List */}
+      <motion.div key={selectedCategory} className="w-full max-w-3xl overflow-x-auto bg-gray-200 p-6 rounded-lg shadow-lg flex space-x-4 scrollbar-hide" initial={{ opacity: 0, x: selectedCategory === "Frontend" ? -50 : 50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }}>
+        {skillsData.TechnicalExperience[selectedCategory].map((skill) => (
+          <div key={skill} className="flex flex-col items-center justify-center bg-gray-800 text-white px-6 py-4 rounded-md w-36 h-36 text-center shadow-lg">
+            {skillIcons[skill] || <span className="w-12 h-12"></span>} {/* Display icon if exists */}
+            <span className="text-sm font-semibold mt-2">{skill}</span>
+          </div>
+        ))}
+      </motion.div>
+
+      {/* Soft Skills - Now Scrollable */}
+<motion.div className="mt-10 text-center" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
+  <h2 className="text-4xl font-bold text-center mb-8 text-emerald-500">Soft Skills</h2>
+  <div className="w-full max-w-3xl overflow-x-auto bg-gray-200 p-6 rounded-lg shadow-lg flex space-x-4 scrollbar-hide">
+    {skillsData.SoftSkills.map((skill) => (
+      <div key={skill} className="flex flex-col items-center justify-center bg-gray-700 text-white px-6 py-4 rounded-md w-36 h-36 text-center shadow-lg">
+        <span className="text-sm font-semibold">{skill}</span>
+      </div>
+    ))}
+  </div>
+</motion.div>
+
+
+      {/* Disclaimer */}
+      <motion.p className="mt-6 text-center text-gray-600 text-sm" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1 }}>
+        *I&apos;m always learning new technologies. If a specific stack isn’t listed here, I can quickly adapt to it.
+      </motion.p>
+    </section>
+  );
 }

@@ -1,3 +1,5 @@
+"use client";
+
 export default function GetToKnowMe() {
     return (
         <section id="about" className="py-16 w-full h-auto bg-white text-black">
