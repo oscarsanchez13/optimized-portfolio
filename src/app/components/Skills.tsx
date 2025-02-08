@@ -116,7 +116,8 @@
 
 import React from 'react';
 
-const Skills = () => {
+
+export default function Skills() {
     return (
         <div className="flex flex-col items-center justify-center h-96 bg-gray-100 border-4 border-yellow-500 text-center p-6 rounded-lg shadow-lg">
             <div className="text-4xl font-bold text-gray-700">🚧 Skills Section Coming Soon 🚧</div>
@@ -126,6 +127,4 @@ const Skills = () => {
             </div>
         </div>
     );
-};
-
-export default Skills;
+}
