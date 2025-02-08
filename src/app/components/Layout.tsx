@@ -1,5 +1,6 @@
 import { ReactNode } from "react";
 import Navbar from "./Navbar";
+import Footer from "./Footer";
 import { Analytics } from "@vercel/analytics/react";
 
 type LayoutProps = {
@@ -11,6 +12,7 @@ export default function Layout({ children }: LayoutProps) {
         <div className="min-h-screen flex flex-col">
             <Navbar />
             <main className="flex-grow w-full px-4">{children}</main>
+            <Footer />
             <Analytics />
         </div>
     );

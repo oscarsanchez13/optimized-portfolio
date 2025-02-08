@@ -77,10 +77,12 @@ export default function Contact() {
                 <FaEnvelope size={24} />
               </a>
             </div>
-          </div>
+            <br/>
+          </div>          
 
           {/* Right Side: Contact Form */}
           <div className="bg-gray-800 p-6 rounded-lg shadow-lg">
+                      
             <form onSubmit={handleSubmit} className="space-y-4">
               {/* Name Input */}
               <div className="relative">
