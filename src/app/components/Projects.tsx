@@ -8,15 +8,15 @@ import { SiNextdotjs, SiDocker, SiKubernetes, SiJenkins, SiReact, SiGithubaction
 // Project Data
 const allProjects = [
     { id: 1, name: "DevOps Dashboard", image: "/projects/devops-dashboard.png", description: "A real-time dashboard for monitoring Kubernetes clusters.", tech: [SiNextdotjs, SiKubernetes, SiDocker, SiAmazon ], repo: "#", live: "#" },
-    { id: 2, name: "CI/CD Pipeline Manager", image: "/projects/cicd-pipeline.png", description: "A CI/CD pipeline visualization tool for DevOps engineers.", tech: [SiReact, SiJenkins, SiGithubactions, SiAmazon], repo: "#", live: "#" },
-    { id: 3, name: "Kubernetes Auto-Scaler", image: "/projects/k8s-auto-scaler.png", description: "Auto-scaling Kubernetes deployments based on real-time metrics.", tech: [SiKubernetes, SiAmazon, SiDocker], repo: "#", live: "#" },
-    { id: 4, name: "Serverless API with AWS Lambda", image: "/projects/aws-lambda-api.png", description: "A highly scalable serverless API deployed on AWS Lambda.", tech: [SiAmazon, SiNextdotjs], repo: "#", live: "#" },
-    { id: 5, name: "GitHub Actions CI/CD Workflow", image: "/projects/github-actions.png", description: "Automated CI/CD pipeline using GitHub Actions.", tech: [SiGithubactions, SiJenkins, SiDocker], repo: "#", live: "#" },
-    { id: 6, name: "Infrastructure as Code (IaC)", image: "/projects/iac.png", description: "Using Terraform and AWS to define infrastructure as code.", tech: [SiAmazon, SiDocker, SiNextdotjs], repo: "#", live: "#" },
-    { id: 7, name: "Monitoring with Grafana", image: "/projects/grafana-monitoring.png", description: "Real-time observability using Grafana, Prometheus, and Loki.", tech: [SiNextdotjs, SiDocker, SiAmazon], repo: "#", live: "#" },
-    { id: 8, name: "Multi-Region Kubernetes Clusters", image: "/projects/multi-region-k8s.png", description: "Deploying Kubernetes clusters across multiple AWS regions.", tech: [SiKubernetes, SiAmazon], repo: "#", live: "#" },
-    { id: 9, name: "Fullstack Logging System", image: "/projects/logging-system.png", description: "A full-stack logging system for distributed applications.", tech: [SiReact, SiNextdotjs, SiDocker], repo: "#", live: "#" },
-    { id: 10, name: "Cloud Cost Optimization Tool", image: "/projects/cloud-cost.png", description: "A tool for analyzing and optimizing cloud infrastructure costs.", tech: [SiAmazon, SiKubernetes, SiDocker], repo: "#", live: "#" }
+    { id: 2, name: "Monitoring with Grafana", image: "/projects/grafana-monitoring.PNG", description: "Real-time observability using Grafana, Prometheus, and Loki.", tech: [SiNextdotjs, SiDocker, SiAmazon], repo: "#", live: "#" },
+    { id: 3, name: "Cloud Cost Optimization Tool", image: "/projects/cloud-cost.PNG", description: "A tool for analyzing and optimizing cloud infrastructure costs.", tech: [SiAmazon, SiKubernetes, SiDocker], repo: "#", live: "#" },
+    { id: 4, name: "Multi-Region Kubernetes Clusters", image: "/projects/multi-region-k8s.png", description: "Deploying Kubernetes clusters across multiple AWS regions.", tech: [SiKubernetes, SiAmazon], repo: "#", live: "#" },
+    { id: 5, name: "Kubernetes Auto-Scaler", image: "/projects/k8s-auto-scaler.png", description: "Auto-scaling Kubernetes deployments based on real-time metrics.", tech: [SiKubernetes, SiAmazon, SiDocker], repo: "#", live: "#" },
+    { id: 6, name: "Fullstack Logging System", image: "/projects/logging-system.png", description: "A full-stack logging system for distributed applications.", tech: [SiReact, SiNextdotjs, SiDocker], repo: "#", live: "#" },
+    { id: 7, name: "GitHub Actions CI/CD Workflow", image: "/projects/github-actions.png", description: "Automated CI/CD pipeline using GitHub Actions.", tech: [SiGithubactions, SiJenkins, SiDocker], repo: "#", live: "#" },
+    { id: 8, name: "CI/CD Pipeline Manager", image: "/projects/cicd-pipeline.png", description: "A CI/CD pipeline visualization tool for DevOps engineers.", tech: [SiReact, SiJenkins, SiGithubactions, SiAmazon], repo: "#", live: "#" },
+    { id: 9, name: "Infrastructure as Code (IaC)", image: "/projects/iac.PNG", description: "Using Terraform and AWS to define infrastructure as code.", tech: [SiAmazon, SiDocker, SiNextdotjs], repo: "#", live: "#" },
+    { id: 10, name: "Serverless API with AWS Lambda", image: "/projects/aws-lambda-api.png", description: "A highly scalable serverless API deployed on AWS Lambda.", tech: [SiAmazon, SiNextdotjs], repo: "#", live: "#" },
 ];
 
 export default function Projects() {
@@ -32,7 +32,7 @@ export default function Projects() {
                 <h2 className="section-title text-4xl font-bold text-center mb-10">Projects</h2>
 
                 {/* Project Grid */}
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-0">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4">
                     {allProjects.slice(0, visibleProjects).map((project) => (
                         <motion.div
                             key={project.id}
@@ -97,7 +97,8 @@ export default function Projects() {
                         </motion.div>
                     ))}
 
-                    {/* View More Projects */}
+                {/* View More Projects - Hidden When No More Projects */}
+                {visibleProjects < allProjects.length && (
                     <motion.div 
                         className="flex items-center justify-center border border-black bg-gray-700 hover:bg-gray-600 text-white cursor-pointer w-full h-64 md:h-80"
                         onClick={loadMoreProjects}
@@ -107,6 +108,7 @@ export default function Projects() {
                             <span>View More Projects</span> <span className="text-2xl">+</span>
                         </span>
                     </motion.div>
+                )}
                 </div>
             </div>
         </section>

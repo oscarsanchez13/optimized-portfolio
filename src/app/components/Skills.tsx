@@ -4,7 +4,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { DiJavascript1, DiReact, DiNodejs, DiDocker, DiGit, DiPostgresql } from "react-icons/di";
-import { SiTypescript, SiNextdotjs, SiTailwindcss, SiMongodb, SiGraphql, SiKubernetes, SiTerraform, SiAmazon, SiGithubactions, SiJenkins, SiHelm, SiPrometheus, SiGrafana, SiExpress, SiHtml5, SiCss3, SiGitlab, SiNetlify, SiFigma } from "react-icons/si";
+import { SiTypescript, SiNextdotjs, SiTailwindcss, SiMongodb, SiGraphql, SiKubernetes, SiTerraform, SiAmazon, SiGithubactions, SiJenkins, SiHelm, SiPrometheus, SiGrafana, SiExpress, SiHtml5, SiCss3, SiGitlab, SiNetlify, SiFigma, SiPostman, SiAuth0, SiVercel } from "react-icons/si";
 
 // Mapping stack names to their respective React Icons
 const skillIcons: { [key: string]: JSX.Element } = {
@@ -33,20 +33,23 @@ const skillIcons: { [key: string]: JSX.Element } = {
   "CSS3": <SiCss3 className="w-10 h-10 md:w-12 md:h-12 text-blue-500 drop-shadow-lg shadow-white" />,
   "Netlify": <SiNetlify className="w-10 h-10 md:w-12 md:h-12 text-blue-500 drop-shadow-lg shadow-white" />,
   "Figma": <SiFigma className="w-10 h-10 md:w-12 md:h-12 text-pink-500 drop-shadow-lg shadow-white" />,
+  "Postman": <SiPostman className="w-10 h-10 md:w-12 md:h-12 text-orange-500 drop-shadow-lg shadow-white" />,
+  "Auth0": <SiAuth0 className="w-10 h-10 md:w-12 md:h-12 text-blue-500 drop-shadow-lg shadow-white" />,
+  "Vercel": <SiVercel className="w-10 h-10 md:w-12 md:h-12 text-white drop-shadow-lg shadow-white" />,
   "Azure DevOps": <Image src="/icons/azure-devops.png" alt="Azure DevOps" width={48} height={48} className="drop-shadow-lg shadow-white" />,
 };
 
 const skillsData = {
   TechnicalExperience: {
     Frontend: ["JavaScript", "TypeScript", "React", "Next.js", "Tailwind CSS", "HTML5", "CSS3", "Netlify", "Figma"],
-    Backend: ["Node.js", "Express.js", "GraphQL", "MongoDB", "PostgreSQL"],
-    DevOps: ["Docker", "Kubernetes", "Terraform", "AWS", "GitHub Actions", "Jenkins", "Helm", "Prometheus", "Grafana", "Git", "GitLab"],
+    Backend: ["Node.js", "Express.js", "GraphQL", "MongoDB", "PostgreSQL", "Postman", "Auth0"],
+    DevOps: ["Docker", "Kubernetes", "Terraform", "AWS", "GitHub Actions", "Jenkins", "Helm", "Prometheus", "Grafana", "Git", "GitLab", "Vercel"],
   },
-  SoftSkills: ["Leadership", "Process Optimization", "Team Building", "Strategic Planning", "Agile Methodologies"],
+  SoftSkills: ["Leadership", "Process Optimization", "Team Building", "Strategic Planning", "Agile Methodologies", "Problem-Solving", "Decision-Making", "Communication", "Time Management", "Adaptability", "Bilingual (English/Spanish)"],
 };
 
 export default function Skills() {
-  const [selectedCategory, setSelectedCategory] = useState("Frontend");
+  const [selectedCategory, setSelectedCategory] = useState<keyof typeof skillsData.TechnicalExperience>("Frontend");
 
   return (
     <section id="skills" className="relative flex flex-col items-center bg-white py-20 text-black">
@@ -54,7 +57,7 @@ export default function Skills() {
 
       <div className="flex space-x-4 mb-6">
         {Object.keys(skillsData.TechnicalExperience).map((category) => (
-          <button key={category} className={`px-6 py-2 text-lg font-semibold rounded-md ${selectedCategory === category ? "bg-emerald-500 text-white" : "bg-gray-200 text-black hover:bg-gray-300"}`} onClick={() => setSelectedCategory(category)}>
+          <button key={category} className={`px-6 py-2 text-lg font-semibold rounded-md ${selectedCategory === category ? "bg-emerald-500 text-white" : "bg-gray-200 text-black hover:bg-gray-300"}`} onClick={() => setSelectedCategory(category as keyof typeof skillsData.TechnicalExperience)}>
             {category}
           </button>
         ))}
@@ -78,6 +81,7 @@ export default function Skills() {
           </div>
         ))}
       </motion.div>
+      <p className="font-thin text-center mt-6 text-sm text-gray-500">* I&apos;m always learning new technologies. If a specific stack isn’t listed here, I can quickly adapt to it.</p>
     </section>
   );
 }
