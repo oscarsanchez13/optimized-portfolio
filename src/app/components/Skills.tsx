@@ -92,3 +92,4 @@ export default function Skills() {
     </section>
   );
 }
+// currently has a responsive issue with the soft skills section
