@@ -13,4 +13,4 @@ const Certifications = () => {
 };
 
 export default Certifications;
-// work on this next
+// create 5 certification cards
