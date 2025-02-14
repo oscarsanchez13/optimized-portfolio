@@ -3,8 +3,8 @@
 
 Welcome to my **Developer Portfolio**, where I showcase my journey in **DevOps Engineering, Software Development, and Leadership**. This portfolio is designed with a clean, modern UI and **will feature live animations and engaging interactive elements** to grab attention and leave a lasting impression.  
 
-🔗 **Live Site:** [OS-Portfolio.com]  
-📂 **Repository:** [https://github.com/oscarsanchez13/optimized-portfolio]  
+🔗 **Live Site:** https://OS-Portfolio.com  
+📂 **Repository:** https://github.com/oscarsanchez13/optimized-portfolio 
 
 ---
 
@@ -154,10 +154,10 @@ Ensure you have the following installed:
 
 ## 📬 **Contact & Connect**  
 
-💼 **Portfolio:** [OS-Portfolio.com]  
-📧 **Email:** [Architectsanchez13@gmail.com]  
-💻 **LinkedIn:** [Linkedin.com/in/oscarsanchez13]  
-🐙 **GitHub:** [https://github.com/oscarsanchez13]  
+💼 **Portfolio:** https://OS-Portfolio.com  
+📧 **Email:** Architectsanchez13@gmail.com  
+💻 **LinkedIn:** https://Linkedin.com/in/oscarsanchez13  
+🐙 **GitHub:** https://github.com/oscarsanchez13 
 
 Let's connect and build something amazing! 🚀  
 
