@@ -1,10 +1,10 @@
 "use client";
 
-export default function GetToKnowMe() {
+export default function AboutMe() {
     return (
-        <section id="about" className="py-16 w-full h-auto bg-white text-black">
+        <section id="about-me" className="py-16 w-full h-auto bg-white text-black">
             <div className="container mx-auto px-6 md:px-12 lg:px-20">
-                <h2 className="text-4xl font-bold text-center mb-6">Get To Know Me</h2>
+                <h2 className="text-4xl font-bold text-center mb-6">About Me</h2>
                 <div className="flex flex-wrap justify-center gap-6">
                     {/* Sticky Notes with Achievements */}
                     <div className="sticky-note transform rotate-3">

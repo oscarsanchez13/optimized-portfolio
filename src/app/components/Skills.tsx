@@ -57,7 +57,7 @@ export default function Skills() {
 
       <div className="flex space-x-4 mb-6">
         {Object.keys(skillsData.TechnicalExperience).map((category) => (
-          <button key={category} className={`px-6 py-2 text-lg font-semibold rounded-md ${selectedCategory === category ? "bg-emerald-500 text-white" : "bg-gray-200 text-black hover:bg-gray-300"}`} onClick={() => setSelectedCategory(category as keyof typeof skillsData.TechnicalExperience)}>
+          <button key={category} className={`px-4 py-2 text-lg font-semibold rounded-md ${selectedCategory === category ? "bg-emerald-500 text-white" : "bg-gray-200 text-black hover:bg-gray-300"}`} onClick={() => setSelectedCategory(category as keyof typeof skillsData.TechnicalExperience)}>
             {category}
           </button>
         ))}

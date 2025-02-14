@@ -58,7 +58,7 @@ export default function Navbar() {
                     <Link href="#projects" onClick={(e) => handleScroll(e, "#projects")}>Projects</Link>
                     <Link href="#skills" onClick={(e) => handleScroll(e, "#skills")}>Skills</Link>
                     <Link href="#certifications" onClick={(e) => handleScroll(e, "#certifications")}>Certifications</Link>
-                    <Link href="#get-to-know-me" onClick={(e) => handleScroll(e, "#get-to-know-me")}>Get To Know Me</Link>
+                    <Link href="#about-me" onClick={(e) => handleScroll(e, "#about-me")}>About Me</Link>
                     <Link href="#recommendations" onClick={(e) => handleScroll(e, "#recommendations")}>Recommendations</Link>
                     <Link href="#contact" onClick={(e) => handleScroll(e, "#contact")}>Contact</Link>
                 </div>
@@ -88,7 +88,7 @@ export default function Navbar() {
                     <Link href="#projects" onClick={(e) => handleScroll(e, "#projects")}>Projects</Link>
                     <Link href="#skills" onClick={(e) => handleScroll(e, "#skills")}>Skills</Link>
                     <Link href="#certifications" onClick={(e) => handleScroll(e, "#certifications")}>Certifications</Link>
-                    <Link href="#get-to-know-me" onClick={(e) => handleScroll(e, "#get-to-know-me")}>Get To Know Me</Link>
+                    <Link href="#about-me" onClick={(e) => handleScroll(e, "#about-me")}>About Me</Link>
                     <Link href="#recommendations" onClick={(e) => handleScroll(e, "#recommendations")}>Recommendations</Link>
                     <Link href="#contact" onClick={(e) => handleScroll(e, "#contact")}>Contact</Link>
                     <a href="https://www.linkedin.com/in/oscarsanchez13" target="_blank" rel="noopener noreferrer" className="bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded-lg transition flex items-center space-x-2">
