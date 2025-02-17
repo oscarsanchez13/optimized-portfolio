@@ -46,6 +46,7 @@ export default function Navbar() {
 
     return (
         <nav className={`fixed top-0 left-0 w-full bg-black text-white py-4 px-6 flex justify-between items-center z-50 transition-transform duration-300 ${navVisible ? "translate-y-0" : "-translate-y-full"}`}>
+            {/* fix this line so nav is responsive^ */}
             {/* Logo */}
             <Link href="/" className="flex flex-col items-center leading-none text-center">
                 <span className="text-[2.5rem] md:text-[3rem] font-bold tracking-wide logo-outline neonGlow">&lt;OS/&gt;</span>
