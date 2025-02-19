@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { usePathname } from "next/navigation";
 import { FiMenu, FiX } from "react-icons/fi";
 import Link from "next/link";
 import { FaLinkedin } from "react-icons/fa";
@@ -10,7 +9,6 @@ export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
     const [lastScrollY, setLastScrollY] = useState(0);
     const [navVisible, setNavVisible] = useState(true);
-    const pathname = usePathname();
 
     const toggleMenu = () => setIsOpen((prev) => !prev);
 
