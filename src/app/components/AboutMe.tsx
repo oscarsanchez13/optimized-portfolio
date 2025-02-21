@@ -8,7 +8,7 @@ export default function AboutMe() {
                 <div className="flex flex-wrap justify-center gap-6">
                     {/* Sticky Notes with Achievements */}
                     <div className="sticky-note transform rotate-3">
-                        <p className="text-lg font-semibold">🌍 7 International Projects</p>
+                        <p className="text-lg font-semibold">🌍 14 International Projects</p>
                         <p className="text-sm">Led cross-functional teams across multiple countries.</p>
                     </div>
                     <div className="sticky-note transform -rotate-3">
@@ -21,7 +21,7 @@ export default function AboutMe() {
                     </div>
                     <div className="sticky-note transform -rotate-2">
                         <p className="text-lg font-semibold">🏆 Leadership Awards</p>
-                        <p className="text-sm">Central Gulf Coast Manager of The Year 2022, 2023</p>
+                        <p className="text-sm">Central Gulf Coast Leader of The Year 2022, 2023</p>
                     </div>
                     <div className="sticky-note transform rotate-3">
                         <p className="text-lg font-semibold">📚 1000+ Hours of Learning</p>
