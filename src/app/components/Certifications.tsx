@@ -87,7 +87,7 @@ const Certifications = () => {
   );
 };
 
-// export default Certifications;
+export default Certifications;
 
 // import React from 'react';
 
