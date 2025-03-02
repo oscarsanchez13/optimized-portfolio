@@ -174,12 +174,3 @@ If you find this portfolio useful or inspiring, feel free to **star the repo** â
 
 ```bash
 git clone PLACEHOLDER_FOR_REPO_LINK
-
-
----
-
-// fix redeployment issue with versel.
-// pull main branch to dev branch.
-// customize certificated icons for page.
-// Work on recomendation page
-// Debug and ensure responsiveness
