@@ -7,33 +7,33 @@ import "swiper/css/navigation";
 
 const recommendations = [
   {
-    name: "John Doe",
+    name: "Jim Medlock",
     image: "/images/john-doe.jpg",
     role: "Founder & CEO of CHINGU",
     message: "An outstanding engineer with a strong work ethic. Highly recommend!",
   },
   {
-    name: "Jane Smith",
+    name: "Josh Neufeld",
     image: "/images/jane-smith.jpg",
     role: "VP of Operations at Brinker Int.",
     message: "A pleasure to work with. Always delivers high-quality results.",
   },
   {
-    name: "Robert Johnson",
+    name: "Ricardo Aguilera",
     image: "/images/robert-johnson.jpg",
     role: "Senor Software Engineer",
     message: "Incredibly skilled and passionate about technology.",
   },
   {
-    name: "Emily Davis",
+    name: "Roxanne Davis",
     image: "/images/emily-davis.jpg",
     role: "Product Owner at TechCorp",
     message: "Brings great leadership and technical expertise to any team.",
   },
   {
-    name: "Michael Brown",
+    name: "Curtis Goolsby",
     image: "/images/michael-brown.jpg",
-    role: "Lead Developer at CodeCraft",
+    role: "Site Reliability Engineer",
     message: "A true professional who is always willing to go the extra mile.",
   },
 ];
