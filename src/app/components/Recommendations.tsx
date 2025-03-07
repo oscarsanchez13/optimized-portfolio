@@ -9,22 +9,32 @@ const recommendations = [
   {
     name: "John Doe",
     image: "/images/john-doe.jpg",
+    role: "Founder & CEO of CHINGU",
     message: "An outstanding engineer with a strong work ethic. Highly recommend!",
   },
   {
     name: "Jane Smith",
     image: "/images/jane-smith.jpg",
+    role: "VP of Operations at Brinker Int.",
     message: "A pleasure to work with. Always delivers high-quality results.",
   },
   {
     name: "Robert Johnson",
     image: "/images/robert-johnson.jpg",
+    role: "Senor Software Engineer",
     message: "Incredibly skilled and passionate about technology.",
   },
   {
     name: "Emily Davis",
     image: "/images/emily-davis.jpg",
+    role: "Product Owner at TechCorp",
     message: "Brings great leadership and technical expertise to any team.",
+  },
+  {
+    name: "Michael Brown",
+    image: "/images/michael-brown.jpg",
+    role: "Lead Developer at CodeCraft",
+    message: "A true professional who is always willing to go the extra mile.",
   },
 ];
 
