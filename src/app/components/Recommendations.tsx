@@ -67,6 +67,8 @@ const Recommendations = () => {
                   className="w-24 h-24 rounded-full border-4 border-gray-300 shadow-md"
                 />
                 <h3 className="text-lg font-semibold mt-4">{rec.name}</h3>
+                <p className="text-sm text-gray-600">{rec.role}</p>
+                <hr className="w-1/2 my-4 border-gray-300" />
                 <p className="text-sm text-gray-600 mt-2 italic text-center">
                   &quot;{rec.message}&quot;
                 </p>
