@@ -26,7 +26,7 @@ const recommendations = [
   },
   {
     name: "Roxanne Davis",
-    image: "/images/roxane-davis.webp",
+    image: "/images/roxane-davis.jpg",
     role: "Product Owner at TechCorp",
     message: "Brings great leadership and technical expertise to any team.",
   },
