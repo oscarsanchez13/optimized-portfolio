@@ -8,19 +8,19 @@ import "swiper/css/navigation";
 const recommendations = [
   {
     name: "Jim Medlock",
-    image: "/images/john-doe.jpg",
+    image: "/images/jim-medlock.jpg",
     role: "Founder & CEO of CHINGU",
     message: "An outstanding engineer with a strong work ethic. Highly recommend!",
   },
   {
     name: "Josh Neufeld",
-    image: "/images/jane-smith.jpg",
+    image: "/images/josh-neufeld.jpg",
     role: "VP of Operations at Brinker Int.",
     message: "A pleasure to work with. Always delivers high-quality results.",
   },
   {
     name: "Ricardo Aguilera",
-    image: "/images/robert-johnson.jpg",
+    image: "/images/ricardo-aguilera.jpg",
     role: "Senor Software Engineer",
     message: "Incredibly skilled and passionate about technology.",
   },
