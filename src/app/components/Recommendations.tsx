@@ -26,13 +26,13 @@ const recommendations = [
   },
   {
     name: "Roxanne Davis",
-    image: "/images/emily-davis.jpg",
+    image: "/images/roxane-davis.webp",
     role: "Product Owner at TechCorp",
     message: "Brings great leadership and technical expertise to any team.",
   },
   {
     name: "Curtis Goolsby",
-    image: "/images/michael-brown.jpg",
+    image: "/images/curtis-goolsby.jpg",
     role: "Site Reliability Engineer",
     message: "A true professional who is always willing to go the extra mile.",
   },
