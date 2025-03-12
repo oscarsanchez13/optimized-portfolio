@@ -21,14 +21,14 @@ const recommendations = [
   {
     name: "Ricardo Aguilera",
     image: "/images/ricardo-aguilera.jpg",
-    role: "Senor Software Engineer",
-    message: "Incredibly skilled and passionate about technology.",
+    role: "Product Owner",
+    message: "Brings great leadership and technical expertise to any team.",
   },
   {
     name: "Roxanne Davis",
     image: "/images/roxanne-davis.jpg",
-    role: "Product Owner at TechCorp",
-    message: "Brings great leadership and technical expertise to any team.",
+    role: "Senor Software Engineer",
+    message: "Incredibly skilled and passionate about technology.",
   },
   {
     name: "Curtis Goolsby",
@@ -51,7 +51,7 @@ const Recommendations = () => {
           slidesPerView={1}
           loop={true}
           navigation
-          autoplay={{ delay: 4000, disableOnInteraction: false }}
+          autoplay={{ delay: 3000, disableOnInteraction: false }}
           breakpoints={{
             768: { slidesPerView: 2 },
             1024: { slidesPerView: 3 },
