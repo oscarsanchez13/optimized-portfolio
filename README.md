@@ -174,5 +174,3 @@ If you find this portfolio useful or inspiring, feel free to **star the repo** â
 
 ```bash
 git clone PLACEHOLDER_FOR_REPO_LINK
-
-test
