@@ -174,3 +174,7 @@ If you find this portfolio useful or inspiring, feel free to **star the repo** â
 
 ```bash
 git clone PLACEHOLDER_FOR_REPO_LINK
+
+---
+
+// error when adding 3D visualizer to skills section, node modules are corrupted and next needs to be doen graded
