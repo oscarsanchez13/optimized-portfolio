@@ -174,11 +174,3 @@ If you find this portfolio useful or inspiring, feel free to **star the repo** �
 
 ```bash
 git clone PLACEHOLDER_FOR_REPO_LINK
-
----
-
-## 🌟 **Show Your Support**  
-If you find this portfolio useful or inspiring, feel free to **star the repo** ⭐ on GitHub!  
-
-```bash
-git clone PLACEHOLDER_FOR_REPO_LINK
