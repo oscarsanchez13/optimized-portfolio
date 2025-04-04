@@ -1,4 +1,4 @@
-# 🚀 My Developer Portfolio  
+# 🚀 My Developer Portfolio  🚀
 Welcome to my **Developer Portfolio**, where I showcase my journey in **DevOps Engineering, Software Development, and Leadership**. This portfolio is designed with a clean, modern UI and **will feature live animations and engaging interactive elements** to grab attention and leave a lasting impression.  
 
 🔗 **Live Site:** https://OS-Portfolio.com  
