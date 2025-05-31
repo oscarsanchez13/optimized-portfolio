@@ -30,12 +30,12 @@ const recommendations = [
     role: "Senor Software Engineer",
     message: "Incredibly skilled and passionate about technology.",
   },
-  {
-    name: "Curtis Goolsby",
-    image: "/images/curtis-goolsby.jpg",
-    role: "Site Reliability Engineer",
-    message: "A true professional who is always willing to go the extra mile.",
-  },
+  // {
+  //   name: "Curtis Goolsby",
+  //   image: "/images/curtis-goolsby.jpg",
+  //   role: "Site Reliability Engineer",
+  //   message: "A true professional who is always willing to go the extra mile.",
+  // },
 ];
 
 const Recommendations = () => {
