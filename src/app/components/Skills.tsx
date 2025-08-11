@@ -53,6 +53,16 @@ export default function Skills() {
 
   return (
     <section id="skills" className="relative flex flex-col items-center bg-white py-20 text-black">
+      <motion.h2 className="text-4xl font-bold text-center mt-10 mb-6 text-emerald-500">Soft Skills</motion.h2>
+
+      <motion.div className="w-full max-w-3xl overflow-x-auto bg-gray-300 p-6 rounded-lg shadow-lg flex space-x-4 scrollbar-hide">
+        {skillsData.SoftSkills.map((skill) => (
+          <div key={skill} className="flex flex-col items-center justify-center bg-gray-200 text-black px-4 py-3 rounded-2xl w-28 h-28 md:w-36 md:h-36 text-center shadow-2xl">
+            <span className="text-xs md:text-sm font-semibold">{skill}</span>
+          </div>
+        ))}
+      </motion.div>
+      
       <motion.h2 className="text-4xl font-bold text-center mb-8 text-emerald-500">Technical Skills</motion.h2>
 
       <div className="flex space-x-4 mb-6">
@@ -68,16 +78,6 @@ export default function Skills() {
           <div key={skill} className="flex flex-col items-center justify-center bg-gray-200 text-black px-4 py-3 rounded-2xl w-28 h-28 md:w-36 md:h-36 text-center shadow-2xl">
             {skillIcons[skill] || <span className="w-10 h-10 md:w-12 md:h-12"></span>}
             <span className="text-xs md:text-sm font-semibold mt-2">{skill}</span>
-          </div>
-        ))}
-      </motion.div>
-
-      <motion.h2 className="text-4xl font-bold text-center mt-10 mb-6 text-emerald-500">Soft Skills</motion.h2>
-
-      <motion.div className="w-full max-w-3xl overflow-x-auto bg-gray-300 p-6 rounded-lg shadow-lg flex space-x-4 scrollbar-hide">
-        {skillsData.SoftSkills.map((skill) => (
-          <div key={skill} className="flex flex-col items-center justify-center bg-gray-200 text-black px-4 py-3 rounded-2xl w-28 h-28 md:w-36 md:h-36 text-center shadow-2xl">
-            <span className="text-xs md:text-sm font-semibold">{skill}</span>
           </div>
         ))}
       </motion.div>
