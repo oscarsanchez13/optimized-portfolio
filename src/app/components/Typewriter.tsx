@@ -2,13 +2,13 @@
 import { useEffect, useState } from "react";
 
 const roles = [
+  "President of Operations",
+  "Marketing Guru",
+  "Site Selection Expert",
+  "Multi-Unit Executive",
   "Software Engineer",
-  "DevOps Engineer",
-  "Kubernetes Expert",
-  "Cloud Engineer",
-  "Full-Stack Developer",
-  "Site Reliability Engineer",
-  "Platform Engineer",
+  "AGILE Expert",
+  "Business Strategist",
 ];
 
 export default function Typewriter() {
