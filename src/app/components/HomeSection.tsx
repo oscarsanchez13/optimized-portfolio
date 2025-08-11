@@ -30,7 +30,7 @@ export default function HomeSection() {
                             <p className="text-lg md:text-2xl leading-relaxed">
                                 I&apos;m a passionate <Typewriter /> with expertise in{" "}
                                 <span className="text-emerald-400 font-semibold">Scaling Businesses</span>
-                                and 
+                                {" "}and{" "}
                                 <span className="text-emerald-400 font-semibold">Integrading Technology</span>.
                             </p>
                         </div>
