@@ -63,7 +63,9 @@ export default function Skills() {
         ))}
       </motion.div>
 
-      <div></div>
+      <div>
+        <br></br>
+      </div>
       
       <motion.h2 className="text-4xl font-bold text-center mb-8 text-emerald-500">Technical Skills</motion.h2>
 
