@@ -29,7 +29,9 @@ export default function HomeSection() {
                             <h1 className="text-5xl md:text-7xl font-bold mb-4">Hi, I&apos;m Oscar.</h1>
                             <p className="text-lg md:text-2xl leading-relaxed">
                                 I&apos;m a passionate <Typewriter /> with expertise in{" "}
-                                <span className="text-emerald-400 font-semibold">Operational Management</span>.
+                                <span className="text-emerald-400 font-semibold">Scaling Businesses</span>
+                                and 
+                                <span className="text-emerald-400 font-semibold">Integrading Technology</span>.
                             </p>
                         </div>
                     </div>
