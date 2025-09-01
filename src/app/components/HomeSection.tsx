@@ -58,7 +58,9 @@ export default function HomeSection() {
                         <h1 className="text-5xl font-bold">Hi, I&apos;m Oscar.</h1>
                         <p className="text-lg leading-relaxed">
                             I&apos;m a passionate <Typewriter /> with expertise in{" "}
-                            <span className="text-emerald-400 font-semibold">Operational Management</span>.
+                                <span className="text-emerald-400 font-semibold">Scaling Businesses</span>
+                                {" "}and{" "}
+                                <span className="text-emerald-400 font-semibold">Integrading Technology</span>.
                         </p>
                     </div>
                 </div>
