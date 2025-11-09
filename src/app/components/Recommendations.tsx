@@ -41,9 +41,9 @@ const recommendations = [
 
 const Recommendations = () => {
   return (
-    <section className="py-20 bg-gray-100 text-gray-900">
+    <section className="py-20 bg-black text-white">
       <div className="max-w-5xl mx-auto px-6 text-center">
-        <h2 className="text-4xl font-bold mb-12">Recommendations</h2>
+        <h2 className="section-title text-4xl font-bold mb-12">Recommendations</h2>
 
         {/* Swiper Carousel */}
         <Swiper
@@ -61,18 +61,18 @@ const Recommendations = () => {
         >
           {recommendations.map((rec, index) => (
             <SwiperSlide key={index}>
-              <div className="bg-white p-6 rounded-xl shadow-lg flex flex-col items-center">
+              <div className="glass-strong border border-emerald-400/30 p-8 rounded-xl shadow-xl flex flex-col items-center hover:scale-105 transition-transform duration-300 glow-hover h-full">
                 <Image
                   src={rec.image}
                   alt={rec.name}
                   width={96}
                   height={96}
-                  className="rounded-full border-4 border-gray-300 shadow-md"
+                  className="rounded-full border-4 border-emerald-400/50 shadow-lg shadow-emerald-500/20"
                 />
-                <h3 className="text-lg font-semibold mt-4">{rec.name}</h3>
-                <p className="text-sm text-gray-600">{rec.role}</p>
-                <hr className="w-1/2 my-4 border-gray-300" />
-                <p className="text-sm text-gray-600 mt-2 italic text-center">
+                <h3 className="text-xl font-bold mt-6 text-emerald-400">{rec.name}</h3>
+                <p className="text-sm text-gray-300 mt-2">{rec.role}</p>
+                <div className="w-1/2 h-px bg-gradient-to-r from-transparent via-emerald-400/50 to-transparent my-4" />
+                <p className="text-sm text-gray-300 mt-2 italic text-center leading-relaxed">
                   &quot;{rec.message}&quot;
                 </p>
               </div>
