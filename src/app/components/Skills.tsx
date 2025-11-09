@@ -52,40 +52,46 @@ export default function Skills() {
   const [selectedCategory, setSelectedCategory] = useState<keyof typeof skillsData.TechnicalExperience>("Frontend");
 
   return (
-    <section id="skills" className="relative flex flex-col items-center bg-white py-20 text-black">
-      <motion.h2 className="text-4xl font-bold text-center mt-10 mb-6 text-emerald-500">Soft Skills</motion.h2>
+    <section id="skills" className="relative flex flex-col items-center bg-black py-20 text-white">
+      <motion.h2 className="section-title text-4xl font-bold text-center mb-12">Soft Skills</motion.h2>
 
-      <motion.div className="w-full max-w-3xl overflow-x-auto bg-gray-300 p-6 rounded-lg shadow-lg flex space-x-4 scrollbar-hide">
+      <motion.div className="w-full max-w-5xl overflow-x-auto glass-dark p-6 rounded-xl shadow-lg flex space-x-4 scrollbar-hide border border-emerald-400/20">
         {skillsData.SoftSkills.map((skill) => (
-          <div key={skill} className="flex flex-col items-center justify-center bg-gray-200 text-black px-4 py-3 rounded-2xl w-28 h-28 md:w-36 md:h-36 text-center shadow-2xl">
-            <span className="text-xs md:text-sm font-semibold">{skill}</span>
+          <div key={skill} className="flex flex-col items-center justify-center glass-strong border border-emerald-400/30 px-4 py-3 rounded-xl w-32 h-32 md:w-40 md:h-40 text-center hover:scale-105 transition-transform duration-300 glow-hover">
+            <span className="text-xs md:text-sm font-semibold text-emerald-400">{skill}</span>
           </div>
         ))}
       </motion.div>
 
-      <div>
-        <br></br>
-      </div>
-      
-      <motion.h2 className="text-4xl font-bold text-center mb-8 text-emerald-500">Technical Skills</motion.h2>
+      <div className="my-8"></div>
 
-      <div className="flex space-x-4 mb-6">
+      <motion.h2 className="section-title text-4xl font-bold text-center mb-12">Technical Skills</motion.h2>
+
+      <div className="flex space-x-4 mb-8">
         {Object.keys(skillsData.TechnicalExperience).map((category) => (
-          <button key={category} className={`px-4 py-2 text-lg font-semibold rounded-md ${selectedCategory === category ? "bg-emerald-500 text-white" : "bg-gray-200 text-black hover:bg-gray-300"}`} onClick={() => setSelectedCategory(category as keyof typeof skillsData.TechnicalExperience)}>
+          <button
+            key={category}
+            className={`px-6 py-3 text-lg font-semibold rounded-xl transition-all duration-300 ${
+              selectedCategory === category
+                ? "glass-strong border-2 border-emerald-400 text-emerald-400 glow-primary"
+                : "glass border border-emerald-400/30 text-white hover:border-emerald-400/50"
+            }`}
+            onClick={() => setSelectedCategory(category as keyof typeof skillsData.TechnicalExperience)}
+          >
             {category}
           </button>
         ))}
       </div>
 
-      <motion.div key={selectedCategory} className="w-full max-w-3xl overflow-x-auto bg-gray-300 p-6 rounded-lg shadow-lg flex space-x-4 scrollbar-hide">
+      <motion.div key={selectedCategory} className="w-full max-w-5xl overflow-x-auto glass-dark p-6 rounded-xl shadow-lg flex space-x-4 scrollbar-hide border border-emerald-400/20">
         {skillsData.TechnicalExperience[selectedCategory].map((skill) => (
-          <div key={skill} className="flex flex-col items-center justify-center bg-gray-200 text-black px-4 py-3 rounded-2xl w-28 h-28 md:w-36 md:h-36 text-center shadow-2xl">
+          <div key={skill} className="flex flex-col items-center justify-center glass-strong border border-emerald-400/30 px-4 py-3 rounded-xl w-32 h-32 md:w-40 md:h-40 text-center hover:scale-105 transition-transform duration-300 glow-hover">
             {skillIcons[skill] || <span className="w-10 h-10 md:w-12 md:h-12"></span>}
-            <span className="text-xs md:text-sm font-semibold mt-2">{skill}</span>
+            <span className="text-xs md:text-sm font-semibold mt-2 text-white">{skill}</span>
           </div>
         ))}
       </motion.div>
-      <p className="font-thin text-center mt-6 text-sm text-gray-500">* I&apos;m always learning new technologies. If a specific stack isn’t listed here, I can quickly adapt to it.</p>
+      <p className="font-thin text-center mt-8 text-sm text-gray-400">* I&apos;m always learning new technologies. If a specific stack isn't listed here, I can quickly adapt to it.</p>
     </section>
   );
 }
