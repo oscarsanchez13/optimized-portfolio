@@ -41,7 +41,7 @@ export default function Navbar() {
     };
 
     return (
-        <nav className={`sticky top-0 left-0 w-full bg-black text-white py-4 px-6 z-50 transition-all duration-300 ${navVisible ? "opacity-100" : "opacity-0 pointer-events-none"}`}>
+        <nav className={`sticky top-0 left-0 w-full glass-dark text-white py-4 px-6 z-50 transition-all duration-300 border-b border-emerald-500/20 ${navVisible ? "opacity-100" : "opacity-0 pointer-events-none"}`}>
             <div className="container mx-auto flex justify-between items-center">
                 {/* Logo */}
                 <Link href="/" className="flex flex-col items-center leading-none text-center">
@@ -50,7 +50,7 @@ export default function Navbar() {
                 </Link>
 
                 {/* Desktop Navigation */}
-                <div className="hidden lg:flex justify-center items-center border-2 border-emerald-400 rounded-lg py-3 px-8 mx-auto max-w-screen-lg w-full">
+                <div className="hidden lg:flex justify-center items-center glass border-2 border-emerald-400/50 glow-hover rounded-lg py-3 px-8 mx-auto max-w-screen-lg w-full shadow-lg shadow-emerald-500/10">
                     <div className="flex space-x-10 text-lg font-bold">
                         <Link href="#projects" onClick={(e) => handleScroll(e, "#projects")}>Projects</Link>
                         <Link href="#skills" onClick={(e) => handleScroll(e, "#skills")}>Skills</Link>
@@ -82,7 +82,7 @@ export default function Navbar() {
 
             {/* Mobile Dropdown Menu */}
             {isOpen && (
-                <div className="lg:hidden bg-black border-t border-emerald-400">
+                <div className="lg:hidden glass-strong border-t border-emerald-400/50">
                     <div className="flex flex-col space-y-4 px-6 py-4">
                         <Link href="#projects" onClick={(e) => handleScroll(e, "#projects")} className="text-white hover:text-emerald-400 transition">Projects</Link>
                         <Link href="#skills" onClick={(e) => handleScroll(e, "#skills")} className="text-white hover:text-emerald-400 transition">Skills</Link>

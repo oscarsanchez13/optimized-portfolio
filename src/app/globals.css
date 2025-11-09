@@ -2,15 +2,31 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+/* CSS Custom Properties for Theming */
+:root {
+  --color-primary: #10b981;
+  --color-primary-dark: #059669;
+  --color-primary-light: #34d399;
+  --color-accent: #6ee7b7;
+  --color-bg: #0a0a0a;
+  --color-bg-elevated: #1a1a1a;
+  --color-text: #ffffff;
+  --color-text-muted: #a1a1aa;
+  --glow-primary: 0 0 20px rgba(16, 185, 129, 0.5);
+  --glow-accent: 0 0 30px rgba(110, 231, 183, 0.6);
+}
+
 /* General Theme */
 html, body {
-  background-color: #0a0a0a !important; /* Set it to match the theme */
+  background-color: var(--color-bg) !important;
   overflow-x: hidden;
   overflow-y: auto;
+  font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
+
 body {
-    background-color: #0a0a0a;
-    color: #ffffff;
+  background-color: var(--color-bg);
+  color: var(--color-text);
 }
 
 /* Smooth Scrolling */
@@ -25,6 +41,87 @@ html {
 }
 .scrollbar-hide::-webkit-scrollbar {
   display: none;  /* Safari and Chrome */
+}
+
+/* Glassmorphism Utilities */
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glass-strong {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+
+.glass-dark {
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Gradient Border Effect */
+.gradient-border {
+  position: relative;
+  background: linear-gradient(145deg, rgba(10, 10, 10, 0.95), rgba(26, 26, 26, 0.95));
+  border-radius: 12px;
+  padding: 2px;
+}
+
+.gradient-border::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  padding: 2px;
+  background: linear-gradient(145deg, var(--color-primary), var(--color-accent));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+/* Glow Effects */
+.glow-primary {
+  box-shadow: var(--glow-primary);
+}
+
+.glow-accent {
+  box-shadow: var(--glow-accent);
+}
+
+.glow-hover {
+  transition: box-shadow 0.3s ease;
+}
+
+.glow-hover:hover {
+  box-shadow: 0 0 25px rgba(16, 185, 129, 0.7);
+}
+
+/* Animated Gradient Background */
+.animated-gradient {
+  background: linear-gradient(
+    45deg,
+    rgba(16, 185, 129, 0.1),
+    rgba(52, 211, 153, 0.1),
+    rgba(110, 231, 183, 0.1)
+  );
+  background-size: 200% 200%;
+  animation: gradientFlow 8s ease infinite;
+}
+
+@keyframes gradientFlow {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
 }
 
 /* Text Colors */

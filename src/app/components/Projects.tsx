@@ -50,7 +50,7 @@ export default function Projects() {
                                 <div className="absolute w-full h-full transition-transform transform-style-3d group-hover:rotate-y-180 duration-500 ease-in-out">
                                     
                                     {/* Front Side */}
-                                    <div className="absolute w-full h-full bg-black rounded-lg shadow-lg overflow-hidden">
+                                    <div className="absolute w-full h-full glass-dark rounded-lg shadow-lg shadow-emerald-500/10 overflow-hidden border border-emerald-500/20">
                                         {project.image ? (
                                             <Image
                                                 src={project.image}
@@ -74,7 +74,7 @@ export default function Projects() {
                                     </div>
 
                                     {/* Back Side (Flips on Hover) */}
-                                    <div className="absolute w-full h-full bg-gray-800 rounded-lg p-4 flex flex-col justify-between transform rotate-y-180 backface-hidden opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                                    <div className="absolute w-full h-full glass-strong rounded-lg p-4 flex flex-col justify-between transform rotate-y-180 backface-hidden opacity-0 group-hover:opacity-100 transition-opacity duration-500 border border-emerald-400/30 glow-primary">
                                         
                                         {/* Tech Icons on Top */}
                                         <div className="flex justify-center gap-2 mb-2">
@@ -107,8 +107,8 @@ export default function Projects() {
 
                     {/* View More Projects */}
                     {visibleProjects !== null && visibleProjects < allProjects.length && (
-                        <motion.div 
-                            className="flex items-center justify-center border border-black bg-gray-700 hover:bg-gray-600 text-white cursor-pointer w-full h-64 md:h-80"
+                        <motion.div
+                            className="flex items-center justify-center glass-strong border border-emerald-400/30 glow-hover text-white cursor-pointer w-full h-64 md:h-80 rounded-lg"
                             onClick={loadMoreProjects}
                             whileTap={{ scale: 0.95 }}
                         >
