@@ -66,10 +66,11 @@ export default function Navbar() {
                     href="https://www.linkedin.com/in/oscarsanchez13"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="hidden lg:flex bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded-lg transition items-center space-x-2 text-base md:text-lg"
+                    className="hidden lg:flex glass-strong border-2 border-emerald-400/50 hover:border-emerald-400 text-white py-3 px-6 rounded-xl transition-all duration-300 items-center space-x-2 text-base md:text-lg font-semibold glow-hover group relative overflow-hidden"
                 >
-                    <span className="font-semibold">Let&apos;s Connect!</span>
-                    <FaLinkedin className="text-xl md:text-2xl" />
+                    <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/20 to-emerald-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <span className="relative z-10">Let&apos;s Connect!</span>
+                    <FaLinkedin className="text-xl md:text-2xl relative z-10 group-hover:scale-110 transition-transform duration-300" />
                 </a>
 
                 {/* Mobile Menu */}
@@ -94,10 +95,11 @@ export default function Navbar() {
                             href="https://www.linkedin.com/in/oscarsanchez13"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded-lg transition flex items-center justify-center space-x-2"
+                            className="glass-strong border-2 border-emerald-400/50 hover:border-emerald-400 text-white py-3 px-6 rounded-xl transition-all duration-300 flex items-center justify-center space-x-2 font-semibold glow-hover group relative overflow-hidden"
                         >
-                            <span className="font-semibold">Let&apos;s Connect!</span>
-                            <FaLinkedin className="text-xl" />
+                            <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/20 to-emerald-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            <span className="relative z-10">Let&apos;s Connect!</span>
+                            <FaLinkedin className="text-xl relative z-10 group-hover:scale-110 transition-transform duration-300" />
                         </a>
                     </div>
                 </div>
