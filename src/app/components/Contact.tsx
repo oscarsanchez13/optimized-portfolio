@@ -56,9 +56,9 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-16 bg-gray-900 text-white">
+    <section id="contact" className="py-20 bg-gray-900 text-white">
       <div className="container mx-auto px-6 md:px-12 lg:px-20">
-        <h2 className="section-title text-4xl font-bold text-center mb-10">Let&apos;s Connect!</h2>
+        <h2 className="section-title text-4xl font-bold text-center mb-12">Let&apos;s Connect!</h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Left Side: Social Links */}
@@ -67,21 +67,21 @@ export default function Contact() {
               Feel free to reach out! Whether you have a question or just want to say hi, I&apos;ll do my best to get back to you.
             </p>
             <div className="flex space-x-4">
-              <a href="https://linkedin.com/in/oscarsanchez13" target="_blank" rel="noopener noreferrer" className="bg-emerald-600 hover:bg-emerald-500 p-3 rounded-full transition">
-                <FaLinkedin size={24} />
+              <a href="https://linkedin.com/in/oscarsanchez13" target="_blank" rel="noopener noreferrer" className="glass-strong border border-emerald-400/50 hover:border-emerald-400 p-4 rounded-xl transition-all duration-300 glow-hover">
+                <FaLinkedin size={28} className="text-emerald-400" />
               </a>
-              <a href="https://github.com/oscarsanchez13" target="_blank" rel="noopener noreferrer" className="bg-gray-700 hover:bg-gray-600 p-3 rounded-full transition">
-                <FaGithub size={24} />
+              <a href="https://github.com/oscarsanchez13" target="_blank" rel="noopener noreferrer" className="glass-strong border border-emerald-400/50 hover:border-emerald-400 p-4 rounded-xl transition-all duration-300 glow-hover">
+                <FaGithub size={28} className="text-emerald-400" />
               </a>
-              <a href="mailto:architectsanchez13@gmail.com" className="bg-gray-700 hover:bg-gray-600 p-3 rounded-full transition">
-                <FaEnvelope size={24} />
+              <a href="mailto:architectsanchez13@gmail.com" className="glass-strong border border-emerald-400/50 hover:border-emerald-400 p-4 rounded-xl transition-all duration-300 glow-hover">
+                <FaEnvelope size={28} className="text-emerald-400" />
               </a>
             </div>
             <br/>
           </div>          
 
           {/* Right Side: Contact Form */}
-          <div className="bg-gray-800 p-6 rounded-lg shadow-lg">
+          <div className="glass-strong border border-emerald-400/30 p-8 rounded-xl shadow-xl">
                       
             <form onSubmit={handleSubmit} className="space-y-4">
               {/* Name Input */}
