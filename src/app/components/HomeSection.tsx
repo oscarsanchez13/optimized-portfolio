@@ -2,6 +2,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import { FaChevronDown } from "react-icons/fa";
+import Image from "next/image";
 import Typewriter from "./Typewriter";
 
 /**
@@ -55,14 +56,14 @@ export default function HomeSection() {
 
           {/* Right Side */}
           <div className="flex-1 h-full relative">
-            <img src="/Reverce.jpg" alt="Oscar Sanchez" className="absolute w-full h-full object-cover" />
+            <Image src="/Reverce.jpg" alt="Oscar Sanchez" fill className="object-cover" priority />
             <div className="absolute inset-0 bg-gradient-to-l from-transparent via-gray-700 to-black opacity-40" />
           </div>
         </div>
       ) : (
         /* ===== MOBILE ===== */
         <div className="relative w-full h-full">
-          <img src="/Reverce.jpg" alt="Oscar Sanchez" className="-translate-x-8 w-full h-full object-cover" />
+          <Image src="/Reverce.jpg" alt="Oscar Sanchez" fill className="object-cover -translate-x-8" priority />
 
           {/* Text overlay wrapped in a glass card for readability */}
           <div className="absolute bottom-12 right-1/2 transform -translate-x-1 text-left text-white px-4">

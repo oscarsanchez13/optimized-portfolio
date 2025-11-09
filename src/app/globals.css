@@ -13,6 +13,20 @@ body {
     color: #ffffff;
 }
 
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Hide Scrollbar but keep functionality */
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  scrollbar-width: none;  /* Firefox */
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;  /* Safari and Chrome */
+}
+
 /* Text Colors */
 .text-emerald {
     color: #50C878;
@@ -57,12 +71,12 @@ body {
   transform-style: preserve-3d;
   transition: transform 0.5s ease-in-out;
 }
-.group-hover\:rotate-y-180 {
-  transform: rotateY();
+.group:hover .group-hover\:rotate-y-180 {
+  transform: rotateY(180deg);
 }
 .rotate-y-180 {
-  transform: rotateY();
-} 
+  transform: rotateY(180deg);
+}
 .backface-hidden {
   backface-visibility: hidden;
 }

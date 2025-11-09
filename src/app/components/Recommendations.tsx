@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay } from "swiper/modules";
 import "swiper/css";
@@ -61,10 +62,12 @@ const Recommendations = () => {
           {recommendations.map((rec, index) => (
             <SwiperSlide key={index}>
               <div className="bg-white p-6 rounded-xl shadow-lg flex flex-col items-center">
-                <img
+                <Image
                   src={rec.image}
                   alt={rec.name}
-                  className="w-24 h-24 rounded-full border-4 border-gray-300 shadow-md"
+                  width={96}
+                  height={96}
+                  className="rounded-full border-4 border-gray-300 shadow-md"
                 />
                 <h3 className="text-lg font-semibold mt-4">{rec.name}</h3>
                 <p className="text-sm text-gray-600">{rec.role}</p>

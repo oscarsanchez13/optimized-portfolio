@@ -79,6 +79,29 @@ export default function Navbar() {
                     </button>
                 </div>
             </div>
+
+            {/* Mobile Dropdown Menu */}
+            {isOpen && (
+                <div className="lg:hidden bg-black border-t border-emerald-400">
+                    <div className="flex flex-col space-y-4 px-6 py-4">
+                        <Link href="#projects" onClick={(e) => handleScroll(e, "#projects")} className="text-white hover:text-emerald-400 transition">Projects</Link>
+                        <Link href="#skills" onClick={(e) => handleScroll(e, "#skills")} className="text-white hover:text-emerald-400 transition">Skills</Link>
+                        <Link href="#certifications" onClick={(e) => handleScroll(e, "#certifications")} className="text-white hover:text-emerald-400 transition">Certifications</Link>
+                        <Link href="#about-me" onClick={(e) => handleScroll(e, "#about-me")} className="text-white hover:text-emerald-400 transition">About Me</Link>
+                        <Link href="#recommendations" onClick={(e) => handleScroll(e, "#recommendations")} className="text-white hover:text-emerald-400 transition">Recommendations</Link>
+                        <Link href="#contact" onClick={(e) => handleScroll(e, "#contact")} className="text-white hover:text-emerald-400 transition">Contact</Link>
+                        <a
+                            href="https://www.linkedin.com/in/oscarsanchez13"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded-lg transition flex items-center justify-center space-x-2"
+                        >
+                            <span className="font-semibold">Let&apos;s Connect!</span>
+                            <FaLinkedin className="text-xl" />
+                        </a>
+                    </div>
+                </div>
+            )}
         </nav>
     );
 }
