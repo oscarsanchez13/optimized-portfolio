@@ -47,35 +47,36 @@ const Certifications = () => {
           Certifications
         </h2>
 
-        {/* Horizontal scroll container for certificates */}
-        <div className="flex space-x-6 overflow-x-auto pb-6 scrollbar-hide">
+        {/* Grid layout for certificates */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {certifications.map((cert, index) => (
             <div
               key={index}
-              className={`relative min-w-[250px] sm:min-w-[300px] md:min-w-[350px] lg:min-w-[400px] flex flex-col items-center justify-center p-6 shadow-xl rounded-lg transition-transform transform hover:scale-105
-                ${
-                  cert.date === "Coming Soon"
-                    ? "border-gray-600 text-gray-500 bg-gray-800"
-                    : "border-gray-400 bg-gray-700"
-                }`}
-              style={{
-                borderWidth: "10px",
-                borderStyle: "solid",
-                borderColor: cert.date === "Coming Soon" ? "#555" : "#ccc",
-                backgroundColor: cert.date === "Coming Soon" ? "#222" : "#fff",
-                color: cert.date === "Coming Soon" ? "#777" : "#000",
-                boxShadow: "5px 5px 15px rgba(0,0,0,0.3)",
-              }}
+              className={`glass-strong border-2 rounded-xl p-8 transition-all duration-300 hover:scale-105 glow-hover relative ${
+                cert.date === "Coming Soon"
+                  ? "border-gray-500/30 opacity-70"
+                  : "border-emerald-400/50"
+              }`}
             >
-              <div className="w-full flex flex-col items-center p-4">
-                <h3 className="text-lg font-bold text-center">{cert.title}</h3>
-                <p className="text-sm text-center">{cert.provider}</p>
-                <p className="text-xs italic mt-2">{cert.date}</p>
+              {/* Certificate Content */}
+              <div className="flex flex-col items-center text-center space-y-3">
+                <div className={`text-4xl mb-2 ${cert.date === "Coming Soon" ? "grayscale opacity-50" : ""}`}>
+                  🎓
+                </div>
+                <h3 className={`text-xl font-bold ${cert.date === "Coming Soon" ? "text-gray-400" : "text-emerald-400"}`}>
+                  {cert.title}
+                </h3>
+                <p className={`text-sm ${cert.date === "Coming Soon" ? "text-gray-500" : "text-gray-300"}`}>
+                  {cert.provider}
+                </p>
+                <p className={`text-xs italic ${cert.date === "Coming Soon" ? "text-gray-600" : "text-emerald-300"}`}>
+                  {cert.date}
+                </p>
               </div>
 
-              {/* Ribbon for "Coming Soon" badges */}
+              {/* Coming Soon Badge */}
               {cert.date === "Coming Soon" && (
-                <div className="absolute top-2 right-2 bg-gray-600 text-white px-3 py-1 text-xs font-bold rounded-lg">
+                <div className="absolute top-3 right-3 glass border border-emerald-400/30 px-3 py-1 text-xs font-bold rounded-lg text-emerald-400">
                   Coming Soon
                 </div>
               )}
