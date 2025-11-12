@@ -7,7 +7,7 @@ const roles = [
   "President of Operations",
   "Head of Product & Analytics",
   "Cloud & DevOps Lead",
-  "Customer Experience (CX) Innovator",
+  "Customer Experience Innovator",
   "Multi-Unit Executive",
   "Full-stack Software Engineer",
 ];
@@ -49,7 +49,7 @@ export default function Typewriter() {
   }, []);
 
   return (
-    <span className="text-green-400 font-semibold">
+    <span className="text-emerald-500 font-semibold">
       {text}
       {blink && <span className="blinker">|</span>}
     </span>

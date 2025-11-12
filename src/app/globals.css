@@ -277,3 +277,13 @@ html {
   animation: neonColorCycle 2s infinite alternate ease-in-out;
   -webkit-text-stroke: 1.2px rgba(255, 255, 255, 1); /* White outline for better readability */
 }
+
+/* Highlighted Keywords - Color Changing on Hover */
+.keyword-highlight {
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.keyword-highlight:hover {
+  animation: neonColorCycle 2s infinite alternate ease-in-out;
+}

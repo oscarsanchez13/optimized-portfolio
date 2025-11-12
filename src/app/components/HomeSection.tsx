@@ -46,19 +46,19 @@ export default function HomeSection() {
             <div className="text-white max-w-3xl">
               <h1 className="text-5xl md:text-6xl font-bold mb-6">Hi, I&apos;m Oscar.</h1>
               <p className="text-base md:text-lg leading-relaxed">
-                I&apos;m a passionate{" "}
-                <span className="text-xl md:text-2xl"><Typewriter /></span>{" "}
+                I&apos;m a passionate <span className="inline-block min-w-[320px] md:min-w-[420px] text-xl md:text-2xl"><Typewriter /></span>
+                <br />
                 with an{" "}
-                <span className="text-emerald-400 font-semibold text-lg md:text-xl">entrepreneurial</span>{" "}
+                <span className="text-teal-200 font-semibold text-lg md:text-xl keyword-highlight">entrepreneurial</span>{" "}
                 mindset, scaling{" "}
-                <span className="text-emerald-400 font-semibold text-lg md:text-xl">multi-unit</span>{" "}
+                <span className="text-teal-200 font-semibold text-lg md:text-xl keyword-highlight">multi-unit</span>{" "}
                 businesses, integrating{" "}
-                <span className="text-emerald-400 font-semibold text-lg md:text-xl">cloud</span>,{" "}
-                <span className="text-emerald-400 font-semibold text-lg md:text-xl">AI</span>, and{" "}
-                <span className="text-emerald-400 font-semibold text-lg md:text-xl">Machine Learning</span>, as well as building{" "}
-                <span className="text-emerald-400 font-semibold text-lg md:text-xl">customer-first</span>{" "}
+                <span className="text-teal-200 font-semibold text-lg md:text-xl keyword-highlight">cloud</span>,{" "}
+                <span className="text-teal-200 font-semibold text-lg md:text-xl keyword-highlight">AI</span>, and{" "}
+                <span className="text-teal-200 font-semibold text-lg md:text-xl keyword-highlight">Machine Learning</span>, as well as building{" "}
+                <span className="text-teal-200 font-semibold text-lg md:text-xl keyword-highlight">customer-first</span>{" "}
                 platforms that drastically transform{" "}
-                <span className="text-emerald-400 font-semibold text-lg md:text-xl">operations</span>.
+                <span className="text-teal-200 font-semibold text-lg md:text-xl keyword-highlight">operations</span>.
               </p>
             </div>
           </div>
@@ -80,21 +80,21 @@ export default function HomeSection() {
               <GlassCard>
                 <h1 className="text-3xl sm:text-4xl font-bold">Hi, I&apos;m Oscar.</h1>
                 <p className="text-sm sm:text-base leading-relaxed mt-2">
-                  I&apos;m a passionate{" "}
-                  <span aria-live="polite" aria-atomic="true" className="text-base sm:text-lg">
+                  I&apos;m a passionate <span aria-live="polite" aria-atomic="true" className="inline-block min-w-[240px] text-base sm:text-lg">
                     <Typewriter />
-                  </span>{" "}
+                  </span>
+                  <br />
                   with an{" "}
-                  <span className="text-emerald-400 font-semibold text-base sm:text-lg">entrepreneurial</span>{" "}
+                  <span className="text-teal-200 font-semibold text-base sm:text-lg keyword-highlight">entrepreneurial</span>{" "}
                   mindset, scaling{" "}
-                  <span className="text-emerald-400 font-semibold text-base sm:text-lg">multi-unit</span>{" "}
+                  <span className="text-teal-200 font-semibold text-base sm:text-lg keyword-highlight">multi-unit</span>{" "}
                   businesses, integrating{" "}
-                  <span className="text-emerald-400 font-semibold text-base sm:text-lg">cloud</span>,{" "}
-                  <span className="text-emerald-400 font-semibold text-base sm:text-lg">AI</span>, and{" "}
-                  <span className="text-emerald-400 font-semibold text-base sm:text-lg">Machine Learning</span>, as well as building{" "}
-                  <span className="text-emerald-400 font-semibold text-base sm:text-lg">customer-first</span>{" "}
+                  <span className="text-teal-200 font-semibold text-base sm:text-lg keyword-highlight">cloud</span>,{" "}
+                  <span className="text-teal-200 font-semibold text-base sm:text-lg keyword-highlight">AI</span>, and{" "}
+                  <span className="text-teal-200 font-semibold text-base sm:text-lg keyword-highlight">Machine Learning</span>, as well as building{" "}
+                  <span className="text-teal-200 font-semibold text-base sm:text-lg keyword-highlight">customer-first</span>{" "}
                   platforms that drastically transform{" "}
-                  <span className="text-emerald-400 font-semibold text-base sm:text-lg">operations</span>.
+                  <span className="text-teal-200 font-semibold text-base sm:text-lg keyword-highlight">operations</span>.
                 </p>
               </GlassCard>
             </div>
