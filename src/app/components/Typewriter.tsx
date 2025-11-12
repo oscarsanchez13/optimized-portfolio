@@ -26,7 +26,7 @@ export default function Typewriter() {
           setText((prev) => prev + roles[index][charIndex]);
           setCharIndex((prev) => prev + 1);
         } else {
-          setTimeout(() => setIsDeleting(true), 2000); // Pause before deleting
+          setTimeout(() => setIsDeleting(true), 3000); // Pause before deleting
         }
       } else {
         if (charIndex > 0) {
@@ -49,7 +49,7 @@ export default function Typewriter() {
   }, []);
 
   return (
-    <span className="text-emerald-400 font-semibold">
+    <span className="text-green-400 font-semibold">
       {text}
       {blink && <span className="blinker">|</span>}
     </span>

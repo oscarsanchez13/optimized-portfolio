@@ -49,12 +49,16 @@ export default function HomeSection() {
                 I&apos;m a passionate{" "}
                 <span className="text-xl md:text-2xl"><Typewriter /></span>{" "}
                 with an{" "}
-                <span className="text-emerald-400 font-semibold text-lg md:text-xl">entrepreneurial mindset</span>,{" "}
-                <span className="text-emerald-400 font-semibold text-lg md:text-xl">scaling multi-unit businesses</span>, integrating{" "}
-                <span className="text-emerald-400 font-semibold text-lg md:text-xl">cloud, AI, and Machine Learning</span>, as well as building{" "}
-                <span className="text-emerald-400 font-semibold text-lg md:text-xl">customer-first platforms</span>{" "}
-                that drastically{" "}
-                <span className="text-emerald-400 font-semibold text-lg md:text-xl">transform operations</span>.
+                <span className="text-emerald-400 font-semibold text-lg md:text-xl">entrepreneurial</span>{" "}
+                mindset, scaling{" "}
+                <span className="text-emerald-400 font-semibold text-lg md:text-xl">multi-unit</span>{" "}
+                businesses, integrating{" "}
+                <span className="text-emerald-400 font-semibold text-lg md:text-xl">cloud</span>,{" "}
+                <span className="text-emerald-400 font-semibold text-lg md:text-xl">AI</span>, and{" "}
+                <span className="text-emerald-400 font-semibold text-lg md:text-xl">Machine Learning</span>, as well as building{" "}
+                <span className="text-emerald-400 font-semibold text-lg md:text-xl">customer-first</span>{" "}
+                platforms that drastically transform{" "}
+                <span className="text-emerald-400 font-semibold text-lg md:text-xl">operations</span>.
               </p>
             </div>
           </div>
@@ -81,12 +85,16 @@ export default function HomeSection() {
                     <Typewriter />
                   </span>{" "}
                   with an{" "}
-                  <span className="text-emerald-400 font-semibold text-base sm:text-lg">entrepreneurial mindset</span>,{" "}
-                  <span className="text-emerald-400 font-semibold text-base sm:text-lg">scaling multi-unit businesses</span>, integrating{" "}
-                  <span className="text-emerald-400 font-semibold text-base sm:text-lg">cloud, AI, and Machine Learning</span>, as well as building{" "}
-                  <span className="text-emerald-400 font-semibold text-base sm:text-lg">customer-first platforms</span>{" "}
-                  that drastically{" "}
-                  <span className="text-emerald-400 font-semibold text-base sm:text-lg">transform operations</span>.
+                  <span className="text-emerald-400 font-semibold text-base sm:text-lg">entrepreneurial</span>{" "}
+                  mindset, scaling{" "}
+                  <span className="text-emerald-400 font-semibold text-base sm:text-lg">multi-unit</span>{" "}
+                  businesses, integrating{" "}
+                  <span className="text-emerald-400 font-semibold text-base sm:text-lg">cloud</span>,{" "}
+                  <span className="text-emerald-400 font-semibold text-base sm:text-lg">AI</span>, and{" "}
+                  <span className="text-emerald-400 font-semibold text-base sm:text-lg">Machine Learning</span>, as well as building{" "}
+                  <span className="text-emerald-400 font-semibold text-base sm:text-lg">customer-first</span>{" "}
+                  platforms that drastically transform{" "}
+                  <span className="text-emerald-400 font-semibold text-base sm:text-lg">operations</span>.
                 </p>
               </GlassCard>
             </div>
