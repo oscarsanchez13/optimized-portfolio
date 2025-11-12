@@ -43,13 +43,18 @@ export default function HomeSection() {
         <div className="flex h-full w-full">
           {/* Left Side */}
           <div className="flex-1 h-full bg-gradient-to-r from-black via-gray-900 to-gray-700 flex items-center px-24">
-            <div className="text-white">
-              <h1 className="text-5xl md:text-7xl font-bold mb-4">Hi, I&apos;m Oscar.</h1>
-              <p className="text-lg md:text-2xl leading-relaxed">
-                I&apos;m a passionate <Typewriter /> with expertise in{" "}
-                <span className="text-emerald-400 font-semibold">Scaling Businesses</span>{" "}
-                and{" "}
-                <span className="text-emerald-400 font-semibold">Integrating Technology</span>.
+            <div className="text-white max-w-3xl">
+              <h1 className="text-5xl md:text-6xl font-bold mb-6">Hi, I&apos;m Oscar.</h1>
+              <p className="text-base md:text-lg leading-relaxed">
+                I&apos;m a passionate{" "}
+                <span className="text-xl md:text-2xl"><Typewriter /></span>{" "}
+                with an{" "}
+                <span className="text-emerald-400 font-semibold text-lg md:text-xl">entrepreneurial mindset</span>,{" "}
+                <span className="text-emerald-400 font-semibold text-lg md:text-xl">scaling multi-unit businesses</span>, integrating{" "}
+                <span className="text-emerald-400 font-semibold text-lg md:text-xl">cloud, AI, and Machine Learning</span>, as well as building{" "}
+                <span className="text-emerald-400 font-semibold text-lg md:text-xl">customer-first platforms</span>{" "}
+                that drastically{" "}
+                <span className="text-emerald-400 font-semibold text-lg md:text-xl">transform operations</span>.
               </p>
             </div>
           </div>
@@ -69,16 +74,19 @@ export default function HomeSection() {
           <div className="absolute bottom-12 right-1/2 transform -translate-x-1 text-left text-white px-4">
             <div className="max-w-[92vw] sm:max-w-md">
               <GlassCard>
-                <h1 className="text-4xl sm:text-5xl font-bold">Hi, I&apos;m Oscar.</h1>
-                <p className="text-base sm:text-lg leading-relaxed mt-1">
+                <h1 className="text-3xl sm:text-4xl font-bold">Hi, I&apos;m Oscar.</h1>
+                <p className="text-sm sm:text-base leading-relaxed mt-2">
                   I&apos;m a passionate{" "}
-                  <span aria-live="polite" aria-atomic="true">
+                  <span aria-live="polite" aria-atomic="true" className="text-base sm:text-lg">
                     <Typewriter />
                   </span>{" "}
-                  with expertise in{" "}
-                  <span className="text-emerald-400 font-semibold">Scaling Businesses</span>{" "}
-                  and{" "}
-                  <span className="text-emerald-400 font-semibold">Integrating Technology</span>.
+                  with an{" "}
+                  <span className="text-emerald-400 font-semibold text-base sm:text-lg">entrepreneurial mindset</span>,{" "}
+                  <span className="text-emerald-400 font-semibold text-base sm:text-lg">scaling multi-unit businesses</span>, integrating{" "}
+                  <span className="text-emerald-400 font-semibold text-base sm:text-lg">cloud, AI, and Machine Learning</span>, as well as building{" "}
+                  <span className="text-emerald-400 font-semibold text-base sm:text-lg">customer-first platforms</span>{" "}
+                  that drastically{" "}
+                  <span className="text-emerald-400 font-semibold text-base sm:text-lg">transform operations</span>.
                 </p>
               </GlassCard>
             </div>
