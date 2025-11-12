@@ -42,43 +42,40 @@ export default function Navbar() {
 
     return (
         <nav className={`sticky top-0 left-0 w-full glass-dark text-white py-4 px-6 z-50 transition-all duration-300 border-b border-emerald-500/20 ${navVisible ? "opacity-100" : "opacity-0 pointer-events-none"}`}>
-            <div className="container mx-auto flex justify-between items-center">
-                {/* Logo */}
-                <Link href="/" className="flex flex-col items-center leading-none text-center">
-                    <span className="text-[2.5rem] md:text-[3rem] font-bold tracking-wide logo-outline neonGlow">&lt;OS/&gt;</span>
-                    <span className="text-xs md:text-sm font-semibold tracking-widest text-white">OSCAR SANCHEZ</span>
+            <div className="container mx-auto flex items-center gap-8">
+                {/* Logo - Left */}
+                <Link href="/" className="flex flex-col items-start leading-none flex-shrink-0">
+                    <span className="text-3xl lg:text-4xl font-bold tracking-wide logo-outline neonGlow">&lt;OS/&gt;</span>
+                    <span className="text-[10px] lg:text-xs font-semibold tracking-widest text-white/80">OSCAR SANCHEZ</span>
                 </Link>
 
-                {/* Desktop Navigation */}
-                <div className="hidden lg:flex justify-center items-center glass border-2 border-emerald-400/50 glow-hover rounded-lg py-3 px-8 mx-auto max-w-screen-lg w-full shadow-lg shadow-emerald-500/10">
-                    <div className="flex space-x-10 text-lg font-bold">
-                        <Link href="#projects" onClick={(e) => handleScroll(e, "#projects")}>Projects</Link>
-                        <Link href="#skills" onClick={(e) => handleScroll(e, "#skills")}>Skills</Link>
-                        <Link href="#certifications" onClick={(e) => handleScroll(e, "#certifications")}>Certifications</Link>
-                        <Link href="#about-me" onClick={(e) => handleScroll(e, "#about-me")}>About Me</Link>
-                        <Link href="#recommendations" onClick={(e) => handleScroll(e, "#recommendations")}>Recommendations</Link>
-                        <Link href="#contact" onClick={(e) => handleScroll(e, "#contact")}>Contact</Link>
+                {/* Desktop Navigation - Center */}
+                <div className="hidden lg:flex flex-1 justify-center">
+                    <div className="glass border border-emerald-400/30 rounded-xl py-3 px-6 flex items-center gap-8">
+                        <Link href="#projects" onClick={(e) => handleScroll(e, "#projects")} className="text-sm font-semibold hover:text-emerald-400 transition-colors">Projects</Link>
+                        <Link href="#skills" onClick={(e) => handleScroll(e, "#skills")} className="text-sm font-semibold hover:text-emerald-400 transition-colors">Skills</Link>
+                        <Link href="#certifications" onClick={(e) => handleScroll(e, "#certifications")} className="text-sm font-semibold hover:text-emerald-400 transition-colors">Certifications</Link>
+                        <Link href="#about-me" onClick={(e) => handleScroll(e, "#about-me")} className="text-sm font-semibold hover:text-emerald-400 transition-colors">About</Link>
+                        <Link href="#contact" onClick={(e) => handleScroll(e, "#contact")} className="text-sm font-semibold hover:text-emerald-400 transition-colors">Contact</Link>
                     </div>
                 </div>
 
-                {/* Let's Connect Button */}
+                {/* Let's Connect Button - Right */}
                 <a
                     href="https://www.linkedin.com/in/oscarsanchez13"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="hidden lg:flex glass-strong border-2 border-emerald-400/50 hover:border-emerald-400 text-white py-3 px-6 rounded-xl transition-all duration-300 items-center space-x-2 text-base md:text-lg font-semibold glow-hover group relative overflow-hidden"
+                    className="hidden lg:flex glass-strong border-2 border-emerald-400/50 hover:border-emerald-400 text-white py-2.5 px-5 rounded-xl transition-all duration-300 items-center gap-2 text-sm font-semibold glow-hover group relative overflow-hidden flex-shrink-0"
                 >
                     <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/20 to-emerald-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    <span className="relative z-10">Let&apos;s Connect!</span>
-                    <FaLinkedin className="text-xl md:text-2xl relative z-10 group-hover:scale-110 transition-transform duration-300" />
+                    <span className="relative z-10">Connect</span>
+                    <FaLinkedin className="text-lg relative z-10 group-hover:scale-110 transition-transform duration-300" />
                 </a>
 
-                {/* Mobile Menu */}
-                <div className="lg:hidden z-50">
-                    <button onClick={toggleMenu} aria-label="Toggle Menu">
-                        {isOpen ? <FiX size={30} /> : <FiMenu size={30} />}
-                    </button>
-                </div>
+                {/* Mobile Menu Button */}
+                <button onClick={toggleMenu} aria-label="Toggle Menu" className="lg:hidden ml-auto">
+                    {isOpen ? <FiX size={28} /> : <FiMenu size={28} />}
+                </button>
             </div>
 
             {/* Mobile Dropdown Menu */}
