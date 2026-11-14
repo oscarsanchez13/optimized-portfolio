@@ -19,6 +19,8 @@ export const site = {
 
 export const hero = {
   greeting: "Hi, I'm Oscar.",
+  // Short line above the name; mirrors site.title so it stays neutral.
+  eyebrow: "Operator · Technologist · Builder",
   // Cycles in the typewriter. Keep to roles he has actually held or does today.
   roles: [
     "Technology Leader",

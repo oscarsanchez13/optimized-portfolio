@@ -4,7 +4,7 @@ import type { CaseStudy } from "@/data/profile";
 
 function Frame({ title, children }: { title: string; children: React.ReactNode }) {
   return (
-    <div className="absolute inset-0 flex flex-col bg-[#0b1220] text-[10px] text-slate-300 font-mono">
+    <div className="viz absolute inset-0 flex flex-col bg-[#0b1220] text-[10px] leading-snug text-slate-300 font-mono" aria-hidden>
       <div className="flex items-center gap-1.5 px-3 py-2 border-b border-white/10 bg-black/40">
         <span className="w-2 h-2 rounded-full bg-red-400/70" />
         <span className="w-2 h-2 rounded-full bg-yellow-400/70" />
@@ -30,21 +30,21 @@ function Ops() {
   const kpis = [["Open orders", "1,284"], ["Tasks today", "37"], ["Work orders", "412"], ["Approvals due", "9"]];
   return (
     <Frame title="ops.platform / overview">
-      <div className="grid grid-cols-4 gap-2 mb-3">
-        {kpis.map(([k, v]) => (
-          <div key={k} className="rounded bg-white/5 border border-white/10 p-2">
-            <div className="text-[8px] text-slate-400 truncate">{k}</div>
+      <div className="viz-cols-2 grid grid-cols-4 gap-2 mb-3">
+        {kpis.map(([k, v], i) => (
+          <div key={k} className={`rounded bg-white/5 border border-white/10 p-2 ${i > 1 ? "viz-hide-sm" : ""}`}>
+            <div className="text-[9px] text-slate-400 truncate">{k}</div>
             <div className="text-sm text-white font-semibold">{v}</div>
           </div>
         ))}
       </div>
       <div className="grid grid-cols-3 gap-2 h-[55%]">
         <div className="col-span-2 rounded bg-white/5 border border-white/10 p-2 flex flex-col">
-          <div className="text-[8px] text-slate-400 mb-1">Volume by location (sample)</div>
+          <div className="text-[9px] text-slate-400 mb-1">Volume by location (sample)</div>
           <div className="flex-1 relative"><Bars values={[62, 80, 45, 91, 70, 55, 84, 66]} /></div>
         </div>
         <div className="rounded bg-white/5 border border-white/10 p-2 space-y-1.5">
-          <div className="text-[8px] text-slate-400">Approval chain</div>
+          <div className="text-[9px] text-slate-400">Approval chain</div>
           {["Requester", "Manager", "Finance", "Done"].map((s, i) => (
             <div key={s} className="flex items-center gap-1.5">
               <span className={`w-2 h-2 rounded-full ${i < 2 ? "bg-emerald-400" : i === 2 ? "bg-yellow-400 animate-pulse" : "bg-slate-600"}`} />
@@ -72,14 +72,14 @@ function Invoice() {
           <div className="absolute inset-x-0 h-6 bg-emerald-400/30 border-y border-emerald-500 viz-scan" />
         </div>
         <div className="col-span-3 space-y-1.5">
-          <div className="text-[8px] text-slate-400">OCR extracted → GL posting</div>
+          <div className="text-[9px] text-slate-400">OCR extracted → GL posting</div>
           {rows.map(([v, amt, s]) => (
             <div key={v} className="flex items-center justify-between rounded bg-white/5 border border-white/10 px-2 py-1">
               <span>{v}</span><span className="text-white">${amt}</span>
-              <span className={s === "ok" ? "text-emerald-400" : "text-amber-400"}>{s === "ok" ? "✓ matched" : "! review"}</span>
+              <span className={s === "ok" ? "text-emerald-400" : "text-amber-400"}>{s === "ok" ? "✓" : "!"}<span className="viz-hide-sm">{s === "ok" ? " matched" : " review"}</span></span>
             </div>
           ))}
-          <div className="rounded bg-emerald-500/15 border border-emerald-400/40 px-2 py-1 text-emerald-300">Depreciation run · 312 assets · posted</div>
+          <div className="rounded bg-emerald-500/15 border border-emerald-400/40 px-2 py-1 text-emerald-300 truncate">Depreciation run · 312 assets<span className="viz-hide-sm"> · posted</span></div>
         </div>
       </div>
     </Frame>
@@ -112,13 +112,13 @@ function Mcp() {
         <div className="col-span-2 rounded bg-white/5 border border-white/10 p-2 flex flex-col items-center justify-center text-center">
           <div className="w-6 h-6 rounded-full bg-emerald-400/20 border border-emerald-400 mb-1.5" />
           <div className="text-white text-[10px] mb-1">AI assistant requests access</div>
-          <div className="text-[8px] text-slate-400 mb-2">reports.read · tickets.create</div>
+          <div className="text-[9px] text-slate-400 mb-2">reports.read · tickets.create</div>
           <div className="flex gap-1.5"><span className="px-2 py-0.5 rounded bg-emerald-500 text-black">Allow</span><span className="px-2 py-0.5 rounded bg-white/10">Deny</span></div>
         </div>
         <div className="col-span-3 space-y-1">
-          <div className="text-[8px] text-slate-400">Activity log</div>
+          <div className="text-[9px] text-slate-400">Activity log</div>
           {log.map(([t, u, s, r]) => (
-            <div key={t} className="flex gap-2 rounded bg-white/5 px-2 py-1"><span className="text-slate-500">{t}</span><span>{u}</span><span className="text-white truncate">{s}</span><span className={`ml-auto ${r === "allow" ? "text-emerald-400" : "text-red-400"}`}>{r}</span></div>
+            <div key={t} className="flex gap-2 rounded bg-white/5 px-2 py-1"><span className="viz-hide-sm text-slate-500">{t}</span><span className="viz-hide-sm">{u}</span><span className="text-white truncate">{s}</span><span className={`ml-auto ${r === "allow" ? "text-emerald-400" : "text-red-400"}`}>{r}</span></div>
           ))}
         </div>
       </div>
@@ -140,7 +140,7 @@ function Pipeline() {
           ))}
         </div>
         <div className="col-span-3 rounded bg-white/5 border border-white/10 p-2 flex flex-col">
-          <div className="text-[8px] text-slate-400 mb-1">Spend vs. leads by channel (sample)</div>
+          <div className="text-[9px] text-slate-400 mb-1">Spend vs. leads by channel (sample)</div>
           <div className="flex-1 flex items-end gap-2">
             {[[40, 70], [65, 80], [30, 35], [80, 95], [50, 62]].map(([s, l], i) => (
               <div key={i} className="flex-1 flex items-end gap-0.5 h-full">
@@ -180,11 +180,11 @@ function Finance() {
     <Frame title="sancho-finance / overview">
       <div className="grid grid-cols-3 gap-2 mb-2">
         {[["Net worth", "+12.4%"], ["Savings rate", "21%"], ["Debt-free", "Mar 2029"]].map(([k, v]) => (
-          <div key={k} className="rounded bg-white/5 border border-white/10 p-2"><div className="text-[8px] text-slate-400">{k}</div><div className="text-white text-sm font-semibold">{v}</div></div>
+          <div key={k} className="rounded bg-white/5 border border-white/10 p-2"><div className="text-[9px] text-slate-400">{k}</div><div className="text-white text-sm font-semibold">{v}</div></div>
         ))}
       </div>
       <div className="rounded bg-white/5 border border-white/10 p-2 h-[58%] relative">
-        <div className="text-[8px] text-slate-400">18-month forecast (sample data)</div>
+        <div className="text-[9px] text-slate-400">18-month forecast (sample data)</div>
         <svg viewBox="0 0 100 40" className="absolute inset-x-2 bottom-2 h-[75%] w-[calc(100%-1rem)]" preserveAspectRatio="none">
           <path d="M0,34 C15,30 25,31 35,25 S55,22 65,15 S85,9 100,4" fill="none" stroke="#34d399" strokeWidth="1.5" className="viz-draw" />
           <path d="M0,34 C15,30 25,31 35,25 S55,22 65,15 S85,9 100,4 L100,40 L0,40 Z" fill="url(#g)" opacity=".35" />
@@ -199,11 +199,11 @@ function Cicd() {
   const steps = ["lint", "typecheck", "tests", "privacy-guard", "build", "deploy"];
   return (
     <Frame title="actions / main">
-      <div className="flex items-center gap-1 mb-3">
+      <div className="viz-stack flex items-center gap-1 mb-3">
         {steps.map((s, i) => (
-          <div key={s} className="flex items-center gap-1 flex-1">
+          <div key={s} className="flex items-center gap-1 flex-1 min-w-0">
             <div className="flex-1 rounded border border-emerald-400/50 bg-emerald-500/10 px-1 py-1.5 text-center text-emerald-200 truncate viz-fade" style={{ animationDelay: `${i * 200}ms` }}>✓ {s}</div>
-            {i < steps.length - 1 && <span className="text-slate-500">›</span>}
+            {i < steps.length - 1 && <span className="viz-hide-sm text-slate-500">›</span>}
           </div>
         ))}
       </div>
