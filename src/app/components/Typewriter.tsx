@@ -4,46 +4,44 @@ import { hero } from "@/data/profile";
 
 const roles = hero.roles;
 
+/**
+ * Types and deletes each role in turn. The full list is always in the DOM for
+ * screen readers and crawlers; the animated text is decorative.
+ */
 export default function Typewriter() {
-  const [text, setText] = useState("");
   const [index, setIndex] = useState(0);
-  const [charIndex, setCharIndex] = useState(0);
-  const [isDeleting, setIsDeleting] = useState(false);
-  const [blink, setBlink] = useState(true);
+  const [count, setCount] = useState(0);
+  const [deleting, setDeleting] = useState(false);
+  const [still, setStill] = useState(false);
 
   useEffect(() => {
-    const timeout = setTimeout(() => {
-      if (!isDeleting) {
-        if (charIndex < roles[index].length) {
-          setText((prev) => prev + roles[index][charIndex]);
-          setCharIndex((prev) => prev + 1);
-        } else {
-          setTimeout(() => setIsDeleting(true), 3000); // Pause before deleting
-        }
-      } else {
-        if (charIndex > 0) {
-          setText((prev) => prev.slice(0, -1));
-          setCharIndex((prev) => prev - 1);
-        } else {
-          setIsDeleting(false);
-          setIndex((prev) => (prev + 1) % roles.length);
-        }
-      }
-    }, isDeleting ? 50 : 100); // Typing is slower, deleting is faster
-
-    return () => clearTimeout(timeout);
-  }, [charIndex, isDeleting, index]);
-
-  // Blinking Cursor Effect
-  useEffect(() => {
-    const blinkInterval = setInterval(() => setBlink((prev) => !prev), 500);
-    return () => clearInterval(blinkInterval);
+    setStill(window.matchMedia("(prefers-reduced-motion: reduce)").matches);
   }, []);
 
+  useEffect(() => {
+    if (still) return;
+    const word = roles[index];
+    let delay = deleting ? 45 : 95;
+    if (!deleting && count === word.length) delay = 2600;
+    const t = setTimeout(() => {
+      if (!deleting && count === word.length) setDeleting(true);
+      else if (deleting && count === 0) {
+        setDeleting(false);
+        setIndex((i) => (i + 1) % roles.length);
+      } else setCount((c) => c + (deleting ? -1 : 1));
+    }, delay);
+    return () => clearTimeout(t);
+  }, [count, deleting, index, still]);
+
+  const text = still ? roles[0] : roles[index].slice(0, count);
+
   return (
-    <span className="text-emerald-500 font-semibold">
-      {text}
-      {blink && <span className="blinker">|</span>}
+    <span className="font-semibold text-emerald-400">
+      <span className="sr-only">{roles.join(", ")}</span>
+      <span aria-hidden>
+        {text}
+        <span className="blinker">|</span>
+      </span>
     </span>
   );
 }

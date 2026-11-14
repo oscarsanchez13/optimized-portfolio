@@ -1,7 +1,6 @@
-"use client";
-import { motion } from "framer-motion";
 import { FiUsers, FiSettings, FiTrendingUp, FiBookOpen, FiTarget, FiRadio, FiBriefcase, FiCpu } from "react-icons/fi";
 import { disciplines } from "@/data/profile";
+import SectionHeading from "./SectionHeading";
 
 const icons: Record<string, React.ReactNode> = {
   leadership: <FiUsers />, operations: <FiSettings />, finance: <FiTrendingUp />, accounting: <FiBookOpen />,
@@ -10,26 +9,30 @@ const icons: Record<string, React.ReactNode> = {
 
 export default function Disciplines() {
   return (
-    <section id="disciplines" className="py-20 bg-black text-white">
-      <div className="container mx-auto px-6 md:px-12 lg:px-20">
-        <h2 className="section-title text-4xl font-bold text-center mb-3">The Full Stack of Business</h2>
-        <p className="text-center text-slate-400 mb-12 max-w-2xl mx-auto">Most leaders go deep on one side of a company. I&apos;ve worked every side — and I build the software that ties them together.</p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+    <section id="disciplines" className="bg-black py-14 text-white md:py-20">
+      <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
+        <SectionHeading
+          eyebrow="01 / Expertise"
+          title="The Full Stack of Business"
+          lead={<>Most leaders go deep on one side of a company. I&apos;ve worked every side — and I build the software that ties them together.</>}
+        />
+        <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-4 lg:gap-5">
           {disciplines.map((d, i) => (
-            <motion.div
+            <li
               key={d.key}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.05 }}
-              className={`glass-strong border border-emerald-400/30 p-6 rounded-xl glow-hover hover:scale-[1.03] transition-transform duration-300 ${i % 2 ? "-rotate-1" : "rotate-1"} hover:rotate-0`}
+              style={{ "--reveal-delay": `${(i % 4) * 60}ms` } as React.CSSProperties}
+              className={`reveal glass-strong glow-hover flex gap-4 rounded-xl border border-emerald-400/30 p-5 transition-transform duration-300 sm:block lg:p-6 lg:hover:scale-[1.03] ${i % 2 ? "lg:-rotate-1" : "lg:rotate-1"} lg:hover:rotate-0`}
             >
-              <div className="text-2xl text-emerald-400 mb-3">{icons[d.key]}</div>
-              <h3 className="text-xl font-bold mb-2">{d.title}</h3>
-              <p className="text-sm text-slate-300 leading-relaxed">{d.proof}</p>
-            </motion.div>
+              <div className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-lg border border-emerald-400/30 bg-emerald-400/10 text-xl text-emerald-400 sm:mb-4" aria-hidden>
+                {icons[d.key]}
+              </div>
+              <div>
+                <h3 className="mb-1 text-lg font-bold sm:mb-2 sm:text-xl">{d.title}</h3>
+                <p className="text-sm leading-relaxed text-slate-300">{d.proof}</p>
+              </div>
+            </li>
           ))}
-        </div>
+        </ul>
       </div>
     </section>
   );

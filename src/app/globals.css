@@ -19,8 +19,7 @@
 /* General Theme */
 html, body {
   background-color: var(--color-bg) !important;
-  overflow-x: hidden;
-  overflow-y: auto;
+  overflow-x: clip;
   font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
@@ -32,6 +31,13 @@ body {
 /* Smooth Scrolling */
 html {
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+/* Anchored sections land below the fixed navbar */
+section[id] {
+  scroll-margin-top: calc(4.5rem + env(safe-area-inset-top));
 }
 
 /* Hide Scrollbar but keep functionality */
@@ -129,12 +135,6 @@ html {
     color: #50C878;
 }
 
-@media (max-width: 768px) {
-  .scroll-arrow {
-    bottom: 4rem; /* Moves arrow further down in mobile */
-    font-size: 2rem; /* Smaller size for mobile */
-  }
-}
 
 
 /* Sticky Notes Styling */
@@ -167,9 +167,6 @@ html {
 .transform-style-3d {
   transform-style: preserve-3d;
   transition: transform 0.5s ease-in-out;
-}
-.group:hover .group-hover\:rotate-y-180 {
-  transform: rotateY(180deg);
 }
 .rotate-y-180 {
   transform: rotateY(180deg);
@@ -241,7 +238,8 @@ html {
 /* Default Neon Effect */
 .logo-outline {
   font-family: "Arial", sans-serif;
-  font-size: 2.5rem;
+  font-size: 1.875rem;
+  line-height: 1;
   font-weight: bold;
   color: transparent;
   text-transform: uppercase;
@@ -256,10 +254,20 @@ html {
   -webkit-text-stroke: 1.2px rgba(255, 255, 255, 1); /* White outline to keep readability */
 }
 
-/* Section Titles - Hollow Neon Glow */
+@media (min-width: 1024px) {
+  .logo-outline { font-size: 2.25rem; }
+}
+
+/* Section Titles - Hollow Neon Glow.
+   Fluid size: 24px at 320px wide, capped at 48px, so the longest single word
+   ("Recommendations") never overflows a phone. */
 .section-title {
   font-family: "Arial", sans-serif;
-  font-size: 2rem;
+  font-size: clamp(1.5rem, 7.2vw, 3rem);
+  line-height: 1.1;
+  letter-spacing: 0.02em;
+  overflow-wrap: break-word;
+  text-wrap: balance;
   font-weight: bold;
   color: transparent;
   text-transform: uppercase;
@@ -302,6 +310,61 @@ html {
 .viz-draw { animation: vizDraw 1.8s ease-out both; }
 .rotate-y-180 { transform: rotateY(180deg); }
 
+/* Section eyebrow: small mono label above each neon title */
+.eyebrow {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: rgba(110, 231, 183, 0.8);
+}
+
+/* ===== Mobile-first additions ===== */
+
+/* Scroll reveal. Content is visible by default (no JS, crawlers, print).
+   Only once the client has checked IntersectionObserver support does it hide
+   below-the-fold blocks, and the observer brings them back in. */
+.reveal-ready .reveal:not(.is-in) {
+  opacity: 0;
+  transform: translateY(18px);
+}
+.reveal {
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  transition-delay: var(--reveal-delay, 0ms);
+}
+@media print {
+  .reveal-ready .reveal:not(.is-in) { opacity: 1; transform: none; }
+}
+
+/* Case-study flip cards: flip only where real hover exists (mouse/trackpad).
+   Touch devices tap straight into the detail sheet. */
+@media (hover: hover) and (pointer: fine) {
+  .flip-card:hover .flip-inner,
+  .flip-card:focus-visible .flip-inner {
+    transform: rotateY(180deg);
+  }
+}
+
+/* Case-study mock screens: container queries thin them out when the card is narrow */
+.viz { container-type: inline-size; }
+@container (max-width: 360px) {
+  .viz .viz-hide-sm { display: none !important; }
+  .viz .viz-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+  .viz .viz-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; }
+  .viz .viz-stack { display: grid !important; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+/* Swiper brand colours */
+.recs-swiper {
+  --swiper-theme-color: #34d399;
+  --swiper-navigation-size: 22px;
+  --swiper-pagination-bullet-inactive-color: #ffffff;
+  --swiper-pagination-bullet-inactive-opacity: 0.3;
+  padding-bottom: 2.75rem !important;
+}
+.recs-swiper .swiper-slide { height: auto; }
+
+
 /* Respect people who turn animations off in their OS settings */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
@@ -310,4 +373,5 @@ html {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+  .reveal-ready .reveal:not(.is-in) { opacity: 1; transform: none; }
 }

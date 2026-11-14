@@ -31,7 +31,12 @@ export const metadata: Metadata = {
     },
 };
 
-export const viewport: Viewport = { themeColor: "#0a0a0a" };
+export const viewport: Viewport = {
+    themeColor: "#0a0a0a",
+    width: "device-width",
+    initialScale: 1,
+    viewportFit: "cover", // lets safe-area insets reach the fixed nav, sheets and footer
+};
 
 const personJsonLd = {
     "@context": "https://schema.org",
