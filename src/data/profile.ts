@@ -69,7 +69,7 @@ export type Role = {
 
 export const experience: Role[] = [
   {
-    company: "Crain Automotive Holdings",
+    company: "Multi-location automotive group",
     title: "Senior Product Owner",
     start: "2025",
     end: "Present",
@@ -83,7 +83,7 @@ export const experience: Role[] = [
     tags: ["technology", "operations", "finance", "accounting", "marketing"],
   },
   {
-    company: "Layne's Chicken Fingers (franchise group)",
+    company: "Quick-service restaurant franchise group",
     title: "Operations Leadership",
     start: "2025",
     end: "2025",
@@ -95,20 +95,20 @@ export const experience: Role[] = [
     tags: ["operations", "marketing", "sales", "leadership"],
   },
   {
-    company: "Brinker International (Chili's)",
-    title: "Restaurant General Manager",
+    company: "National casual-dining brand",
+    title: "General Manager → Director of Operations",
     start: "2022",
     end: "2024",
-    summary: "Ran a full-service restaurant: P&L, hiring, guest experience and sales.",
+    summary: "Promoted from General Manager to Director of Operations, leading multi-unit P&L, people and guest experience.",
     highlights: [
-      "Moved the restaurant to the top of its seven-store area.",
+      "Turned a restaurant into the top performer of its seven-store area, then earned the move to Director of Operations.",
       "Recognized by the company and selected for a leadership development program.",
       "Owned the P&L, labor, food cost and guest metrics.",
     ],
     tags: ["leadership", "operations", "finance", "sales"],
   },
   {
-    company: "Panera Bread",
+    company: "National bakery-café brand",
     title: "Restaurant Management",
     start: "2020",
     end: "2022",
@@ -265,8 +265,8 @@ export const certifications = [
 ];
 
 export const recommendations = [
-  { name: "Jim Medlock", image: "/images/jim-medlock.jpg", role: "Founder & CEO, Chingu", message: "An outstanding engineer with a strong work ethic. Highly recommend!" },
-  { name: "Josh Neufeld", image: "/images/josh-neufeld.jpg", role: "VP of Operations, Brinker International", message: "A pleasure to work with. Always delivers high-quality results." },
+  { name: "Jim Medlock", image: "/images/jim-medlock.jpg", role: "Founder & CEO, global developer community", message: "An outstanding engineer with a strong work ethic. Highly recommend!" },
+  { name: "Josh Neufeld", image: "/images/josh-neufeld.jpg", role: "VP of Operations, national restaurant brand", message: "A pleasure to work with. Always delivers high-quality results." },
   { name: "Ricardo Aguilera", image: "/images/ricardo-aguilera.jpg", role: "Product Owner", message: "Brings great leadership and technical expertise to any team." },
   { name: "Roxanne Davis", image: "/images/roxanne-davis.jpg", role: "Senior Software Engineer", message: "Incredibly skilled and passionate about technology." },
 ];
