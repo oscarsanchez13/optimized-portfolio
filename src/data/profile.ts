@@ -259,9 +259,27 @@ export const caseStudies: CaseStudy[] = [
   },
 ];
 
-export const certifications = [
-  { title: "Full-Stack Software Engineer", provider: "Thinkful", date: "2021" },
-  { title: "Full-Stack Engineering", provider: "Udemy", date: "2022" },
+export type CertCategory = "leadership" | "technology" | "operations" | "growth";
+export type Certification = {
+  title: string;
+  issuer: string;
+  year: string;
+  category: CertCategory;
+  kind?: "certificate" | "degree" | "license";
+  verifyUrl?: string;
+};
+
+// Only credentials Oscar has confirmed he holds. The wall renders whatever is here.
+export const certifications: Certification[] = [
+  { title: "Full-Stack Software Engineering", issuer: "Thinkful", year: "2021", category: "technology" },
+  { title: "Full-Stack Web Development", issuer: "Udemy", year: "2022", category: "technology" },
+];
+
+export const certCategories: { key: CertCategory; label: string; blurb: string }[] = [
+  { key: "leadership", label: "Leadership & Strategy", blurb: "Leading people, programs and companies" },
+  { key: "operations", label: "Operations & Finance", blurb: "Running the numbers and the machine" },
+  { key: "growth", label: "Marketing & Growth", blurb: "Finding customers and keeping them" },
+  { key: "technology", label: "Technology & AI", blurb: "Building what the business runs on" },
 ];
 
 export const recommendations = [
