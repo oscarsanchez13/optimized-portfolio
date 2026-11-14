@@ -184,10 +184,6 @@ html {
   text-align: center;
 }
 
-/* Ensures project blocks touch each other */
-.grid {
-  gap: 0px;
-}
 
 .blinker {
   font-weight: bold;
@@ -286,4 +282,32 @@ html {
 
 .keyword-highlight:hover {
   animation: neonColorCycle 2s infinite alternate ease-in-out;
+}
+
+/* ===== v2 additions ===== */
+.neon-number { text-shadow: 0 0 18px rgba(52, 211, 153, 0.45); }
+
+/* Case-study visuals */
+@keyframes vizGrow { from { transform: scaleY(0); } to { transform: scaleY(1); } }
+.viz-grow { transform-origin: bottom; animation: vizGrow 0.9s ease-out both; }
+@keyframes vizFade { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+.viz-fade { animation: vizFade 0.5s ease-out both; }
+@keyframes vizScan { 0% { top: 0; } 100% { top: calc(100% - 1.5rem); } }
+.viz-scan { animation: vizScan 2.4s ease-in-out infinite alternate; }
+@keyframes vizFlow { 0% { opacity: .2; } 50% { opacity: 1; } 100% { opacity: .2; } }
+.viz-flow { animation: vizFlow 1.6s ease-in-out infinite; }
+@keyframes vizWave { 0%, 100% { height: 20%; } 50% { height: 100%; } }
+.viz-wave { height: 20%; animation: vizWave 0.9s ease-in-out infinite; }
+@keyframes vizDraw { from { stroke-dasharray: 300; stroke-dashoffset: 300; } to { stroke-dasharray: 300; stroke-dashoffset: 0; } }
+.viz-draw { animation: vizDraw 1.8s ease-out both; }
+.rotate-y-180 { transform: rotateY(180deg); }
+
+/* Respect people who turn animations off in their OS settings */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

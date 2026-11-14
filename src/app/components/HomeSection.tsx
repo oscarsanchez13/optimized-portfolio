@@ -4,6 +4,29 @@ import { useEffect, useState } from "react";
 import { FaChevronDown } from "react-icons/fa";
 import Image from "next/image";
 import Typewriter from "./Typewriter";
+import { hero } from "@/data/profile";
+
+function Pitch({ size }: { size: "lg" | "sm" }) {
+  const big = size === "lg";
+  return (
+    <>
+      <p className={big ? "text-xl md:text-2xl mb-2" : "text-base sm:text-lg mb-1"}>
+        <span className={`inline-block ${big ? "min-w-[320px] md:min-w-[420px]" : "min-w-[240px]"} text-emerald-400 font-semibold`} aria-live="polite" aria-atomic="true"><Typewriter /></span>
+      </p>
+      <p className={big ? "text-2xl md:text-3xl font-semibold mb-4" : "text-lg font-semibold mb-2"}>{hero.lead}</p>
+      <p className={`${big ? "text-base md:text-lg" : "text-sm"} leading-relaxed text-slate-300`}>{hero.body}</p>
+      <div className={`flex flex-wrap gap-2 ${big ? "mt-6" : "mt-3"}`}>
+        {hero.keywords.map((k) => (
+          <span key={k} className="keyword-highlight text-teal-200 border border-teal-200/30 rounded-full px-3 py-1 text-xs md:text-sm">{k}</span>
+        ))}
+      </div>
+      <div className={`flex gap-3 ${big ? "mt-8" : "mt-4"}`}>
+        <a href="#projects" className="bg-emerald-600 hover:bg-emerald-500 text-white font-semibold py-2.5 px-5 rounded-lg text-sm">See my work</a>
+        <a href="#contact" className="glass-strong border border-emerald-400/50 hover:border-emerald-400 text-white font-semibold py-2.5 px-5 rounded-lg text-sm">Get in touch</a>
+      </div>
+    </>
+  );
+}
 
 /**
  * Mobile-only card to ensure contrast where text overlays the image.
@@ -45,57 +68,27 @@ export default function HomeSection() {
           <div className="flex-1 h-full bg-gradient-to-r from-black via-gray-900 to-gray-700 flex items-center px-24">
             <div className="text-white max-w-3xl">
               <h1 className="text-5xl md:text-6xl font-bold mb-6">Hi, I&apos;m Oscar.</h1>
-              <p className="text-base md:text-lg leading-relaxed">
-                I&apos;m a passionate <span className="inline-block min-w-[320px] md:min-w-[420px] text-xl md:text-2xl"><Typewriter /></span>
-                <br />
-                with an{" "}
-                <span className="text-teal-200 font-semibold text-lg md:text-xl keyword-highlight">entrepreneurial</span>{" "}
-                mindset, scaling{" "}
-                <span className="text-teal-200 font-semibold text-lg md:text-xl keyword-highlight">multi-unit</span>{" "}
-                businesses, integrating{" "}
-                <span className="text-teal-200 font-semibold text-lg md:text-xl keyword-highlight">cloud</span>,{" "}
-                <span className="text-teal-200 font-semibold text-lg md:text-xl keyword-highlight">AI</span>, and{" "}
-                <span className="text-teal-200 font-semibold text-lg md:text-xl keyword-highlight">Machine Learning</span>, as well as building{" "}
-                <span className="text-teal-200 font-semibold text-lg md:text-xl keyword-highlight">customer-first</span>{" "}
-                platforms that drastically transform{" "}
-                <span className="text-teal-200 font-semibold text-lg md:text-xl keyword-highlight">operations</span>.
-              </p>
+              <Pitch size="lg" />
             </div>
           </div>
 
           {/* Right Side */}
           <div className="flex-1 h-full relative">
-            <Image src="/Reverce.jpg" alt="Oscar Sanchez" fill className="object-cover" priority />
+            <Image src="/Reverce.jpg" alt="Portrait of Oscar Sanchez" fill className="object-cover" priority />
             <div className="absolute inset-0 bg-gradient-to-l from-transparent via-gray-700 to-black opacity-40" />
           </div>
         </div>
       ) : (
         /* ===== MOBILE ===== */
         <div className="relative w-full h-full">
-          <Image src="/Reverce.jpg" alt="Oscar Sanchez" fill className="object-cover -translate-x-8" priority />
+          <Image src="/Reverce.jpg" alt="Portrait of Oscar Sanchez" fill className="object-cover object-[60%_20%]" priority />
 
           {/* Text overlay wrapped in a glass card for readability */}
-          <div className="absolute bottom-12 right-1/2 transform -translate-x-1 text-left text-white px-4">
-            <div className="max-w-[92vw] sm:max-w-md">
+          <div className="absolute inset-x-4 bottom-16 text-left text-white">
+            <div className="max-w-md mx-auto">
               <GlassCard>
                 <h1 className="text-3xl sm:text-4xl font-bold">Hi, I&apos;m Oscar.</h1>
-                <p className="text-sm sm:text-base leading-relaxed mt-2">
-                  I&apos;m a passionate <span aria-live="polite" aria-atomic="true" className="inline-block min-w-[240px] text-base sm:text-lg">
-                    <Typewriter />
-                  </span>
-                  <br />
-                  with an{" "}
-                  <span className="text-teal-200 font-semibold text-base sm:text-lg keyword-highlight">entrepreneurial</span>{" "}
-                  mindset, scaling{" "}
-                  <span className="text-teal-200 font-semibold text-base sm:text-lg keyword-highlight">multi-unit</span>{" "}
-                  businesses, integrating{" "}
-                  <span className="text-teal-200 font-semibold text-base sm:text-lg keyword-highlight">cloud</span>,{" "}
-                  <span className="text-teal-200 font-semibold text-base sm:text-lg keyword-highlight">AI</span>, and{" "}
-                  <span className="text-teal-200 font-semibold text-base sm:text-lg keyword-highlight">Machine Learning</span>, as well as building{" "}
-                  <span className="text-teal-200 font-semibold text-base sm:text-lg keyword-highlight">customer-first</span>{" "}
-                  platforms that drastically transform{" "}
-                  <span className="text-teal-200 font-semibold text-base sm:text-lg keyword-highlight">operations</span>.
-                </p>
+                <div className="mt-2"><Pitch size="sm" /></div>
               </GlassCard>
             </div>
           </div>

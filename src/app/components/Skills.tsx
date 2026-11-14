@@ -3,6 +3,9 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { useState } from "react";
+import { stack } from "@/data/profile";
+import { SiSupabase, SiClaude } from "react-icons/si";
+import { FiCpu, FiMic, FiFileText, FiLink } from "react-icons/fi";
 import { DiJavascript1, DiReact, DiNodejs, DiDocker, DiGit, DiPostgresql } from "react-icons/di";
 import { SiTypescript, SiNextdotjs, SiTailwindcss, SiMongodb, SiGraphql, SiKubernetes, SiTerraform, SiAmazon, SiGithubactions, SiJenkins, SiHelm, SiPrometheus, SiGrafana, SiExpress, SiHtml5, SiCss3, SiGitlab, SiNetlify, SiFigma, SiPostman, SiAuth0, SiVercel } from "react-icons/si";
 
@@ -36,24 +39,26 @@ const skillIcons: { [key: string]: JSX.Element } = {
   "Postman": <SiPostman className="w-10 h-10 md:w-12 md:h-12 text-orange-500 drop-shadow-lg shadow-white" />,
   "Auth0": <SiAuth0 className="w-10 h-10 md:w-12 md:h-12 text-blue-500 drop-shadow-lg shadow-white" />,
   "Vercel": <SiVercel className="w-10 h-10 md:w-12 md:h-12 text-white drop-shadow-lg shadow-white" />,
+  "Supabase": <SiSupabase className="w-10 h-10 md:w-12 md:h-12 text-emerald-400" />,
+  "Claude": <SiClaude className="w-10 h-10 md:w-12 md:h-12 text-orange-300" />,
+  "MCP": <FiLink className="w-10 h-10 md:w-12 md:h-12 text-emerald-300" />,
+  "Agents": <FiCpu className="w-10 h-10 md:w-12 md:h-12 text-emerald-300" />,
+  "OCR": <FiFileText className="w-10 h-10 md:w-12 md:h-12 text-sky-300" />,
+  "Voice AI": <FiMic className="w-10 h-10 md:w-12 md:h-12 text-pink-300" />,
   "Azure DevOps": <Image src="/icons/azure-devops.png" alt="Azure DevOps" width={48} height={48} className="drop-shadow-lg shadow-white" />,
 };
 
 const skillsData = {
-  TechnicalExperience: {
-    Frontend: ["JavaScript", "TypeScript", "React", "Next.js", "Tailwind CSS", "HTML5", "CSS3", "Netlify", "Figma"],
-    Backend: ["Node.js", "Express.js", "GraphQL", "MongoDB", "PostgreSQL", "Postman", "Auth0"],
-    DevOps: ["Docker", "Kubernetes", "Terraform", "AWS", "GitHub Actions", "Jenkins", "Helm", "Prometheus", "Grafana", "Git", "GitLab", "Vercel"],
-  },
-  SoftSkills: ["Leadership", "Process Optimization", "Team Building", "Strategic Planning", "Agile Methodologies", "Problem-Solving", "Decision-Making", "Communication", "Time Management", "Adaptability", "Bilingual (English/Spanish)"],
+  TechnicalExperience: stack,
+  SoftSkills: ["Executive Leadership", "P&L Ownership", "Process Optimization", "Team Building", "Strategic Planning", "Budgeting & Forecasting", "Go-to-Market", "Agile Delivery", "Decision-Making", "Communication", "Bilingual (English/Spanish)"],
 };
 
 export default function Skills() {
-  const [selectedCategory, setSelectedCategory] = useState<keyof typeof skillsData.TechnicalExperience>("Frontend");
+  const [selectedCategory, setSelectedCategory] = useState<keyof typeof skillsData.TechnicalExperience>("AI");
 
   return (
     <section id="skills" className="relative flex flex-col items-center bg-black py-20 text-white">
-      <motion.h2 className="section-title text-4xl font-bold text-center mb-12">Soft Skills</motion.h2>
+      <motion.h2 className="section-title text-4xl font-bold text-center mb-12">Leadership Toolkit</motion.h2>
 
       <motion.div className="w-full max-w-5xl overflow-x-auto glass-dark p-6 rounded-xl shadow-lg flex space-x-4 scrollbar-hide border border-emerald-400/20">
         {skillsData.SoftSkills.map((skill) => (
@@ -65,9 +70,9 @@ export default function Skills() {
 
       <div className="my-8"></div>
 
-      <motion.h2 className="section-title text-4xl font-bold text-center mb-12">Technical Skills</motion.h2>
+      <motion.h2 className="section-title text-4xl font-bold text-center mb-12">Technology Stack</motion.h2>
 
-      <div className="flex space-x-4 mb-8">
+      <div className="flex flex-wrap justify-center gap-3 mb-8 px-4">
         {Object.keys(skillsData.TechnicalExperience).map((category) => (
           <button
             key={category}
@@ -91,7 +96,7 @@ export default function Skills() {
           </div>
         ))}
       </motion.div>
-      <p className="font-thin text-center mt-8 text-sm text-gray-400">* I&apos;m always learning new technologies. If a specific stack isn't listed here, I can quickly adapt to it.</p>
+      <p className="font-thin text-center mt-8 text-sm text-gray-400">* I&apos;m always learning new technologies. If a specific stack isn&apos;t listed here, I can quickly adapt to it.</p>
     </section>
   );
 }

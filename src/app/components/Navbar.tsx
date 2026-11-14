@@ -52,10 +52,11 @@ export default function Navbar() {
                 {/* Desktop Navigation - Center */}
                 <div className="hidden lg:flex flex-1 justify-center">
                     <div className="glass border border-emerald-400/30 rounded-xl py-3 px-6 flex items-center gap-8">
-                        <Link href="#projects" onClick={(e) => handleScroll(e, "#projects")} className="text-sm font-semibold hover:text-emerald-400 transition-colors">Projects</Link>
-                        <Link href="#skills" onClick={(e) => handleScroll(e, "#skills")} className="text-sm font-semibold hover:text-emerald-400 transition-colors">Skills</Link>
-                        <Link href="#certifications" onClick={(e) => handleScroll(e, "#certifications")} className="text-sm font-semibold hover:text-emerald-400 transition-colors">Certifications</Link>
-                        <Link href="#about-me" onClick={(e) => handleScroll(e, "#about-me")} className="text-sm font-semibold hover:text-emerald-400 transition-colors">About</Link>
+                        <Link href="#disciplines" onClick={(e) => handleScroll(e, "#disciplines")} className="text-sm font-semibold hover:text-emerald-400 transition-colors">Expertise</Link>
+                        <Link href="#projects" onClick={(e) => handleScroll(e, "#projects")} className="text-sm font-semibold hover:text-emerald-400 transition-colors">Work</Link>
+                        <Link href="#experience" onClick={(e) => handleScroll(e, "#experience")} className="text-sm font-semibold hover:text-emerald-400 transition-colors">Experience</Link>
+                        <Link href="#skills" onClick={(e) => handleScroll(e, "#skills")} className="text-sm font-semibold hover:text-emerald-400 transition-colors">Stack</Link>
+                        <Link href="#recommendations" onClick={(e) => handleScroll(e, "#recommendations")} className="text-sm font-semibold hover:text-emerald-400 transition-colors">Recommendations</Link>
                         <Link href="#contact" onClick={(e) => handleScroll(e, "#contact")} className="text-sm font-semibold hover:text-emerald-400 transition-colors">Contact</Link>
                     </div>
                 </div>
@@ -73,7 +74,7 @@ export default function Navbar() {
                 </a>
 
                 {/* Mobile Menu Button */}
-                <button onClick={toggleMenu} aria-label="Toggle Menu" className="lg:hidden ml-auto">
+                <button onClick={toggleMenu} aria-label="Toggle menu" aria-expanded={isOpen} className="lg:hidden ml-auto">
                     {isOpen ? <FiX size={28} /> : <FiMenu size={28} />}
                 </button>
             </div>
@@ -82,10 +83,10 @@ export default function Navbar() {
             {isOpen && (
                 <div className="lg:hidden glass-strong border-t border-emerald-400/50">
                     <div className="flex flex-col space-y-4 px-6 py-4">
-                        <Link href="#projects" onClick={(e) => handleScroll(e, "#projects")} className="text-white hover:text-emerald-400 transition">Projects</Link>
-                        <Link href="#skills" onClick={(e) => handleScroll(e, "#skills")} className="text-white hover:text-emerald-400 transition">Skills</Link>
-                        <Link href="#certifications" onClick={(e) => handleScroll(e, "#certifications")} className="text-white hover:text-emerald-400 transition">Certifications</Link>
-                        <Link href="#about-me" onClick={(e) => handleScroll(e, "#about-me")} className="text-white hover:text-emerald-400 transition">About Me</Link>
+                        <Link href="#disciplines" onClick={(e) => handleScroll(e, "#disciplines")} className="text-white hover:text-emerald-400 transition">Expertise</Link>
+                        <Link href="#projects" onClick={(e) => handleScroll(e, "#projects")} className="text-white hover:text-emerald-400 transition">Work</Link>
+                        <Link href="#experience" onClick={(e) => handleScroll(e, "#experience")} className="text-white hover:text-emerald-400 transition">Experience</Link>
+                        <Link href="#skills" onClick={(e) => handleScroll(e, "#skills")} className="text-white hover:text-emerald-400 transition">Stack</Link>
                         <Link href="#recommendations" onClick={(e) => handleScroll(e, "#recommendations")} className="text-white hover:text-emerald-400 transition">Recommendations</Link>
                         <Link href="#contact" onClick={(e) => handleScroll(e, "#contact")} className="text-white hover:text-emerald-400 transition">Contact</Link>
                         <a

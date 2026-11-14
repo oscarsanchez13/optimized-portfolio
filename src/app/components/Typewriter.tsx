@@ -1,16 +1,8 @@
 "use client";
 import { useEffect, useState } from "react";
+import { hero } from "@/data/profile";
 
-const roles = [
-  "Director of Technology & Innovation",
-  "Senior Product Owner",
-  "President of Operations",
-  "Head of Product & Analytics",
-  "Cloud & DevOps Lead",
-  "Customer Experience Innovator",
-  "Multi-Unit Executive",
-  "Full-stack Software Engineer",
-];
+const roles = hero.roles;
 
 export default function Typewriter() {
   const [text, setText] = useState("");
