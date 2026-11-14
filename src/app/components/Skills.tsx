@@ -72,7 +72,7 @@ export default function Skills() {
   return (
     <section id="skills" className="bg-black py-14 text-white md:py-20">
       <div className="mx-auto max-w-5xl px-5 sm:px-8">
-        <SectionHeading eyebrow="04 / How I lead" title="Leadership Toolkit" />
+        <SectionHeading eyebrow="05 / How I lead" title="Leadership Toolkit" />
 
         {/* Wrapping grid: every skill visible at once, no hidden sideways scroll */}
         <ul className="reveal grid grid-cols-2 gap-2.5 sm:grid-cols-3 sm:gap-3 lg:grid-cols-4">

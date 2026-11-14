@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { FiExternalLink, FiX } from "react-icons/fi";
 import { certifications, certCategories, type Certification, type CertCategory } from "@/data/profile";
 import s from "./CertificateWall.module.css";
+import SectionHeading from "./SectionHeading";
 
 const sealColor: Record<CertCategory, string> = {
   leadership: "#b8862b",
@@ -95,8 +96,7 @@ export default function Certifications({ items = certifications }: { items?: Cer
   return (
     <section id="certifications" className={`${s.wall} py-14 md:py-20 text-white`}>
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <h2 className="section-title text-3xl sm:text-4xl font-bold text-center mb-3">Credentials</h2>
-        <p className="text-center text-slate-400 mb-10 md:mb-14 max-w-xl mx-auto text-sm sm:text-base">Leadership, operations, growth and technology — the training behind the work.</p>
+        <SectionHeading eyebrow="04 / Credentials" title="Credentials" lead="Leadership, operations, growth and technology — the training behind the work." />
         <div className="space-y-12 md:space-y-16">
           {rows.map((row) => (
             <div key={row.key}>
