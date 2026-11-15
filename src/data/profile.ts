@@ -31,12 +31,11 @@ export const hero = {
   // Cycles in the typewriter: the hats he wears across a business.
   roles: [
     "Founder",
+    "CEO",
     "COO",
     "CTO",
-    "President of Operations",
-    "Head of Technology",
     "Finance Leader",
-    "Marketing Strategist",
+    "Marketing Guru",
     "Advertising Strategist",
     "Sales Leader",
   ],
