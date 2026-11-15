@@ -7,7 +7,7 @@ import SectionHeading from "./SectionHeading";
 import { FiCpu, FiMic, FiFileText, FiLink } from "react-icons/fi";
 import { DiJavascript1, DiReact, DiNodejs, DiDocker, DiGit, DiPostgresql } from "react-icons/di";
 import {
-  SiSupabase, SiClaude, SiTypescript, SiNextdotjs, SiTailwindcss, SiMongodb, SiGraphql, SiKubernetes, SiTerraform, SiAmazon,
+  SiSupabase, SiClaude, SiOpenai, SiGooglegemini, SiMeta, SiTypescript, SiNextdotjs, SiTailwindcss, SiMongodb, SiGraphql, SiKubernetes, SiTerraform, SiAmazon,
   SiGithubactions, SiJenkins, SiHelm, SiPrometheus, SiGrafana, SiExpress, SiHtml5, SiCss3, SiGitlab, SiNetlify, SiFigma,
   SiPostman, SiAuth0, SiVercel,
 } from "react-icons/si";
@@ -44,6 +44,9 @@ const skillIcons: Record<string, React.ReactNode> = {
   Vercel: <SiVercel className={`${ic} text-white`} />,
   Supabase: <SiSupabase className={`${ic} text-emerald-400`} />,
   Claude: <SiClaude className={`${ic} text-orange-300`} />,
+  OpenAI: <SiOpenai className={`${ic} text-white`} />,
+  Gemini: <SiGooglegemini className={`${ic} text-sky-300`} />,
+  "Meta AI": <SiMeta className={`${ic} text-blue-400`} />,
   MCP: <FiLink className={`${ic} text-emerald-300`} />,
   Agents: <FiCpu className={`${ic} text-emerald-300`} />,
   OCR: <FiFileText className={`${ic} text-sky-300`} />,

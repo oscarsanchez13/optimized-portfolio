@@ -4,7 +4,7 @@ The source of **[os-portfolio.com](https://os-portfolio.com)** — the portfolio
 
 > I run the business and build the technology behind it.
 
-Operations, finance, growth and technology in one place: experience, case studies, ventures ([Sancho Holdings](https://sanchoholdings.com) and [Loccoli](https://loccoli.com)), certifications and recommendations.
+Operations, finance, growth and technology in one place: experience, case studies, ventures ([Sancho Holdings](https://sanchoholdings.com) and a local services marketplace, established 2022), certifications and recommendations.
 
 ## Stack
 
