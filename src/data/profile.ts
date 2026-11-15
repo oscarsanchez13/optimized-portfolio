@@ -359,5 +359,5 @@ export const stack = {
   Frontend: ["TypeScript", "React", "Next.js", "Tailwind CSS", "Figma"],
   Backend: ["Node.js", "Express.js", "PostgreSQL", "Supabase", "Postman", "Auth0"],
   "Cloud & DevOps": ["AWS", "Vercel", "Docker", "GitHub Actions", "Git"],
-  "AI": ["Claude", "MCP", "Agents", "OCR", "Voice AI"],
+  "AI": ["Claude", "OpenAI", "Gemini", "Meta AI", "MCP", "Agents", "OCR", "Voice AI"],
 };
