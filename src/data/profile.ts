@@ -148,7 +148,8 @@ export const experience: Role[] = [
     end: "2025",
     summary: "Ran operations for a franchise group growing under a ten-store development agreement.",
     highlights: [
-      "Built KPI and accountability systems that saved $100K+ in five months.",
+      "Owned the full P&L; built KPI and accountability systems that saved $100K+ in five months.",
+      "Built custom real-time reporting tools for every location.",
       "Launched Meta and geofencing ad campaigns that grew catering revenue.",
       "Developed and promoted general managers; helped select new sites.",
     ],
@@ -161,7 +162,8 @@ export const experience: Role[] = [
     end: "2024",
     summary: "Led seven locations, up to 400 team members and $43.5M in annual revenue.",
     highlights: [
-      "Climbed from #1,297 to #25 of 1,300+ units in 16 months.",
+      "Climbed from #1,297 to #25 of 1,300+ units in 16 months — 3rd-best profitability in the company.",
+      "Grew sales 119% year over year, with top marks in training, turnover and online reviews.",
       "Regional Leader of the Year (2022, 2023) and Profits Leader (2022, 2023).",
       "Greatest Improvement (2023) and 5-Star (2024) recognition.",
     ],
@@ -174,9 +176,9 @@ export const experience: Role[] = [
     end: "2021",
     summary: "Built the people engine for a region: training, standards and leadership development.",
     highlights: [
-      "Drove 24% year-over-year sales growth.",
-      "Cut team turnover by 40%.",
-      "Held labor 5% below the company average.",
+      "Trained 25+ managers; drove 24% year-over-year sales growth and cut turnover by 40%.",
+      "Held labor 5% below the company average, with variances within 0.5%.",
+      "Back-to-back perfect financial audits — the only regional training director to do it.",
     ],
     tags: ["leadership", "operations", "sales"],
   },
