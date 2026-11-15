@@ -1,114 +1,73 @@
-// app/components/HomeSection.tsx
-"use client";
-import { useEffect, useState } from "react";
-import { FaChevronDown } from "react-icons/fa";
 import Image from "next/image";
+import { FiChevronDown, FiArrowRight } from "react-icons/fi";
 import Typewriter from "./Typewriter";
+import { hero } from "@/data/profile";
 
 /**
- * Mobile-only card to ensure contrast where text overlays the image.
- * Uses a simple semi-opaque background for maximum reliability.
+ * One responsive tree (no JS viewport switching).
+ * Phone: portrait fills the top of the screen and fades into the copy below.
+ * Desktop (lg+): copy on the left, portrait on the right, full viewport height.
  */
-function GlassCard({ children }: { children: React.ReactNode }) {
-  return (
-    <div
-      className="
-        rounded-2xl px-4 py-3
-        bg-black/60 ring-1 ring-white/15 shadow-xl
-      "
-    >
-      {children}
-    </div>
-  );
-}
-
 export default function HomeSection() {
-  const [isMobile, setIsMobile] = useState(false);
-  const [arrowBottom, setArrowBottom] = useState("2rem");
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 1020);
-      setArrowBottom(window.innerWidth < 768 ? "calc(2rem + -20px)" : "2rem");
-    };
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
   return (
-    <section id="home" className="relative w-screen h-screen overflow-hidden">
-      {!isMobile ? (
-        /* ===== DESKTOP ===== */
-        <div className="flex h-full w-full">
-          {/* Left Side */}
-          <div className="flex-1 h-full bg-gradient-to-r from-black via-gray-900 to-gray-700 flex items-center px-24">
-            <div className="text-white max-w-3xl">
-              <h1 className="text-5xl md:text-6xl font-bold mb-6">Hi, I&apos;m Oscar.</h1>
-              <p className="text-base md:text-lg leading-relaxed">
-                I&apos;m a passionate <span className="inline-block min-w-[320px] md:min-w-[420px] text-xl md:text-2xl"><Typewriter /></span>
-                <br />
-                with an{" "}
-                <span className="text-teal-200 font-semibold text-lg md:text-xl keyword-highlight">entrepreneurial</span>{" "}
-                mindset, scaling{" "}
-                <span className="text-teal-200 font-semibold text-lg md:text-xl keyword-highlight">multi-unit</span>{" "}
-                businesses, integrating{" "}
-                <span className="text-teal-200 font-semibold text-lg md:text-xl keyword-highlight">cloud</span>,{" "}
-                <span className="text-teal-200 font-semibold text-lg md:text-xl keyword-highlight">AI</span>, and{" "}
-                <span className="text-teal-200 font-semibold text-lg md:text-xl keyword-highlight">Machine Learning</span>, as well as building{" "}
-                <span className="text-teal-200 font-semibold text-lg md:text-xl keyword-highlight">customer-first</span>{" "}
-                platforms that drastically transform{" "}
-                <span className="text-teal-200 font-semibold text-lg md:text-xl keyword-highlight">operations</span>.
-              </p>
-            </div>
-          </div>
-
-          {/* Right Side */}
-          <div className="flex-1 h-full relative">
-            <Image src="/Reverce.jpg" alt="Oscar Sanchez" fill className="object-cover" priority />
-            <div className="absolute inset-0 bg-gradient-to-l from-transparent via-gray-700 to-black opacity-40" />
-          </div>
-        </div>
-      ) : (
-        /* ===== MOBILE ===== */
-        <div className="relative w-full h-full">
-          <Image src="/Reverce.jpg" alt="Oscar Sanchez" fill className="object-cover -translate-x-8" priority />
-
-          {/* Text overlay wrapped in a glass card for readability */}
-          <div className="absolute bottom-12 right-1/2 transform -translate-x-1 text-left text-white px-4">
-            <div className="max-w-[92vw] sm:max-w-md">
-              <GlassCard>
-                <h1 className="text-3xl sm:text-4xl font-bold">Hi, I&apos;m Oscar.</h1>
-                <p className="text-sm sm:text-base leading-relaxed mt-2">
-                  I&apos;m a passionate <span aria-live="polite" aria-atomic="true" className="inline-block min-w-[240px] text-base sm:text-lg">
-                    <Typewriter />
-                  </span>
-                  <br />
-                  with an{" "}
-                  <span className="text-teal-200 font-semibold text-base sm:text-lg keyword-highlight">entrepreneurial</span>{" "}
-                  mindset, scaling{" "}
-                  <span className="text-teal-200 font-semibold text-base sm:text-lg keyword-highlight">multi-unit</span>{" "}
-                  businesses, integrating{" "}
-                  <span className="text-teal-200 font-semibold text-base sm:text-lg keyword-highlight">cloud</span>,{" "}
-                  <span className="text-teal-200 font-semibold text-base sm:text-lg keyword-highlight">AI</span>, and{" "}
-                  <span className="text-teal-200 font-semibold text-base sm:text-lg keyword-highlight">Machine Learning</span>, as well as building{" "}
-                  <span className="text-teal-200 font-semibold text-base sm:text-lg keyword-highlight">customer-first</span>{" "}
-                  platforms that drastically transform{" "}
-                  <span className="text-teal-200 font-semibold text-base sm:text-lg keyword-highlight">operations</span>.
-                </p>
-              </GlassCard>
-            </div>
-          </div>
-        </div>
-      )}
-
-      {/* Scroll Down Arrow */}
-      <div
-        className="absolute right-1/2 transform translate-x-1/2 text-white animate-bounce opacity-80 md:bottom-10 md:text-5xl text-4xl"
-        style={{ bottom: arrowBottom }}
-      >
-        <FaChevronDown />
+    <section id="home" aria-label="Introduction" className="relative isolate flex min-h-[100svh] flex-col overflow-hidden bg-[#0a0a0a] lg:flex-row">
+      {/* Portrait */}
+      <div className="relative h-[48svh] min-h-[280px] max-h-[560px] w-full sm:h-[58svh] lg:absolute lg:inset-y-0 lg:right-0 lg:h-auto lg:max-h-none lg:w-1/2">
+        <Image
+          src="/Reverce.jpg"
+          alt="Portrait of Oscar Sanchez"
+          fill
+          priority
+          sizes="(min-width: 1024px) 50vw, 100vw"
+          className="object-cover object-[50%_18%] lg:object-center"
+        />
+        {/* Fade into the copy: downward on phones, leftward on desktop */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/40 to-black/30 lg:bg-gradient-to-r lg:from-[#0a0a0a] lg:via-[#0a0a0a]/30 lg:to-transparent" aria-hidden />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_70%_20%,rgba(16,185,129,0.18),transparent_60%)] mix-blend-screen" aria-hidden />
       </div>
+
+      {/* Copy */}
+      <div className="relative z-10 -mt-32 flex flex-1 items-end px-5 pb-[max(3rem,env(safe-area-inset-bottom))] sm:-mt-40 sm:px-8 lg:mt-0 lg:w-1/2 lg:flex-none lg:items-center lg:bg-gradient-to-r lg:from-black lg:via-gray-900 lg:to-transparent lg:px-16 lg:pb-0 lg:pt-[4.5rem] xl:px-24">
+        <div className="w-full max-w-xl text-white lg:max-w-2xl">
+          <p className="eyebrow mb-3">{hero.eyebrow}</p>
+          <h1 className="text-[2.5rem] font-bold leading-[1.05] tracking-tight sm:text-5xl xl:text-6xl">{hero.greeting}</h1>
+
+          <p className="mt-3 h-8 whitespace-nowrap text-lg sm:text-xl md:mt-4 md:text-2xl">
+            <Typewriter />
+          </p>
+
+          <p className="mt-3 text-xl font-semibold leading-snug sm:text-2xl md:text-3xl">{hero.lead}</p>
+          <p className="mt-3 text-base leading-relaxed text-slate-300 md:text-lg">{hero.body}</p>
+
+          <ul className="mt-4 flex flex-wrap gap-2 md:mt-6" aria-label="Disciplines">
+            {hero.keywords.map((k) => (
+              <li key={k} className="keyword-highlight rounded-full border border-teal-200/30 bg-black/30 px-3 py-1 text-xs text-teal-200 md:text-sm">
+                {k}
+              </li>
+            ))}
+          </ul>
+
+          <div className="mt-6 grid grid-cols-2 gap-3 sm:flex md:mt-8">
+            <a
+              href="#projects"
+              className="flex min-h-[48px] items-center justify-center gap-2 whitespace-nowrap rounded-xl bg-emerald-500 px-4 font-semibold text-black shadow-[0_0_24px_rgba(16,185,129,0.35)] transition-colors hover:bg-emerald-400"
+            >
+              See my work <FiArrowRight aria-hidden />
+            </a>
+            <a
+              href="#contact"
+              className="glass-strong flex min-h-[48px] items-center justify-center whitespace-nowrap rounded-xl border border-emerald-400/50 px-4 font-semibold text-white transition-colors hover:border-emerald-400"
+            >
+              Get in touch
+            </a>
+          </div>
+        </div>
+      </div>
+
+      {/* Scroll cue — desktop only, where the hero fits one screen */}
+      <a href="#impact" aria-label="Scroll to content" className="absolute bottom-8 left-1/4 z-10 hidden -translate-x-1/2 animate-bounce text-4xl text-white/80 lg:block">
+        <FiChevronDown aria-hidden />
+      </a>
     </section>
   );
 }

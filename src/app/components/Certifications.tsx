@@ -1,129 +1,126 @@
 "use client";
-import React from "react";
+import { useEffect, useState } from "react";
+import { FiExternalLink, FiX } from "react-icons/fi";
+import { certifications, certCategories, type Certification, type CertCategory } from "@/data/profile";
+import s from "./CertificateWall.module.css";
+import SectionHeading from "./SectionHeading";
 
-const certifications = [
-  {
-    title: "Full-Stack Software Engineer",
-    provider: "Thinkful",
-    date: "Issued 2023",
-  },
-  {
-    title: "Full-Stack Engineering",
-    provider: "Udemy",
-    date: "Issued 2022",
-  },
-  {
-    title: "Certified Kubernetes Administrator (CKA)",
-    provider: "Linux Foundation",
-    date: "Coming Soon",
-  },
-  {
-    title: "HashiCorp Terraform Associate",
-    provider: "HashiCorp",
-    date: "Coming Soon",
-  },
-  {
-    title: "AWS Certified Solutions Architect – Associate",
-    provider: "AWS",
-    date: "Coming Soon",
-  },
-  {
-    title: "GitHub Actions for DevOps",
-    provider: "GitHub",
-    date: "Coming Soon",
-  },
-  {
-    title: "Microsoft Azure Fundamentals (AZ-900)",
-    provider: "Microsoft",
-    date: "Coming Soon",
-  },
-];
+const sealColor: Record<CertCategory, string> = {
+  leadership: "#b8862b",
+  technology: "#0f9f74",
+  operations: "#7a3e16",
+  growth: "#4b5563",
+};
 
-const Certifications = () => {
+function Seal({ color }: { color: string }) {
+  const points = Array.from({ length: 24 }, (_, i) => {
+    const r = i % 2 ? 15 : 19;
+    const a = (i / 24) * Math.PI * 2;
+    return `${(20 + r * Math.cos(a)).toFixed(2)},${(20 + r * Math.sin(a)).toFixed(2)}`;
+  }).join(" ");
   return (
-    <section className="py-20 bg-gray-900 text-white">
-      <div className="max-w-7xl mx-auto px-6">
-        <h2 className="section-title text-4xl font-bold text-center mb-12">
-          Certifications
-        </h2>
+    <svg viewBox="0 0 40 40" className="w-[18%] max-w-[46px] drop-shadow" aria-hidden>
+      <polygon points={points} fill={color} />
+      <circle cx="20" cy="20" r="11" fill="none" stroke="#fff8" strokeWidth="1" />
+      <path d="M14 20.5l4 4 8-9" fill="none" stroke="#fff" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
 
-        {/* Grid layout for certificates */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {certifications.map((cert, index) => (
-            <div
-              key={index}
-              className={`glass-strong border-2 rounded-xl p-8 transition-all duration-300 hover:scale-105 glow-hover relative ${
-                cert.date === "Coming Soon"
-                  ? "border-gray-500/30 opacity-70"
-                  : "border-emerald-400/50"
-              }`}
-            >
-              {/* Certificate Content */}
-              <div className="flex flex-col items-center text-center space-y-3">
-                <div className={`text-4xl mb-2 ${cert.date === "Coming Soon" ? "grayscale opacity-50" : ""}`}>
-                  🎓
+function Paper({ c, large = false }: { c: Certification; large?: boolean }) {
+  const heading = c.kind === "degree" ? "Diploma" : c.kind === "license" ? "License" : "Certificate";
+  return (
+    <div className={`${s.paper} flex flex-col items-center justify-center text-center px-[8%]`}>
+      <div className={`${s.serif} uppercase tracking-[0.25em] ${large ? "text-xs" : "text-[6px] sm:text-[8px]"} text-amber-900/70 mb-[3%] sm:mb-0`}>{heading}<span className={large ? "" : "hidden sm:inline"}> of Achievement</span></div>
+      <div className={`${s.script} ${large ? "text-lg" : "hidden sm:block text-[11px]"} text-amber-900/80 mt-0.5`}>awarded to</div>
+      <div className={`${s.serif} font-bold ${large ? "text-2xl" : "hidden sm:block text-sm"} leading-tight`}>Oscar Sanchez</div>
+      <div className={`h-px w-2/3 bg-amber-900/30 my-[3%] ${large ? "" : "hidden sm:block"}`} />
+      <div className={`${s.serif} ${large ? "text-xl" : "text-[10px] sm:text-xs"} font-semibold leading-tight sm:leading-snug line-clamp-3`}>{c.title}</div>
+      <div className={`${large ? "text-sm" : "text-[7px] sm:text-[9px]"} text-stone-600 mt-[2%] pr-[18%] sm:pr-0 leading-tight`}>{[c.issuer, c.year].filter(Boolean).join(" · ")}</div>
+      <div className="absolute bottom-[7%] right-[7%] w-full flex justify-end"><Seal color={sealColor[c.category]} /></div>
+    </div>
+  );
+}
+
+function Frame({ c, i, onOpen }: { c: Certification; i: number; onOpen: () => void }) {
+  const tilt = [-1.4, 0.9, -0.6, 1.2, -1, 0.5][i % 6];
+  return (
+    <div className={s.hang}>
+      <span className={s.wire} aria-hidden />
+      <span className={s.nail} aria-hidden />
+      <button
+        type="button"
+        onClick={onOpen}
+        aria-label={`${c.title}, ${c.issuer}, ${c.year} — view certificate`}
+        className={`${s.frame} ${s[c.category]} block w-full text-left outline-none focus-visible:ring-2 focus-visible:ring-emerald-400`}
+        style={{ ["--tilt" as string]: `${tilt}deg` }}
+      >
+        <div className={s.mat}><Paper c={c} /></div>
+      </button>
+    </div>
+  );
+}
+
+function Viewer({ c, onClose }: { c: Certification; onClose: () => void }) {
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") onClose(); };
+    window.addEventListener("keydown", onKey);
+    document.body.style.overflow = "hidden";
+    return () => { window.removeEventListener("keydown", onKey); document.body.style.overflow = ""; };
+  }, [onClose]);
+  return (
+    <div className="fixed inset-0 z-[60] bg-black/85 backdrop-blur-sm flex items-center justify-center p-4" onClick={onClose}>
+      <div role="dialog" aria-modal="true" aria-label={c.title} className="w-full max-w-2xl" onClick={(e) => e.stopPropagation()}>
+        <div className="flex justify-end mb-2">
+          <button onClick={onClose} aria-label="Close" className="p-3 rounded-lg bg-white/10 hover:bg-white/20 text-white"><FiX size={20} /></button>
+        </div>
+        <div className={`${s.frame} ${s[c.category]}`} style={{ ["--tilt" as string]: "0deg" }}>
+          <div className={s.mat}><Paper c={c} large /></div>
+        </div>
+        {c.verifyUrl && (
+          <a href={c.verifyUrl} target="_blank" rel="noopener noreferrer" className="mt-4 inline-flex items-center gap-2 text-emerald-300 hover:text-emerald-200 text-sm font-semibold">
+            Verify this credential <FiExternalLink />
+          </a>
+        )}
+      </div>
+    </div>
+  );
+}
+
+// The live site shows earned credentials only; local previews also show ones in progress.
+const visible = certifications.filter((c) => c.earned || process.env.NODE_ENV !== "production");
+
+export default function Certifications({ items = visible }: { items?: Certification[] }) {
+  const [open, setOpen] = useState<Certification | null>(null);
+  const rows = certCategories
+    .map((cat) => ({ ...cat, items: items.filter((c) => c.category === cat.key) }))
+    .filter((r) => r.items.length > 0);
+
+  return (
+    <section id="certifications" className={`${s.wall} py-14 md:py-20 text-white`}>
+      <div className="mx-auto max-w-6xl px-4 sm:px-6">
+        <SectionHeading eyebrow="05 / Credentials" title="Credentials" lead="Leadership, operations, growth and technology — the training behind the work." />
+        <div className="space-y-12 md:space-y-16">
+          {rows.map((row) => (
+            <div key={row.key}>
+              <div className="flex justify-center mb-6">
+                <div className={`${s.plaque} ${s.serif} rounded-sm px-4 py-1.5 text-center`}>
+                  <div className="text-[11px] sm:text-xs font-bold uppercase tracking-[0.2em]">{row.label}</div>
+                  <div className="text-[10px] opacity-80 hidden sm:block">{row.blurb}</div>
                 </div>
-                <h3 className={`text-xl font-bold ${cert.date === "Coming Soon" ? "text-gray-400" : "text-emerald-400"}`}>
-                  {cert.title}
-                </h3>
-                <p className={`text-sm ${cert.date === "Coming Soon" ? "text-gray-500" : "text-gray-300"}`}>
-                  {cert.provider}
-                </p>
-                <p className={`text-xs italic ${cert.date === "Coming Soon" ? "text-gray-600" : "text-emerald-300"}`}>
-                  {cert.date}
-                </p>
               </div>
-
-              {/* Coming Soon Badge */}
-              {cert.date === "Coming Soon" && (
-                <div className="absolute top-3 right-3 glass border border-emerald-400/30 px-3 py-1 text-xs font-bold rounded-lg text-emerald-400">
-                  Coming Soon
-                </div>
-              )}
+              <div className="flex flex-wrap justify-center gap-x-5 gap-y-8 sm:gap-x-8 sm:gap-y-12">
+                {row.items.map((c, i) => (
+                  <div key={c.title} className="w-[calc(50%-10px)] sm:w-[calc(33.333%-22px)] lg:w-[calc(25%-24px)] max-w-[300px]">
+                    <Frame c={c} i={i} onOpen={() => setOpen(c)} />
+                  </div>
+                ))}
+              </div>
             </div>
           ))}
         </div>
       </div>
+      {open && <Viewer c={open} onClose={() => setOpen(null)} />}
     </section>
   );
-};
-
-export default Certifications;
-
-// import React from 'react';
-
-// const certificates = [
-//   {
-//     title: 'Full-Stack Software Engineer',
-//     imageUrl: '/path-to-your-image/fullstack-software-engineer.png',
-//   },
-//   {
-//     title: 'Full-Stack Engineering',
-//     imageUrl: '/path-to-your-image/fullstack-engineering.png',
-//   },
-//   // Add more certificates as needed
-// ];
-
-// const Certifications = () => {
-//   return (
-//     <section className="py-20 bg-gray-100 text-gray-900">
-//       <div className="max-w-6xl mx-auto px-6">
-//         <h2 className="text-4xl font-bold text-center mb-12">Certifications</h2>
-//         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-//           {certificates.map((cert, index) => (
-//             <div key={index} className="flex flex-col items-center">
-//               <img
-//                 src={cert.imageUrl}
-//                 alt={cert.title}
-//                 className="w-full h-auto shadow-lg mb-4"
-//               />
-//               <h3 className="text-xl font-semibold text-center">{cert.title}</h3>
-//             </div>
-//           ))}
-//         </div>
-//       </div>
-//     </section>
-//   );
-// };
-
-// export default Certifications;
+}
