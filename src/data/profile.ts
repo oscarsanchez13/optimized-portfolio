@@ -82,7 +82,9 @@ export type Venture = {
   body: string;
   url?: string;
   logo?: string;
-  accent: "silver" | "emerald";
+  accent: "silver" | "emerald" | "loccoli";
+  logoShape?: "round" | "square";
+  wordmark?: "nunito";
 };
 
 // Wording mirrors sanchoholdings.com so both sites read as one family.
@@ -98,14 +100,18 @@ export const ventures: Venture[] = [
     accent: "silver",
   },
   {
-    name: "Loccoli",
+    name: "loccoli",
     role: "Founder",
-    status: "In development",
+    status: "Launching soon",
     since: "2022",
     tagline: "Anyone can start earning.",
     body: "A local services marketplace where neighbors book trusted providers, and people in every city can earn, grow and build businesses of their own.",
     url: "https://loccoli.com",
-    accent: "emerald",
+    logo: "/ventures/loccoli.png",
+    logoShape: "square",
+    wordmark: "nunito",
+    // Brand locked 2026-11-15: steel blue #3A5A8C + amber #F2A23A; green only inside the logo.
+    accent: "loccoli",
   },
 ];
 

@@ -1,4 +1,7 @@
 import Image from "next/image";
+import { Nunito } from "next/font/google";
+
+const nunito = Nunito({ subsets: ["latin"], weight: "800", display: "swap" });
 import { FiArrowUpRight } from "react-icons/fi";
 import { ventures, type Venture } from "@/data/profile";
 import SectionHeading from "./SectionHeading";
@@ -16,12 +19,18 @@ const accent = {
     text: "text-emerald-300",
     chip: "border-emerald-400/40 text-emerald-300",
   },
+  loccoli: {
+    ring: "border-[#3A5A8C]/50 hover:border-[#3A5A8C]",
+    glow: "from-[#3A5A8C]/25",
+    text: "text-[#F2A23A]",
+    chip: "border-[#3A5A8C] bg-[#3A5A8C] text-white",
+  },
 } as const;
 
 function Mark({ v }: { v: Venture }) {
   if (v.logo) {
     return (
-      <Image src={v.logo} alt={`${v.name} seal`} width={72} height={72} className="h-16 w-16 rounded-full shadow-lg shadow-black/60 sm:h-[72px] sm:w-[72px]" />
+      <Image src={v.logo} alt={`${v.name} logo`} width={72} height={72} className={`h-16 w-16 shadow-lg shadow-black/60 sm:h-[72px] sm:w-[72px] ${v.logoShape === "square" ? "rounded-2xl" : "rounded-full"}`} />
     );
   }
   return (
@@ -59,7 +68,7 @@ export default function Ventures() {
                         <span className={`rounded-full border px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-wider ${a.chip}`}>{v.role}</span>
                         <span className="text-xs text-slate-400">{v.status}{v.since ? ` · since ${v.since}` : ""}</span>
                       </div>
-                      <h3 className="text-2xl font-bold sm:text-3xl">{v.name}</h3>
+                      <h3 className={`text-2xl font-bold sm:text-3xl ${v.wordmark === "nunito" ? nunito.className : ""}`}>{v.name}</h3>
                       <p className={`mt-1 font-semibold ${a.text}`}>{v.tagline}</p>
                     </div>
                   </div>
