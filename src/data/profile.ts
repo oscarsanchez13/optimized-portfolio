@@ -43,7 +43,7 @@ export const hero = {
   lead: "I run the business and build the technology behind it.",
   keywords: ["finance", "operations", "marketing", "advertising", "sales", "AI"],
   body:
-    "From $40M+ multi-unit P&Ls to production AI, I connect the numbers, the people and the software so a company can see itself clearly — and move faster than its competitors.",
+    "From $40M+ multi-unit P&Ls to the technology behind a $2B+ enterprise, I connect the numbers, the people and the software so a company can see itself clearly — and move faster than its competitors.",
 };
 
 export type Metric = { value: number; decimals?: number; suffix?: string; prefix?: string; label: string };
@@ -70,7 +70,7 @@ export const disciplines: Discipline[] = [
   { key: "marketing", title: "Marketing", proof: "Ran local marketing and loyalty programs alongside a national franchisor; ties every campaign to measurable outcomes." },
   { key: "advertising", title: "Advertising", proof: "Meta and geofencing campaigns that grew catering revenue; unified ad-platform data so every dollar is measured." },
   { key: "sales", title: "Sales", proof: "Drove 24% year-over-year sales growth across a region; builds tools that help sales teams respond faster and close more." },
-  { key: "technology", title: "Technology", proof: "Full-stack engineer and AI architect leading platforms used by 1,400+ people: Next.js, Postgres, AWS, agents and MCP." },
+  { key: "technology", title: "Technology", proof: "Built the enterprise applications, SaaS product and MCP server behind a $2B+ company with 1,100+ employees." },
 ];
 
 export type Role = {
@@ -90,9 +90,10 @@ export const experience: Role[] = [
     title: "Head of Technology",
     start: "2025",
     end: "Present",
-    summary: "Leads the technology behind 20+ locations and 1,400+ users — product, engineering, data and AI.",
+    summary: "Leads technology for a $2B+ revenue company with 1,100+ employees — every department runs on software I built or improved.",
     highlights: [
-      "Directs a team of engineers and owns every production release.",
+      "Built the company's enterprise applications, a SaaS product and an MCP server that lets AI work safely inside the business.",
+      "Partners with every department to automate and improve how its people work; directs the engineering team and owns every production release.",
       "Automated 1,000+ hours a year of manual work with AI document processing.",
       "Caught and corrected a material financial-reporting error and restored a complete month-end close.",
       "Retired multiple paid vendor tools with in-house software; added locations with no new corporate headcount.",
