@@ -20,7 +20,7 @@ export default function Recommendations() {
   return (
     <section id="recommendations" className="bg-black py-14 text-white md:py-20">
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
-        <SectionHeading eyebrow="06 / In their words" title="Recommendations" />
+        <SectionHeading eyebrow="07 / In their words" title="Recommendations" />
         <div className="relative md:px-14">
         <Swiper
           onSwiper={setSwiper}

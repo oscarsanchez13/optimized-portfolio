@@ -1,6 +1,7 @@
 import HomeSection from "./components/HomeSection";
 import Impact from "./components/Impact";
 import Disciplines from "./components/Disciplines";
+import Ventures from "./components/Ventures";
 import Projects from "./components/Projects";
 import Experience from "./components/Experience";
 import Skills from "./components/Skills";
@@ -18,6 +19,7 @@ export default function Home() {
             <HomeSection />
             <Impact />
             <Disciplines />
+            <Ventures />
             <Projects />
             <Experience />
             <Certifications />

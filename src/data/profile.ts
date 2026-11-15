@@ -73,6 +73,42 @@ export const disciplines: Discipline[] = [
   { key: "technology", title: "Technology", proof: "Built the enterprise applications, SaaS product and MCP server behind a $2B+ company with 1,100+ employees." },
 ];
 
+export type Venture = {
+  name: string;
+  role: string;
+  status: string;
+  since?: string;
+  tagline: string;
+  body: string;
+  url?: string;
+  logo?: string;
+  accent: "silver" | "emerald";
+};
+
+// Wording mirrors sanchoholdings.com so both sites read as one family.
+export const ventures: Venture[] = [
+  {
+    name: "Sancho Holdings",
+    role: "Founder",
+    status: "Parent company",
+    tagline: "Building local businesses that last.",
+    body: "Sancho Holdings builds and owns businesses that put people to work, open doors to opportunity, and help neighbors build the futures they dream of. We measure our success by the success we help others reach.",
+    url: "https://sanchoholdings.com",
+    logo: "/ventures/sancho-holdings.png",
+    accent: "silver",
+  },
+  {
+    name: "Loccoli",
+    role: "Founder",
+    status: "In development",
+    since: "2022",
+    tagline: "Anyone can start earning.",
+    body: "A local services marketplace where neighbors book trusted providers, and people in every city can earn, grow and build businesses of their own.",
+    url: "https://loccoli.com",
+    accent: "emerald",
+  },
+];
+
 export type Role = {
   company: string;
   title: string;

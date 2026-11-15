@@ -7,7 +7,7 @@ export default function Experience() {
   return (
     <section id="experience" className="bg-gray-900 py-14 text-white md:py-20">
       <div className="mx-auto max-w-4xl px-5 sm:px-8">
-        <SectionHeading eyebrow="03 / Track record" title="Experience" />
+        <SectionHeading eyebrow="04 / Track record" title="Experience" />
         <ol className="relative ml-1.5 border-l border-emerald-400/30 sm:ml-3">
           {experience.map((r, i) => (
             <li

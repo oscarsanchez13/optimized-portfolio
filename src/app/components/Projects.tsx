@@ -168,7 +168,7 @@ export default function Projects() {
     <section id="projects" className="bg-gray-900 py-14 text-white md:py-20">
       <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
         <SectionHeading
-          eyebrow="02 / Case studies"
+          eyebrow="03 / Case studies"
           title="Selected Work"
           lead="Platforms that run real businesses — finance, operations, marketing and AI. Hover or tap a card for the impact."
         />

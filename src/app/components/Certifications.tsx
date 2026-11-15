@@ -99,7 +99,7 @@ export default function Certifications({ items = visible }: { items?: Certificat
   return (
     <section id="certifications" className={`${s.wall} py-14 md:py-20 text-white`}>
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <SectionHeading eyebrow="04 / Credentials" title="Credentials" lead="Leadership, operations, growth and technology — the training behind the work." />
+        <SectionHeading eyebrow="05 / Credentials" title="Credentials" lead="Leadership, operations, growth and technology — the training behind the work." />
         <div className="space-y-12 md:space-y-16">
           {rows.map((row) => (
             <div key={row.key}>

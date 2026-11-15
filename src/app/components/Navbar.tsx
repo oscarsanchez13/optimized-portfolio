@@ -7,6 +7,7 @@ import { site } from "@/data/profile";
 
 const links = [
     { href: "#disciplines", label: "Expertise" },
+    { href: "#ventures", label: "Ventures" },
     { href: "#projects", label: "Work" },
     { href: "#experience", label: "Experience" },
     { href: "#skills", label: "Stack" },
