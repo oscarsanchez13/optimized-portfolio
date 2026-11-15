@@ -15,10 +15,10 @@ export const site = {
     github: "https://github.com/oscarsanchez13",
     x: "https://x.com/Tech_Sancho",
   },
-  // Sancho Holdings footer + link. Off on purpose: sanchoholdings.com stays anonymous
-  // (no founder name, no portfolio link) while Oscar is employed. Flip to true to connect them.
+  // Sancho Holdings footer + link (owner decision 2026-11-15: connect the portfolio,
+  // Sancho Holdings and its companies publicly).
   holdings: {
-    show: false,
+    show: true,
     name: "Sancho Holdings",
     url: "https://sanchoholdings.com",
   },
