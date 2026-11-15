@@ -14,12 +14,12 @@ function Counter({ m, start }: { m: Metric; start: boolean }) {
     const total = 40;
     const id = setInterval(() => {
       frame += 1;
-      setN(Math.round((m.value * frame) / total));
+      setN((m.value * frame) / total);
       if (frame >= total) clearInterval(id);
     }, 25);
     return () => clearInterval(id);
   }, [start, m.value]);
-  return <span>{m.prefix}{n.toLocaleString()}{m.suffix}</span>;
+  return <span>{m.prefix}{n.toLocaleString("en-US", { minimumFractionDigits: m.decimals ?? 0, maximumFractionDigits: m.decimals ?? 0 })}{m.suffix}</span>;
 }
 
 export default function Impact() {

@@ -5,7 +5,7 @@
 export const site = {
   url: "https://os-portfolio.com",
   name: "Oscar Sanchez",
-  title: "Oscar Sanchez — Operator, Technologist, Builder",
+  title: "Oscar Sanchez — Operations, Finance & Technology Executive",
   description:
     "Oscar Sanchez is a business operator and technology leader who builds the platforms companies run on — combining finance, operations, marketing, sales and engineering to turn messy businesses into measurable ones.",
   email: "architectsanchez13@gmail.com",
@@ -19,44 +19,51 @@ export const site = {
 
 export const hero = {
   greeting: "Hi, I'm Oscar.",
-  // Short line above the name; mirrors site.title so it stays neutral.
-  eyebrow: "Operator · Technologist · Builder",
-  // Cycles in the typewriter. Keep to roles he has actually held or does today.
+  // Static line above the name.
+  eyebrow: "Operations · Finance · Growth · Technology",
+  // Cycles in the typewriter: the hats he wears across a business.
   roles: [
-    "Technology Leader",
-    "Operations Executive",
-    "Senior Product Owner",
-    "Multi-Unit Operator",
-    "Platform Builder",
-    "AI Systems Architect",
+    "Founder",
+    "COO",
+    "CTO",
+    "President of Operations",
+    "Head of Technology",
+    "Finance Leader",
+    "Marketing Strategist",
+    "Advertising Strategist",
+    "Sales Leader",
   ],
   lead: "I run the business and build the technology behind it.",
-  keywords: ["finance", "operations", "marketing", "sales", "AI"],
+  keywords: ["finance", "operations", "marketing", "advertising", "sales", "AI"],
   body:
-    "From multi-unit P&Ls to production AI, I connect the numbers, the people and the software so a company can see itself clearly — and move faster than its competitors.",
+    "From $40M+ multi-unit P&Ls to production AI, I connect the numbers, the people and the software so a company can see itself clearly — and move faster than its competitors.",
 };
 
-export type Metric = { value: number; suffix?: string; prefix?: string; label: string };
+export type Metric = { value: number; decimals?: number; suffix?: string; prefix?: string; label: string };
 
 export const metrics: Metric[] = [
-  { value: 15, suffix: "+", label: "business systems shipped to production" },
-  { value: 8, label: "business disciplines led or built for" },
-  { value: 1, prefix: "#", label: "store in its area, turned around as GM" },
-  { value: 2, label: "languages — English & Spanish" },
+  { value: 43.5, decimals: 1, prefix: "$", suffix: "M", label: "multi-unit revenue led" },
+  { value: 400, suffix: "+", label: "team members led" },
+  { value: 60, suffix: "+", label: "international projects" },
+  { value: 2, suffix: "×", label: "regional Leader of the Year" },
+  { value: 25, prefix: "#", label: "of 1,300+ units — up from #1,297 in 16 months" },
+  { value: 100, prefix: "$", suffix: "K+", label: "saved in 5 months with KPI systems" },
+  { value: 1000, suffix: "+", label: "hours a year automated with AI" },
+  { value: 15, suffix: "+", label: "business systems shipped" },
 ];
 
 export type Discipline = { key: string; title: string; proof: string };
 
 // The eight things he wants to be known for, each tied to proof (no employer specifics).
 export const disciplines: Discipline[] = [
-  { key: "leadership", title: "Leadership", proof: "Took a restaurant to the top of its seven-store area as General Manager; selected for a company leadership program; now leads engineers and business partners together." },
-  { key: "operations", title: "Operations", proof: "Ran multi-unit operations and now designs the systems that run day-to-day work end to end." },
-  { key: "finance", title: "Finance", proof: "Builds financial statements, forecasting and fixed-asset reporting into software leaders actually use." },
-  { key: "accounting", title: "Accounting", proof: "Automated journal posting, depreciation schedules and invoice review straight into the general ledger." },
-  { key: "marketing", title: "Marketing", proof: "Built marketing budget tracking and analytics that tie spend to outcomes across every location." },
-  { key: "advertising", title: "Advertising", proof: "Unified ad-platform data into one warehouse so every advertising dollar can be measured." },
-  { key: "sales", title: "Sales", proof: "Customer-first operator background; builds tools that help sales teams respond faster and close more." },
-  { key: "technology", title: "Technology", proof: "Full-stack engineer and AI architect: Next.js, Node, Postgres, AWS, agents and MCP in production." },
+  { key: "leadership", title: "Leadership", proof: "Led up to 400 people across seven units. Two-time regional Leader of the Year. Today leads engineers and business leaders as one team." },
+  { key: "operations", title: "Operations", proof: "President of Operations for a growing franchise group. Took a unit from #1,297 to #25 of 1,300+ in 16 months." },
+  { key: "finance", title: "Finance", proof: "Owned a $43.5M multi-unit P&L and two years as a Profits Leader. Builds the financial reporting leaders run on." },
+  { key: "accounting", title: "Accounting", proof: "Automated journal posting, depreciation and invoice review into the general ledger — and caught a material reporting error others missed." },
+  { key: "marketing", title: "Marketing", proof: "Ran local marketing and loyalty programs alongside a national franchisor; ties every campaign to measurable outcomes." },
+  { key: "advertising", title: "Advertising", proof: "Meta and geofencing campaigns that grew catering revenue; unified ad-platform data so every dollar is measured." },
+  { key: "sales", title: "Sales", proof: "Drove 24% year-over-year sales growth across a region; builds tools that help sales teams respond faster and close more." },
+  { key: "technology", title: "Technology", proof: "Full-stack engineer and AI architect leading platforms used by 1,400+ people: Next.js, Postgres, AWS, agents and MCP." },
 ];
 
 export type Role = {
@@ -69,56 +76,60 @@ export type Role = {
   tags: string[];
 };
 
+// Highest title reached in each part of his career; no employer names.
 export const experience: Role[] = [
   {
     company: "Multi-location automotive group",
-    title: "Senior Product Owner",
+    title: "Head of Technology",
     start: "2025",
     end: "Present",
-    summary:
-      "Leads product strategy and delivery for internal business software across a multi-location organization.",
+    summary: "Leads the technology behind 20+ locations and 1,400+ users — product, engineering, data and AI.",
     highlights: [
-      "Owns the roadmap from business problem to shipped software, partnering with finance, operations and marketing leaders.",
-      "Brought AI-assisted development and automated quality checks into the delivery process.",
-      "Turns manual, spreadsheet-driven work into tracked, measurable workflows.",
+      "Directs a team of engineers and owns every production release.",
+      "Automated 1,000+ hours a year of manual work with AI document processing.",
+      "Caught and corrected a material financial-reporting error and restored a complete month-end close.",
+      "Retired multiple paid vendor tools with in-house software; added locations with no new corporate headcount.",
     ],
-    tags: ["technology", "operations", "finance", "accounting", "marketing"],
+    tags: ["technology", "leadership", "finance", "accounting", "operations"],
   },
   {
     company: "Quick-service restaurant franchise group",
-    title: "Operations Leadership",
-    start: "2025",
+    title: "President of Operations",
+    start: "2024",
     end: "2025",
-    summary: "Led operations for a growing quick-service franchise group.",
+    summary: "Ran operations for a franchise group growing under a ten-store development agreement.",
     highlights: [
-      "Partnered with the franchisor on local marketing and customer loyalty.",
-      "Focused on cost control and repeatable operating standards.",
+      "Built KPI and accountability systems that saved $100K+ in five months.",
+      "Launched Meta and geofencing ad campaigns that grew catering revenue.",
+      "Developed and promoted general managers; helped select new sites.",
     ],
-    tags: ["operations", "marketing", "sales", "leadership"],
+    tags: ["operations", "finance", "marketing", "advertising", "leadership"],
   },
   {
     company: "National casual-dining brand",
-    title: "General Manager → Director of Operations",
-    start: "2022",
+    title: "Director of Operations",
+    start: "2021",
     end: "2024",
-    summary: "Promoted from General Manager to Director of Operations, leading multi-unit P&L, people and guest experience.",
+    summary: "Led seven locations, up to 400 team members and $43.5M in annual revenue.",
     highlights: [
-      "Turned a restaurant into the top performer of its seven-store area, then earned the move to Director of Operations.",
-      "Recognized by the company and selected for a leadership development program.",
-      "Owned the P&L, labor, food cost and guest metrics.",
+      "Climbed from #1,297 to #25 of 1,300+ units in 16 months.",
+      "Regional Leader of the Year (2022, 2023) and Profits Leader (2022, 2023).",
+      "Greatest Improvement (2023) and 5-Star (2024) recognition.",
     ],
     tags: ["leadership", "operations", "finance", "sales"],
   },
   {
-    company: "National bakery-café brand",
-    title: "Restaurant Management",
-    start: "2020",
-    end: "2022",
-    summary: "Joined management and learned multi-shift operations at scale.",
+    company: "Global consumer-brands portfolio",
+    title: "Regional Training Director",
+    start: "2018",
+    end: "2021",
+    summary: "Built the people engine for a region: training, standards and leadership development.",
     highlights: [
-      "Led shifts, trained team members and kept standards consistent.",
+      "Drove 24% year-over-year sales growth.",
+      "Cut team turnover by 40%.",
+      "Held labor 5% below the company average.",
     ],
-    tags: ["leadership", "operations"],
+    tags: ["leadership", "operations", "sales"],
   },
 ];
 
@@ -264,17 +275,26 @@ export const caseStudies: CaseStudy[] = [
 export type CertCategory = "leadership" | "technology" | "operations" | "growth";
 export type Certification = {
   title: string;
-  issuer: string;
-  year: string;
+  issuer?: string;
+  year?: string;
   category: CertCategory;
   kind?: "certificate" | "degree" | "license";
   verifyUrl?: string;
+  // false = in progress: shows on local previews only, never on the live site.
+  earned: boolean;
 };
 
 // Only credentials Oscar has confirmed he holds. The wall renders whatever is here.
 export const certifications: Certification[] = [
-  { title: "Full-Stack Software Engineering", issuer: "Thinkful", year: "2021", category: "technology" },
-  { title: "Full-Stack Web Development", issuer: "Udemy", year: "2022", category: "technology" },
+  { title: "Master of Business Administration", category: "leadership", kind: "degree", earned: true },
+  { title: "Project Management Professional (PMP)", issuer: "PMI", category: "leadership", earned: true },
+  { title: "Certified Scrum Product Owner (CSPO)", issuer: "Scrum Alliance", category: "leadership", earned: false },
+  { title: "Lean Six Sigma Green Belt", category: "operations", earned: true },
+  { title: "Google Ads Certification", issuer: "Google", category: "growth", earned: false },
+  { title: "Google Analytics Certification", issuer: "Google", category: "growth", earned: false },
+  { title: "Full-Stack Software Engineering", year: "2021", category: "technology", earned: true },
+  { title: "AWS Certified Cloud Practitioner", issuer: "Amazon Web Services", category: "technology", earned: false },
+  { title: "Claude Certification", issuer: "Anthropic", category: "technology", earned: false },
 ];
 
 export const certCategories: { key: CertCategory; label: string; blurb: string }[] = [

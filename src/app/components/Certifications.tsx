@@ -36,7 +36,7 @@ function Paper({ c, large = false }: { c: Certification; large?: boolean }) {
       <div className={`${s.serif} font-bold ${large ? "text-2xl" : "hidden sm:block text-sm"} leading-tight`}>Oscar Sanchez</div>
       <div className={`h-px w-2/3 bg-amber-900/30 my-[3%] ${large ? "" : "hidden sm:block"}`} />
       <div className={`${s.serif} ${large ? "text-xl" : "text-[10px] sm:text-xs"} font-semibold leading-tight sm:leading-snug line-clamp-3`}>{c.title}</div>
-      <div className={`${large ? "text-sm" : "text-[7px] sm:text-[9px]"} text-stone-600 mt-[2%] pr-[18%] sm:pr-0 leading-tight`}>{c.issuer} · {c.year}</div>
+      <div className={`${large ? "text-sm" : "text-[7px] sm:text-[9px]"} text-stone-600 mt-[2%] pr-[18%] sm:pr-0 leading-tight`}>{[c.issuer, c.year].filter(Boolean).join(" · ")}</div>
       <div className="absolute bottom-[7%] right-[7%] w-full flex justify-end"><Seal color={sealColor[c.category]} /></div>
     </div>
   );
@@ -87,7 +87,10 @@ function Viewer({ c, onClose }: { c: Certification; onClose: () => void }) {
   );
 }
 
-export default function Certifications({ items = certifications }: { items?: Certification[] }) {
+// The live site shows earned credentials only; local previews also show ones in progress.
+const visible = certifications.filter((c) => c.earned || process.env.NODE_ENV !== "production");
+
+export default function Certifications({ items = visible }: { items?: Certification[] }) {
   const [open, setOpen] = useState<Certification | null>(null);
   const rows = certCategories
     .map((cat) => ({ ...cat, items: items.filter((c) => c.category === cat.key) }))
