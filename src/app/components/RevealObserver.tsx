@@ -33,7 +33,23 @@ export default function RevealObserver() {
     els.filter((el) => !el.classList.contains("is-in")).forEach((el) => io.observe(el));
     document.documentElement.classList.add("reveal-ready");
 
+    // Blocks added after load (e.g. "View more case studies") must be watched too,
+    // or they stay hidden at opacity 0.
+    const mo = new MutationObserver((records) => {
+      for (const r of records) {
+        r.addedNodes.forEach((n) => {
+          if (!(n instanceof HTMLElement)) return;
+          const added = [n, ...Array.from(n.querySelectorAll<HTMLElement>(".reveal"))].filter(
+            (el) => el.classList.contains("reveal") && !el.classList.contains("is-in")
+          );
+          added.forEach((el) => io.observe(el));
+        });
+      }
+    });
+    mo.observe(document.body, { childList: true, subtree: true });
+
     return () => {
+      mo.disconnect();
       io.disconnect();
       document.documentElement.classList.remove("reveal-ready");
     };
