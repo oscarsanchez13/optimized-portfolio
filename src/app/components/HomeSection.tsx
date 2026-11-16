@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { getImageProps } from "next/image";
 import { FiChevronDown, FiArrowRight } from "react-icons/fi";
 import Typewriter from "./Typewriter";
 import { hero } from "@/data/profile";
@@ -8,19 +8,21 @@ import { hero } from "@/data/profile";
  * Phone: portrait fills the top of the screen and fades into the copy below.
  * Desktop (lg+): copy on the left, portrait on the right, full viewport height.
  */
+const portraitSizes = "(min-width: 1024px) 50vw, 100vw";
+const portraitBase = { alt: "", fill: true, priority: true, sizes: portraitSizes } as const;
+const { props: phone } = getImageProps({ ...portraitBase, src: "/Reverce.jpg" });
+const { srcSet: suit } = getImageProps({ ...portraitBase, src: "/hero.jpg" }).props;
+
 export default function HomeSection() {
   return (
     <section id="home" aria-label="Introduction" className="relative isolate flex min-h-[100svh] flex-col overflow-hidden bg-[#0a0a0a] lg:flex-row">
       {/* Portrait */}
       <div className="relative h-[48svh] min-h-[280px] max-h-[560px] w-full sm:h-[58svh] lg:absolute lg:inset-y-0 lg:right-0 lg:h-auto lg:max-h-none lg:w-1/2">
-        <Image
-          src="/Reverce.jpg"
-          alt="Portrait of Oscar Sanchez"
-          fill
-          priority
-          sizes="(min-width: 1024px) 50vw, 100vw"
-          className="object-cover object-[50%_18%] lg:object-center"
-        />
+        {/* Phones: white-shirt portrait. Tablet and up: suit portrait. Only one is downloaded. */}
+        <picture>
+          <source media="(min-width: 768px)" srcSet={suit} sizes={portraitSizes} />
+          <img {...phone} alt="Portrait of Oscar Sanchez" className="object-cover object-[50%_18%] lg:object-center" />
+        </picture>
         {/* Fade into the copy: downward on phones, leftward on desktop */}
         <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/40 to-black/30 lg:bg-gradient-to-r lg:from-[#0a0a0a] lg:via-[#0a0a0a]/30 lg:to-transparent" aria-hidden />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_70%_20%,rgba(16,185,129,0.18),transparent_60%)] mix-blend-screen" aria-hidden />
