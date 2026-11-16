@@ -65,9 +65,13 @@ export default function HomeSection() {
       </div>
 
       {/* Scroll cue — desktop only, where the hero fits one screen */}
-      <a href="#impact" aria-label="Scroll to content" className="absolute bottom-8 left-1/4 z-10 hidden -translate-x-1/2 animate-bounce text-4xl text-white/80 lg:block">
-        <FiChevronDown aria-hidden />
-      </a>
+      {/* Full-width row so the arrow sits at the page centre; the bounce lives on the inner link
+          because animate-bounce rewrites `transform` and would cancel any translate-x centring. */}
+      <div className="pointer-events-none absolute inset-x-0 bottom-8 z-10 hidden justify-center lg:flex">
+        <a href="#impact" aria-label="Scroll to content" className="pointer-events-auto animate-bounce text-4xl text-white/80">
+          <FiChevronDown aria-hidden />
+        </a>
+      </div>
     </section>
   );
 }
