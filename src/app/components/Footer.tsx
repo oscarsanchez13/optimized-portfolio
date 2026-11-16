@@ -29,11 +29,9 @@ export default function Footer() {
                 {site.holdings.show ? (
                     <p className="text-sm text-gray-400">
                         <a href={site.holdings.url} target="_blank" rel="noopener" className="hover:text-emerald-300">A {site.holdings.name} Product</a>
-                        <span aria-hidden> · </span>
-                        &copy; {new Date().getFullYear()} {site.holdings.name}. All rights reserved.
                     </p>
                 ) : (
-                    <p className="text-sm text-gray-400">&copy; {new Date().getFullYear()} {site.name}. All rights reserved.</p>
+                    <p className="text-sm text-gray-400">&copy; {new Date().getFullYear()} {site.name}</p>
                 )}
                 <p className="mx-auto mt-2 max-w-2xl text-xs text-gray-500">
                     Views are my own. Work samples are illustrative recreations built with sample data and contain no employer information.
