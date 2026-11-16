@@ -331,21 +331,26 @@ export type Certification = {
   category: CertCategory;
   kind?: "certificate" | "degree" | "license";
   verifyUrl?: string;
-  // false = in progress: shows on local previews only, never on the live site.
+  // false = in progress. In-progress items with a `target` show publicly with an
+  // "In progress" stamp; when passed, set earned: true, the year and verifyUrl.
   earned: boolean;
+  target?: string;
 };
 
-// Only credentials Oscar has confirmed he holds. The wall renders whatever is here.
+// Earned credentials, plus ones in progress (shown with an "In progress" stamp and target date).
+// Plan and dates: docs/cert-plan.local.md (certification coach session).
 export const certifications: Certification[] = [
   { title: "Master of Business Administration", category: "leadership", kind: "degree", earned: true },
   { title: "Project Management Professional (PMP)", issuer: "PMI", category: "leadership", earned: true },
-  { title: "Certified Scrum Product Owner (CSPO)", issuer: "Scrum Alliance", category: "leadership", earned: false },
+  { title: "Professional Scrum Product Owner I (PSPO I)", issuer: "Scrum.org", category: "leadership", earned: false, target: "Nov 2026" },
   { title: "Lean Six Sigma Green Belt", category: "operations", earned: true },
-  { title: "Google Ads Certification", issuer: "Google", category: "growth", earned: false },
-  { title: "Google Analytics Certification", issuer: "Google", category: "growth", earned: false },
+  { title: "Google Ads Search Certification", issuer: "Google", category: "growth", earned: false, target: "Nov 2026" },
+  { title: "Google Ads AI-Powered Performance Certification", issuer: "Google", category: "growth", earned: false, target: "Nov 2026" },
+  { title: "Google Ads Measurement Certification", issuer: "Google", category: "growth", earned: false, target: "Nov 2026" },
+  { title: "Google Analytics Certification", issuer: "Google", category: "growth", earned: false, target: "Nov 2026" },
   { title: "Full-Stack Software Engineering", year: "2021", category: "technology", earned: true },
-  { title: "AWS Certified Cloud Practitioner", issuer: "Amazon Web Services", category: "technology", earned: false },
-  { title: "Claude Certification", issuer: "Anthropic", category: "technology", earned: false },
+  { title: "AWS Certified Cloud Practitioner", issuer: "Amazon Web Services", category: "technology", earned: false, target: "Dec 2026" },
+  { title: "Claude Code in Action (course certificate)", issuer: "Anthropic Academy", category: "technology", earned: false, target: "Nov 2026" },
 ];
 
 export const certCategories: { key: CertCategory; label: string; blurb: string }[] = [

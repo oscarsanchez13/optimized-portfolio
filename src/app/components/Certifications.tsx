@@ -31,12 +31,17 @@ function Paper({ c, large = false }: { c: Certification; large?: boolean }) {
   const heading = c.kind === "degree" ? "Diploma" : c.kind === "license" ? "License" : "Certificate";
   return (
     <div className={`${s.paper} flex flex-col items-center justify-center text-center px-[8%]`}>
+      {!c.earned && (
+        <div className={`absolute right-0 top-0 z-[1] origin-top-right translate-x-[29%] translate-y-[38%] rotate-45 bg-amber-500 text-black font-bold uppercase tracking-widest shadow ${large ? "px-10 py-1 text-xs" : "px-6 py-[2px] text-[6px] sm:text-[8px]"}`}>
+          In progress
+        </div>
+      )}
       <div className={`${s.serif} uppercase tracking-[0.25em] ${large ? "text-xs" : "text-[6px] sm:text-[8px]"} text-amber-900/70 mb-[3%] sm:mb-0`}>{heading}<span className={large ? "" : "hidden sm:inline"}> of Achievement</span></div>
       <div className={`${s.script} ${large ? "text-lg" : "hidden sm:block text-[11px]"} text-amber-900/80 mt-0.5`}>awarded to</div>
       <div className={`${s.serif} font-bold ${large ? "text-2xl" : "hidden sm:block text-sm"} leading-tight`}>Oscar Sanchez</div>
       <div className={`h-px w-2/3 bg-amber-900/30 my-[3%] ${large ? "" : "hidden sm:block"}`} />
       <div className={`${s.serif} ${large ? "text-xl" : "text-[10px] sm:text-xs"} font-semibold leading-tight sm:leading-snug line-clamp-3`}>{c.title}</div>
-      <div className={`${large ? "text-sm" : "text-[7px] sm:text-[9px]"} text-stone-600 mt-[2%] pr-[18%] sm:pr-0 leading-tight`}>{[c.issuer, c.year].filter(Boolean).join(" · ")}</div>
+      <div className={`${large ? "text-sm" : "text-[7px] sm:text-[9px]"} text-stone-600 mt-[2%] pr-[18%] sm:pr-0 leading-tight`}>{[c.issuer, c.earned ? c.year : c.target ? `Target ${c.target}` : undefined].filter(Boolean).join(" · ")}</div>
       <div className="absolute bottom-[7%] right-[7%] w-full flex justify-end"><Seal color={sealColor[c.category]} /></div>
     </div>
   );
@@ -51,7 +56,7 @@ function Frame({ c, i, onOpen }: { c: Certification; i: number; onOpen: () => vo
       <button
         type="button"
         onClick={onOpen}
-        aria-label={`${c.title}, ${c.issuer}, ${c.year} — view certificate`}
+        aria-label={`${c.title}${c.issuer ? `, ${c.issuer}` : ""}${c.earned ? (c.year ? `, ${c.year}` : "") : `, in progress, target ${c.target}`} — view certificate`}
         className={`${s.frame} ${s[c.category]} block w-full text-left outline-none focus-visible:ring-2 focus-visible:ring-emerald-400`}
         style={{ ["--tilt" as string]: `${tilt}deg` }}
       >
@@ -88,7 +93,7 @@ function Viewer({ c, onClose }: { c: Certification; onClose: () => void }) {
 }
 
 // The live site shows earned credentials only; local previews also show ones in progress.
-const visible = certifications.filter((c) => c.earned || process.env.NODE_ENV !== "production");
+const visible = certifications.filter((c) => c.earned || Boolean(c.target));
 
 export default function Certifications({ items = visible }: { items?: Certification[] }) {
   const [open, setOpen] = useState<Certification | null>(null);
